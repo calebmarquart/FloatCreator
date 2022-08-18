@@ -31,6 +31,9 @@ struct ContentView: View {
     @State private var showingClearAlert = false
     @State private var configuration = Cash(dimes: 0, nickels: 0, quarters: 0, loonies: 0, toonies: 0, rollNickels: 0, rollDimes: 0, rollQuarters: 0, rollLoonies: 0, rollToonies: 0, bill5: 0, bill10: 0, bill20: 0, bill50: 0, bill100: 0)
     
+    @FocusState private var focusedField: Field?
+    @AppStorage("float_amount") var floatAmount = 300
+    
     var body: some View {
         NavigationView {
             ScrollView(showsIndicators: false) {
@@ -38,20 +41,25 @@ struct ContentView: View {
                     Text("Money in Till")
                         .font(.title3)
                         .bold()
-                    Divider()
-                    coins
-                    Divider()
-                    rolls
+                    Group {
                     Divider()
                     bills
-                    Divider()
+                    rolls
+                    coins
+                    }
                     HStack {
-                        Text("Grand Total")
+                        Text("Till Total")
                             .bold()
                         Spacer()
-                        Text("$\(coinTotal() + rollTotal() + billTotal(), specifier: "%.2f")")
+                        Text("$\(total(), specifier: "%.2f")")
                     }
                     .font(.title3)
+                    HStack {
+                        Text("New Float Amount")
+                        Spacer()
+                        Text("$\(floatAmount)")
+                    }
+                    
                     Button {
                         configuration = Cash(dimes: Int(dimes) ?? 0, nickels: Int(nickels) ?? 0, quarters: Int(quarters) ?? 0, loonies: Int(loonies) ?? 0, toonies: Int(toonies) ?? 0, rollNickels: Int(rollNickels) ?? 0, rollDimes: Int(rollDimes) ?? 0, rollQuarters: Int(rollQuarters) ?? 0, rollLoonies: Int(rollLoonies) ?? 0, rollToonies: Int(rollToonies) ?? 0, bill5: Int(bill5) ?? 0, bill10: Int(bill10) ?? 0, bill20: Int(bill20) ?? 0, bill50: Int(bill50) ?? 0, bill100: Int(bill100) ?? 0)
                         showingNextView = true
@@ -62,17 +70,18 @@ struct ContentView: View {
                             .foregroundColor(.white)
                             .padding(.horizontal, 36)
                             .padding(.vertical, 12)
-                            .background(Color.green)
+                            .background(total() < Double(floatAmount) ? Color.secondary : Color.green)
                             .cornerRadius(12)
                             .frame(maxWidth: .infinity)
                             .padding()
                     }
+                    .disabled(total() < Double(floatAmount))
                 }
                 .padding()
-                .textFieldStyle(.roundedBorder)
+//                .textFieldStyle(.roundedBorder)
                 
                 NavigationLink(isActive: $showingNextView) {
-                    BreakdownView(total: coinTotal() + rollTotal() + billTotal(), configuration: configuration)
+                    NewFloatView(total: coinTotal() + rollTotal() + billTotal(), configuration: configuration)
                 } label: {
                     EmptyView()
                 }
@@ -86,13 +95,24 @@ struct ContentView: View {
                         Image(systemName: "arrow.clockwise")
                     }
                     
-                    Button {
-                        showingSettings = true
+                    NavigationLink {
+                        SettingsView()
                     } label: {
                         Image(systemName: "gear")
                     }
-
-
+                }
+                ToolbarItemGroup(placement: .keyboard) {
+                    Button {
+                        focusedField = nil
+                    } label: {
+                        Text("Cancel")
+                    }
+                    Spacer()
+                    Button {
+                        updateFoccusedField()
+                    } label: {
+                        Text("Next")
+                    }
                 }
             }
             .alert("Are you sure you want to clear float?", isPresented: $showingClearAlert) {
@@ -100,9 +120,6 @@ struct ContentView: View {
                     clearFloat()
                 }
                 Button("Cancel", role: .cancel) {}
-            }
-            .sheet(isPresented: $showingSettings) {
-                Text("Settings")
             }
         }
     }
@@ -112,31 +129,61 @@ struct ContentView: View {
             Text("Coins")
                 .font(.headline)
             HStack {
+                Image("nickel")
+                    .resizable()
+                    .scaledToFit()
+                    .frame(width: 28, height: 28)
                 TextField("Nickels", text: $nickels)
+                    .focused($focusedField, equals: .nickels)
+                    .textField()
                 Text("x 0.05 = ")
                 Text("\((Double(nickels) ?? 0) * 0.05, specifier: "%.2f")")
                     .bold()
             }
             HStack {
+                Image("dime")
+                    .resizable()
+                    .scaledToFit()
+                    .frame(width: 28, height: 28)
                 TextField("Dimes", text: $dimes)
+                    .focused($focusedField, equals: .dimes)
+                    .textField()
                 Text("x 0.10 = ")
                 Text("\((Double(dimes) ?? 0) * 0.1, specifier: "%.2f")")
                     .bold()
             }
             HStack {
+                Image("quarter")
+                    .resizable()
+                    .scaledToFit()
+                    .frame(width: 28, height: 28)
                 TextField("Quarters", text: $quarters)
+                    .focused($focusedField, equals: .quarters)
+                    .textField()
                 Text("x 0.25 = ")
                 Text("\((Double(quarters) ?? 0) * 0.25, specifier: "%.2f")")
                     .bold()
             }
             HStack {
+                Image("loonie")
+                    .resizable()
+                    .scaledToFit()
+                    .frame(width: 28, height: 28)
                 TextField("Loonies", text: $loonies)
+                    .focused($focusedField, equals: .loonies)
+                    .textField()
                 Text("x 1.00 = ")
                 Text("\((Double(loonies) ?? 0) * 1, specifier: "%.2f")")
                     .bold()
             }
             HStack {
+                Image("toonie")
+                    .resizable()
+                    .scaledToFit()
+                    .frame(width: 28, height: 28)
                 TextField("Toonies", text: $toonies)
+                    .focused($focusedField, equals: .toonies)
+                    .textField()
                 Text("x 2.00 = ")
                 Text("\((Double(toonies) ?? 0) * 2, specifier: "%.2f")")
                     .bold()
@@ -147,6 +194,7 @@ struct ContentView: View {
                 Text("$\(coinTotal(), specifier: "%.2f")")
             }
             .font(.subheadline)
+            Divider()
         }
         .keyboardType(.numberPad)
     }
@@ -156,31 +204,66 @@ struct ContentView: View {
             Text("Coin Rolls")
                 .font(.headline)
             HStack {
+                Image(systemName: "n.circle")
+                    .resizable()
+                    .scaledToFit()
+                    .foregroundColor(.primary).opacity(0.2)
+                    .frame(width: 28, height: 28)
                 TextField("Roll of Nickels", text: $rollNickels)
+                    .focused($focusedField, equals: .rollNickels)
+                    .textField()
                 Text("x 2 = ")
                 Text("\((Int(rollNickels) ?? 0) * 2)")
                     .bold()
             }
             HStack {
+                Image(systemName: "d.circle")
+                    .resizable()
+                    .scaledToFit()
+                    .foregroundColor(.primary).opacity(0.2)
+                    .frame(width: 28, height: 28)
                 TextField("Roll of Dimes", text: $rollDimes)
+                    .focused($focusedField, equals: .rollDimes)
+                    .textField()
                 Text("x 5 = ")
                 Text("\((Int(rollDimes) ?? 0) * 5)")
                     .bold()
             }
             HStack {
+                Image(systemName: "q.circle")
+                    .resizable()
+                    .scaledToFit()
+                    .foregroundColor(.primary).opacity(0.2)
+                    .frame(width: 28, height: 28)
                 TextField("Roll of Quarters", text: $rollQuarters)
+                    .focused($focusedField, equals: .rollQuarters)
+                    .textField()
                 Text("x 10 = ")
                 Text("\((Int(rollQuarters) ?? 0) * 10)")
                     .bold()
             }
             HStack {
+                Image(systemName: "l.circle")
+                    .resizable()
+                    .scaledToFit()
+                    .foregroundColor(.primary).opacity(0.2)
+                    .frame(width: 28, height: 28)
                 TextField("Roll of Loonies", text: $rollLoonies)
+                    .focused($focusedField, equals: .rollLoonies)
+                    .textField()
                 Text("x 25 = ")
                 Text("\((Int(rollLoonies) ?? 0) * 25)")
                     .bold()
             }
             HStack {
+                Image(systemName: "t.circle")
+                    .resizable()
+                    .scaledToFit()
+                    .foregroundColor(.primary).opacity(0.2)
+                    .frame(width: 28, height: 28)
                 TextField("Roll of Toonies", text: $rollToonies)
+                    .focused($focusedField, equals: .rollToonies)
+                    .textField()
                 Text("x 50 = ")
                 Text("\((Int(rollToonies) ?? 0) * 50)")
                     .bold()
@@ -191,6 +274,8 @@ struct ContentView: View {
                 Text("$\(rollTotal(), specifier: "%.2f")")
             }
             .font(.subheadline)
+            
+            Divider()
         }
         .keyboardType(.numberPad)
     }
@@ -200,31 +285,61 @@ struct ContentView: View {
             Text("Bills")
                 .font(.headline)
             HStack {
+                Image("5")
+                    .resizable()
+                    .scaledToFit()
+                    .frame(height: 28)
                 TextField("$5 Bills", text: $bill5)
+                    .focused($focusedField, equals: .bill5)
+                    .textField()
                 Text("x 5 = ")
                 Text("\((Int(bill5) ?? 0) * 5)")
                     .bold()
             }
             HStack {
+                Image("10")
+                    .resizable()
+                    .scaledToFit()
+                    .frame(height: 28)
                 TextField("$10 Bills", text: $bill10)
+                    .focused($focusedField, equals: .bill10)
+                    .textField()
                 Text("x 5 = ")
                 Text("\((Int(bill10) ?? 0) * 10)")
                     .bold()
             }
             HStack {
+                Image("20")
+                    .resizable()
+                    .scaledToFit()
+                    .frame(height: 28)
                 TextField("$20 Bills", text: $bill20)
+                    .focused($focusedField, equals: .bill20)
+                    .textField()
                 Text("x 20 = ")
                 Text("\((Int(bill20) ?? 0) * 20)")
                     .bold()
             }
             HStack {
+                Image("50")
+                    .resizable()
+                    .scaledToFit()
+                    .frame(height: 28)
                 TextField("$50 Bills", text: $bill50)
+                    .focused($focusedField, equals: .bill50)
+                    .textField()
                 Text("x 50 = ")
                 Text("\((Int(bill50) ?? 0) * 50)")
                     .bold()
             }
             HStack {
+                Image("100")
+                    .resizable()
+                    .scaledToFit()
+                    .frame(height: 28)
                 TextField("$100 Bills", text: $bill100)
+                    .focused($focusedField, equals: .bill100)
+                    .textField()
                 Text("x 100 = ")
                 Text("\((Int(bill100) ?? 0) * 100)")
                     .bold()
@@ -235,6 +350,8 @@ struct ContentView: View {
                 Text("$\(billTotal(), specifier: "%.2f")")
             }
             .font(.subheadline)
+            
+            Divider()
         }
         .keyboardType(.numberPad)
     }
@@ -269,6 +386,10 @@ struct ContentView: View {
         return Double(five + ten + twenty + fifty + hundred)
     }
     
+    func total() -> Double {
+        return billTotal() + rollTotal() + coinTotal()
+    }
+    
     func clearFloat() {
         nickels = ""
         dimes = ""
@@ -288,9 +409,49 @@ struct ContentView: View {
         
         configuration = Cash(dimes: 0, nickels: 0, quarters: 0, loonies: 0, toonies: 0, rollNickels: 0, rollDimes: 0, rollQuarters: 0, rollLoonies: 0, rollToonies: 0, bill5: 0, bill10: 0, bill20: 0, bill50: 0, bill100: 0)
         
-        
     }
     
+    func updateFoccusedField() {
+        guard let field = focusedField else {
+            return
+        }
+
+        switch field {
+        case .nickels: focusedField = .dimes
+        case .dimes: focusedField = .quarters
+        case .quarters: focusedField = .loonies
+        case .loonies: focusedField = .toonies
+        case .toonies: focusedField = nil
+        case .rollNickels: focusedField = .rollDimes
+        case .rollDimes: focusedField = .rollQuarters
+        case .rollQuarters: focusedField = .rollLoonies
+        case .rollLoonies: focusedField = .rollToonies
+        case .rollToonies: focusedField = .nickels
+        case .bill5: focusedField = .bill10
+        case .bill10: focusedField = .bill20
+        case .bill20: focusedField = .bill50
+        case .bill50: focusedField = .bill100
+        case .bill100: focusedField = .rollNickels
+        }
+    }
+    
+    enum Field {
+        case nickels
+        case dimes
+        case quarters
+        case loonies
+        case toonies
+        case rollNickels
+        case rollDimes
+        case rollQuarters
+        case rollLoonies
+        case rollToonies
+        case bill5
+        case bill10
+        case bill20
+        case bill50
+        case bill100
+    }
 }
 
 struct ContentView_Previews: PreviewProvider {
