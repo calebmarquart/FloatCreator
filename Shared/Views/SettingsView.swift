@@ -10,11 +10,16 @@ import SwiftUI
 struct SettingsView: View {
     @Environment(\.dismiss) var dismiss
     @AppStorage("float_amount") var floatAmount = 300
+    @AppStorage("show_images") var showImages = true
     
     var body: some View {
         List {
             Section("Float Amount") {
                 Stepper("$\(floatAmount) Float", value: $floatAmount, in: 50...1000, step: 50)
+            }
+            
+            Section("Images") {
+                Toggle("Show Images", isOn: $showImages)
             }
             
             Section("About") {

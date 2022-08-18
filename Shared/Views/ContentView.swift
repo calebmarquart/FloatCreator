@@ -8,31 +8,30 @@
 import SwiftUI
 
 struct ContentView: View {
+    @AppStorage("float_amount") var floatAmount = 300
+    @AppStorage("show_images") private var showImages = true
+    
     @State private var nickels = ""
     @State private var dimes = ""
     @State private var quarters = ""
     @State private var loonies = ""
     @State private var toonies = ""
-    
     @State private var rollNickels = ""
     @State private var rollDimes = ""
     @State private var rollQuarters = ""
     @State private var rollLoonies = ""
     @State private var rollToonies = ""
-    
     @State private var bill5 = ""
     @State private var bill10 = ""
     @State private var bill20 = ""
     @State private var bill50 = ""
     @State private var bill100 = ""
-    
     @State private var showingNextView = false
     @State private var showingSettings = false
     @State private var showingClearAlert = false
-    @State private var configuration = Cash(dimes: 0, nickels: 0, quarters: 0, loonies: 0, toonies: 0, rollNickels: 0, rollDimes: 0, rollQuarters: 0, rollLoonies: 0, rollToonies: 0, bill5: 0, bill10: 0, bill20: 0, bill50: 0, bill100: 0)
+    @State private var configuration = emptyCash
     
     @FocusState private var focusedField: Field?
-    @AppStorage("float_amount") var floatAmount = 300
     
     var body: some View {
         NavigationView {
@@ -41,11 +40,12 @@ struct ContentView: View {
                     Text("Money in Till")
                         .font(.title3)
                         .bold()
+                    
                     Group {
-                    Divider()
-                    bills
-                    rolls
-                    coins
+                        Divider()
+                        bills
+                        rolls
+                        coins
                     }
                     HStack {
                         Text("Till Total")
@@ -54,16 +54,14 @@ struct ContentView: View {
                         Text("$\(total(), specifier: "%.2f")")
                     }
                     .font(.title3)
+                    
                     HStack {
                         Text("New Float Amount")
                         Spacer()
                         Text("$\(floatAmount)")
                     }
                     
-                    Button {
-                        configuration = Cash(dimes: Int(dimes) ?? 0, nickels: Int(nickels) ?? 0, quarters: Int(quarters) ?? 0, loonies: Int(loonies) ?? 0, toonies: Int(toonies) ?? 0, rollNickels: Int(rollNickels) ?? 0, rollDimes: Int(rollDimes) ?? 0, rollQuarters: Int(rollQuarters) ?? 0, rollLoonies: Int(rollLoonies) ?? 0, rollToonies: Int(rollToonies) ?? 0, bill5: Int(bill5) ?? 0, bill10: Int(bill10) ?? 0, bill20: Int(bill20) ?? 0, bill50: Int(bill50) ?? 0, bill100: Int(bill100) ?? 0)
-                        showingNextView = true
-                    } label: {
+                    Button(action: calculate) {
                         Text("Continue")
                             .font(.title3)
                             .bold()
@@ -78,10 +76,9 @@ struct ContentView: View {
                     .disabled(total() < Double(floatAmount))
                 }
                 .padding()
-//                .textFieldStyle(.roundedBorder)
                 
                 NavigationLink(isActive: $showingNextView) {
-                    NewFloatView(total: coinTotal() + rollTotal() + billTotal(), configuration: configuration)
+                    NewFloatView(total: total(), configuration: configuration)
                 } label: {
                     EmptyView()
                 }
@@ -105,11 +102,11 @@ struct ContentView: View {
                     Button {
                         focusedField = nil
                     } label: {
-                        Text("Cancel")
+                        Text("Close")
                     }
                     Spacer()
                     Button {
-                        updateFoccusedField()
+                        updateFocusedField()
                     } label: {
                         Text("Next")
                     }
@@ -129,10 +126,12 @@ struct ContentView: View {
             Text("Coins")
                 .font(.headline)
             HStack {
-                Image("nickel")
-                    .resizable()
-                    .scaledToFit()
-                    .frame(width: 28, height: 28)
+                if showImages {
+                    Image("nickel")
+                        .resizable()
+                        .scaledToFit()
+                        .frame(width: 28, height: 28)
+                }
                 TextField("Nickels", text: $nickels)
                     .focused($focusedField, equals: .nickels)
                     .textField()
@@ -141,10 +140,12 @@ struct ContentView: View {
                     .bold()
             }
             HStack {
-                Image("dime")
-                    .resizable()
-                    .scaledToFit()
-                    .frame(width: 28, height: 28)
+                if showImages {
+                    Image("dime")
+                        .resizable()
+                        .scaledToFit()
+                        .frame(width: 28, height: 28)
+                }
                 TextField("Dimes", text: $dimes)
                     .focused($focusedField, equals: .dimes)
                     .textField()
@@ -153,10 +154,12 @@ struct ContentView: View {
                     .bold()
             }
             HStack {
-                Image("quarter")
-                    .resizable()
-                    .scaledToFit()
-                    .frame(width: 28, height: 28)
+                if showImages {
+                    Image("quarter")
+                        .resizable()
+                        .scaledToFit()
+                        .frame(width: 28, height: 28)
+                }
                 TextField("Quarters", text: $quarters)
                     .focused($focusedField, equals: .quarters)
                     .textField()
@@ -165,10 +168,12 @@ struct ContentView: View {
                     .bold()
             }
             HStack {
-                Image("loonie")
-                    .resizable()
-                    .scaledToFit()
-                    .frame(width: 28, height: 28)
+                if showImages {
+                    Image("loonie")
+                        .resizable()
+                        .scaledToFit()
+                        .frame(width: 28, height: 28)
+                }
                 TextField("Loonies", text: $loonies)
                     .focused($focusedField, equals: .loonies)
                     .textField()
@@ -177,10 +182,12 @@ struct ContentView: View {
                     .bold()
             }
             HStack {
-                Image("toonie")
-                    .resizable()
-                    .scaledToFit()
-                    .frame(width: 28, height: 28)
+                if showImages {
+                    Image("toonie")
+                        .resizable()
+                        .scaledToFit()
+                        .frame(width: 28, height: 28)
+                }
                 TextField("Toonies", text: $toonies)
                     .focused($focusedField, equals: .toonies)
                     .textField()
@@ -204,11 +211,13 @@ struct ContentView: View {
             Text("Coin Rolls")
                 .font(.headline)
             HStack {
-                Image(systemName: "n.circle")
-                    .resizable()
-                    .scaledToFit()
-                    .foregroundColor(.primary).opacity(0.2)
-                    .frame(width: 28, height: 28)
+                if showImages {
+                    Image(systemName: "n.circle")
+                        .resizable()
+                        .scaledToFit()
+                        .foregroundColor(.primary).opacity(0.2)
+                        .frame(width: 28, height: 28)
+                }
                 TextField("Roll of Nickels", text: $rollNickels)
                     .focused($focusedField, equals: .rollNickels)
                     .textField()
@@ -217,11 +226,13 @@ struct ContentView: View {
                     .bold()
             }
             HStack {
-                Image(systemName: "d.circle")
-                    .resizable()
-                    .scaledToFit()
-                    .foregroundColor(.primary).opacity(0.2)
-                    .frame(width: 28, height: 28)
+                if showImages {
+                    Image(systemName: "d.circle")
+                        .resizable()
+                        .scaledToFit()
+                        .foregroundColor(.primary).opacity(0.2)
+                        .frame(width: 28, height: 28)
+                }
                 TextField("Roll of Dimes", text: $rollDimes)
                     .focused($focusedField, equals: .rollDimes)
                     .textField()
@@ -230,11 +241,13 @@ struct ContentView: View {
                     .bold()
             }
             HStack {
-                Image(systemName: "q.circle")
-                    .resizable()
-                    .scaledToFit()
-                    .foregroundColor(.primary).opacity(0.2)
-                    .frame(width: 28, height: 28)
+                if showImages {
+                    Image(systemName: "q.circle")
+                        .resizable()
+                        .scaledToFit()
+                        .foregroundColor(.primary).opacity(0.2)
+                        .frame(width: 28, height: 28)
+                }
                 TextField("Roll of Quarters", text: $rollQuarters)
                     .focused($focusedField, equals: .rollQuarters)
                     .textField()
@@ -243,11 +256,13 @@ struct ContentView: View {
                     .bold()
             }
             HStack {
-                Image(systemName: "l.circle")
-                    .resizable()
-                    .scaledToFit()
-                    .foregroundColor(.primary).opacity(0.2)
-                    .frame(width: 28, height: 28)
+                if showImages {
+                    Image(systemName: "l.circle")
+                        .resizable()
+                        .scaledToFit()
+                        .foregroundColor(.primary).opacity(0.2)
+                        .frame(width: 28, height: 28)
+                }
                 TextField("Roll of Loonies", text: $rollLoonies)
                     .focused($focusedField, equals: .rollLoonies)
                     .textField()
@@ -256,11 +271,13 @@ struct ContentView: View {
                     .bold()
             }
             HStack {
-                Image(systemName: "t.circle")
-                    .resizable()
-                    .scaledToFit()
-                    .foregroundColor(.primary).opacity(0.2)
-                    .frame(width: 28, height: 28)
+                if showImages {
+                    Image(systemName: "t.circle")
+                        .resizable()
+                        .scaledToFit()
+                        .foregroundColor(.primary).opacity(0.2)
+                        .frame(width: 28, height: 28)
+                }
                 TextField("Roll of Toonies", text: $rollToonies)
                     .focused($focusedField, equals: .rollToonies)
                     .textField()
@@ -285,10 +302,12 @@ struct ContentView: View {
             Text("Bills")
                 .font(.headline)
             HStack {
-                Image("5")
-                    .resizable()
-                    .scaledToFit()
-                    .frame(height: 28)
+                if showImages {
+                    Image("5")
+                        .resizable()
+                        .scaledToFit()
+                        .frame(height: 28)
+                }
                 TextField("$5 Bills", text: $bill5)
                     .focused($focusedField, equals: .bill5)
                     .textField()
@@ -297,10 +316,12 @@ struct ContentView: View {
                     .bold()
             }
             HStack {
-                Image("10")
-                    .resizable()
-                    .scaledToFit()
-                    .frame(height: 28)
+                if showImages {
+                    Image("10")
+                        .resizable()
+                        .scaledToFit()
+                        .frame(height: 28)
+                }
                 TextField("$10 Bills", text: $bill10)
                     .focused($focusedField, equals: .bill10)
                     .textField()
@@ -309,10 +330,12 @@ struct ContentView: View {
                     .bold()
             }
             HStack {
-                Image("20")
-                    .resizable()
-                    .scaledToFit()
-                    .frame(height: 28)
+                if showImages {
+                    Image("20")
+                        .resizable()
+                        .scaledToFit()
+                        .frame(height: 28)
+                }
                 TextField("$20 Bills", text: $bill20)
                     .focused($focusedField, equals: .bill20)
                     .textField()
@@ -321,10 +344,12 @@ struct ContentView: View {
                     .bold()
             }
             HStack {
-                Image("50")
-                    .resizable()
-                    .scaledToFit()
-                    .frame(height: 28)
+                if showImages {
+                    Image("50")
+                        .resizable()
+                        .scaledToFit()
+                        .frame(height: 28)
+                }
                 TextField("$50 Bills", text: $bill50)
                     .focused($focusedField, equals: .bill50)
                     .textField()
@@ -333,10 +358,12 @@ struct ContentView: View {
                     .bold()
             }
             HStack {
-                Image("100")
-                    .resizable()
-                    .scaledToFit()
-                    .frame(height: 28)
+                if showImages {
+                    Image("100")
+                        .resizable()
+                        .scaledToFit()
+                        .frame(height: 28)
+                }
                 TextField("$100 Bills", text: $bill100)
                     .focused($focusedField, equals: .bill100)
                     .textField()
@@ -390,6 +417,11 @@ struct ContentView: View {
         return billTotal() + rollTotal() + coinTotal()
     }
     
+    func calculate() {
+        configuration = Cash(dimes: Int(dimes) ?? 0, nickels: Int(nickels) ?? 0, quarters: Int(quarters) ?? 0, loonies: Int(loonies) ?? 0, toonies: Int(toonies) ?? 0, rollNickels: Int(rollNickels) ?? 0, rollDimes: Int(rollDimes) ?? 0, rollQuarters: Int(rollQuarters) ?? 0, rollLoonies: Int(rollLoonies) ?? 0, rollToonies: Int(rollToonies) ?? 0, bill5: Int(bill5) ?? 0, bill10: Int(bill10) ?? 0, bill20: Int(bill20) ?? 0, bill50: Int(bill50) ?? 0, bill100: Int(bill100) ?? 0)
+        showingNextView = true
+    }
+    
     func clearFloat() {
         nickels = ""
         dimes = ""
@@ -411,11 +443,11 @@ struct ContentView: View {
         
     }
     
-    func updateFoccusedField() {
+    func updateFocusedField() {
         guard let field = focusedField else {
             return
         }
-
+        
         switch field {
         case .nickels: focusedField = .dimes
         case .dimes: focusedField = .quarters
@@ -459,3 +491,5 @@ struct ContentView_Previews: PreviewProvider {
         ContentView()
     }
 }
+
+let emptyCash = Cash(dimes: 0, nickels: 0, quarters: 0, loonies: 0, toonies: 0, rollNickels: 0, rollDimes: 0, rollQuarters: 0, rollLoonies: 0, rollToonies: 0, bill5: 0, bill10: 0, bill20: 0, bill50: 0, bill100: 0)

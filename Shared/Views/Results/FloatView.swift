@@ -26,7 +26,6 @@ struct FloatView: View {
                     Text("$\(total, specifier: "%.2f")").bold()
                 }
             }
-            
         }
     }
 }

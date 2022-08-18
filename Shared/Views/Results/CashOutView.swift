@@ -24,7 +24,7 @@ struct CashOutView: View {
                     Text("$\(total, specifier: "%.2f")").bold()
                 }
             }
-            
         }
+        .navigationTitle("Cash Out")
     }
 }
