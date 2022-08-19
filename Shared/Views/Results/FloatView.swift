@@ -8,7 +8,8 @@
 import SwiftUI
 
 struct FloatView: View {
-    let total: Double
+    @AppStorage("float_amount") private var floatAmount = 300
+    
     let cash: Cash
     
     var body: some View {
@@ -19,11 +20,17 @@ struct FloatView: View {
             
             CoinsSectionView(cash: cash)
             
-            Section("Float Total") {
+            Section {
                 HStack {
                     Text("Total")
                     Spacer()
-                    Text("$\(total, specifier: "%.2f")").bold()
+                    Text("$\(ChangeMaker().getTotal(cash), specifier: "%.2f")").bold()
+                }
+            } header: {
+                Text("Float Total")
+            } footer: {
+                if ChangeMaker().getTotal(cash) != Double(floatAmount) {
+                    Text("Accurate float could not be created due to insufficient cash.")
                 }
             }
         }

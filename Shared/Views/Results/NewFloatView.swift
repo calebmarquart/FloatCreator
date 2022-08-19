@@ -16,12 +16,12 @@ struct NewFloatView: View {
     @State private var cashout: Cash = emptyCash
     
     var body: some View {
-        FloatView(total: Double(floatAmount), cash: float)
+        FloatView(cash: float)
             .navigationTitle("Suggested Float")
             .toolbar {
                 ToolbarItem(placement: .navigationBarTrailing) {
                     NavigationLink("Next") {
-                        CashOutView(total: total - Double(floatAmount), cash: cashout)
+                        CashOutView(cash: cashout)
                     }
                 }
             }

@@ -79,7 +79,7 @@ struct CoinsSectionView: View {
             HStack {
                 Text("Coin Total")
                 Spacer()
-                Text("$\(Double(cash.nickels) * 0.05 + Double(cash.dimes) * 0.1 + Double(cash.quarters) * 0.25 + Double(cash.loonies) + Double(cash.toonies) * 2, specifier: "%.2f")")
+                Text("$\(ChangeMaker().getCoinTotal(cash), specifier: "%.2f")")
             }
         }
     }

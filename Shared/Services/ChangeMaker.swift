@@ -167,6 +167,33 @@ struct ChangeMaker{
         
     }
     
+    func getTotal(_ cash: Cash) -> Double {
+        return getCoinTotal(cash) + Double(getRollTotal(cash)) + Double(getBillTotal(cash))
+    }
+    
+    func getCoinTotal(_ cash: Cash) -> Double {
+        return Double(cash.nickels) * 0.05 +
+        Double(cash.dimes) * 0.1 +
+        Double(cash.quarters) * 0.25 +
+        Double(cash.loonies) +
+        Double(cash.toonies) * 2
+    }
+    
+    func getBillTotal(_ cash: Cash) -> Int {
+        return cash.bill5 * 5 +
+        cash.bill10 * 10 +
+        cash.bill20 * 20 +
+        cash.bill50 * 50 +
+        cash.bill100 * 100
+    }
+    
+    func getRollTotal(_ cash: Cash) -> Int {
+        return cash.rollNickels * 2 +
+        cash.rollDimes * 5 +
+        cash.rollQuarters * 10 +
+        cash.rollLoonies * 25 +
+        cash.rollToonies * 100
+    }
 }
 
 struct Cash {

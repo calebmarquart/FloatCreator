@@ -8,7 +8,6 @@
 import SwiftUI
 
 struct CashOutView: View {
-    let total: Double
     let cash: Cash
     
     var body: some View {
@@ -21,7 +20,7 @@ struct CashOutView: View {
                 HStack {
                     Text("Total")
                     Spacer()
-                    Text("$\(total, specifier: "%.2f")").bold()
+                    Text("$\(ChangeMaker().getTotal(cash), specifier: "%.2f")").bold()
                 }
             }
         }

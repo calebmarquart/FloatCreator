@@ -325,7 +325,7 @@ struct ContentView: View {
                 TextField("$10 Bills", text: $bill10)
                     .focused($focusedField, equals: .bill10)
                     .textField()
-                Text("x 5 = ")
+                Text("x 10 = ")
                 Text("\((Int(bill10) ?? 0) * 10)")
                     .bold()
             }
