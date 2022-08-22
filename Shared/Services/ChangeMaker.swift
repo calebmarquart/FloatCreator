@@ -166,11 +166,11 @@ struct ChangeMaker {
         let quarters = original.quarters - cashout.quarters
         let loonies = original.loonies - cashout.loonies
         let toonies = original.toonies - cashout.toonies
-        let rollNickels = original.rollNickels - cashout.rollNickels
-        let rollDimes = original.rollDimes - cashout.rollDimes
-        let rollQuarters = original.rollDimes - cashout.rollQuarters
-        let rollLoonies = original.rollLoonies - cashout.rollLoonies
-        let rollToonies = original.rollToonies - cashout.rollToonies
+        let rollNickels = original.rollNickels
+        let rollDimes = original.rollDimes
+        let rollQuarters = original.rollDimes
+        let rollLoonies = original.rollLoonies
+        let rollToonies = original.rollToonies
         let bill5 = original.bill5 - cashout.bill5
         let bill10 = original.bill10 - cashout.bill10
         let bill20 = original.bill20 - cashout.bill20
