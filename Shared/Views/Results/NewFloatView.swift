@@ -8,7 +8,6 @@
 import SwiftUI
 
 struct NewFloatView: View {
-    let total: Double
     let configuration: Cash
     let change = ChangeMaker()
     @AppStorage("float_amount") private var floatAmount = 300
@@ -26,8 +25,8 @@ struct NewFloatView: View {
                 }
             }
             .onAppear {
-                cashout = change.makeChange(withCashout: total - Double(floatAmount), from: configuration)
-                float = change.difference(original: configuration, cashout: cashout)
+                cashout = change.createCashout(from: configuration, float: floatAmount)
+                float = change.createFloat(original: configuration, cashout: cashout)
             }
     }
 }
@@ -35,7 +34,23 @@ struct NewFloatView: View {
 struct NewFloatView_Previews: PreviewProvider {
     static var previews: some View {
         NavigationView {
-            NewFloatView(total: 447.35, configuration: Cash(dimes: 0, nickels: 0, quarters: 0, loonies: 0, toonies: 0, rollNickels: 0, rollDimes: 0, rollQuarters: 0, rollLoonies: 0, rollToonies: 0, bill5: 0, bill10: 0, bill20: 0, bill50: 0, bill100: 0))
+            NewFloatView(configuration:
+                            Cash(dimes: 0,
+                                 nickels: 0,
+                                 quarters: 0,
+                                 loonies: 0,
+                                 toonies: 0,
+                                 rollNickels: 0,
+                                 rollDimes: 0,
+                                 rollQuarters: 0,
+                                 rollLoonies: 0,
+                                 rollToonies: 0,
+                                 bill5: 0,
+                                 bill10: 0,
+                                 bill20: 0,
+                                 bill50: 0,
+                                 bill100: 0)
+            )
         }
     }
 }

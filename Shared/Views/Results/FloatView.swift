@@ -20,17 +20,11 @@ struct FloatView: View {
             
             CoinsSectionView(cash: cash)
             
-            Section {
+            Section("Float Total") {
                 HStack {
                     Text("Total")
                     Spacer()
                     Text("$\(ChangeMaker().getTotal(cash), specifier: "%.2f")").bold()
-                }
-            } header: {
-                Text("Float Total")
-            } footer: {
-                if ChangeMaker().getTotal(cash) != Double(floatAmount) {
-                    Text("Accurate float could not be created due to insufficient cash.")
                 }
             }
         }

@@ -1,5 +1,5 @@
 //
-//  CoinsSectionView.swift
+//  RollsSectionView.swift
 //  FloatCreator
 //
 //  Created by Caleb Marquart on 2022-08-17.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct CoinsSectionView: View {
+struct RollsSectionView: View {
     @AppStorage("show_images") private var showImages = true
     let cash: Cash
     
@@ -15,74 +15,77 @@ struct CoinsSectionView: View {
         Section {
             HStack {
                 if showImages {
-                Image("nickel")
+                Image(systemName: "n.circle")
                     .resizable()
                     .scaledToFit()
+                    .foregroundColor(.secondary)
                     .frame(width: 24, height: 24)
                 }
-                Text("Nickels")
+                Text("Roll of Nickels")
                 Spacer()
-                Text("\(cash.nickels) - ")
-                Text("$\(Double(cash.nickels) * 0.05, specifier: "%.2f")").bold()
+                Text("\(cash.rollNickels) - ")
+                Text("$\(cash.rollNickels * 2)").bold()
             }
             HStack {
                 if showImages {
-                Image("dime")
+                Image(systemName: "d.circle")
                     .resizable()
                     .scaledToFit()
+                    .foregroundColor(.secondary)
                     .frame(width: 24, height: 24)
                 }
-                Text("Dimes")
+                Text("Roll of Dimes")
                 Spacer()
-                Text("\(cash.dimes) - ")
-                Text("$\(Double(cash.dimes) * 0.1, specifier: "%.2f")").bold()
+                Text("\(cash.rollDimes) - ")
+                Text("$\(cash.rollDimes * 5)").bold()
             }
             HStack {
                 if showImages {
-                Image("quarter")
+                Image(systemName: "q.circle")
                     .resizable()
                     .scaledToFit()
+                    .foregroundColor(.secondary)
                     .frame(width: 24, height: 24)
                 }
-                Text("Quarters")
+                Text("Roll of Quarters")
                 Spacer()
-                Text("\(cash.quarters) - ")
-                Text("$\(Double(cash.quarters) * 0.25, specifier: "%.2f")").bold()
+                Text("\(cash.rollQuarters) - ")
+                Text("$\(cash.rollQuarters * 10)").bold()
             }
             HStack {
                 if showImages {
-                Image("loonie")
+                Image(systemName: "l.circle")
                     .resizable()
                     .scaledToFit()
+                    .foregroundColor(.secondary)
                     .frame(width: 24, height: 24)
                 }
-                Text("Loonies")
+                Text("Roll of Loonies")
                 Spacer()
-                Text("\(cash.loonies) - ")
-                Text("$\(Double(cash.loonies), specifier: "%.2f")").bold()
+                Text("\(cash.rollLoonies) - ")
+                Text("$\(cash.rollLoonies * 25)").bold()
             }
             HStack {
                 if showImages {
-                Image("toonie")
+                Image(systemName: "t.circle")
                     .resizable()
                     .scaledToFit()
+                    .foregroundColor(.secondary)
                     .frame(width: 24, height: 24)
                 }
-                Text("Toonies")
+                Text("Roll of Toonies")
                 Spacer()
-                Text("\(cash.toonies) - ")
-                Text("$\(Double(cash.toonies * 2), specifier: "%.2f")").bold()
+                Text("\(cash.rollToonies) - ")
+                Text("$\(cash.rollToonies * 50)").bold()
             }
         } header: {
-            Text("Coins")
+            Text("Rolls")
         } footer: {
             HStack {
-                Text("Coin Total")
+                Text("Roll Total")
                 Spacer()
-                Text("$\(ChangeMaker().getCoinTotal(cash), specifier: "%.2f")")
+                Text("$\(ChangeMaker().getRollTotal(cash))")
             }
         }
     }
-    
-    
 }

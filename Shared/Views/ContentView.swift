@@ -78,7 +78,7 @@ struct ContentView: View {
                 .padding()
                 
                 NavigationLink(isActive: $showingNextView) {
-                    NewFloatView(total: total(), configuration: configuration)
+                    NewFloatView(configuration: configuration)
                 } label: {
                     EmptyView()
                 }
@@ -384,7 +384,7 @@ struct ContentView: View {
     }
     
     func coinTotal() -> Double {
-        let n = (Double(nickels) ?? 0) * 0.5
+        let n = (Double(nickels) ?? 0) * 0.05
         let d = (Double(dimes) ?? 0) * 0.1
         let q = (Double(quarters) ?? 0) * 0.25
         let l = (Double(loonies) ?? 0)
@@ -492,4 +492,18 @@ struct ContentView_Previews: PreviewProvider {
     }
 }
 
-let emptyCash = Cash(dimes: 0, nickels: 0, quarters: 0, loonies: 0, toonies: 0, rollNickels: 0, rollDimes: 0, rollQuarters: 0, rollLoonies: 0, rollToonies: 0, bill5: 0, bill10: 0, bill20: 0, bill50: 0, bill100: 0)
+let emptyCash = Cash(dimes: 0,
+                     nickels: 0,
+                     quarters: 0,
+                     loonies: 0,
+                     toonies: 0,
+                     rollNickels: 0,
+                     rollDimes: 0,
+                     rollQuarters: 0,
+                     rollLoonies: 0,
+                     rollToonies: 0,
+                     bill5: 0,
+                     bill10: 0,
+                     bill20: 0,
+                     bill50: 0,
+                     bill100: 0)

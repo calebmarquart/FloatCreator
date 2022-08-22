@@ -7,9 +7,9 @@
 
 import SwiftUI
 
-struct ChangeMaker{
-    func makeChange(withCashout cash: Double, from configuration: Cash) -> Cash {
-        var total = cash
+struct ChangeMaker {
+    func createCashout(from configuration: Cash, float: Int) -> Cash {
+        var total = getTotal(configuration) - Double(float)
         
         var nickels = 0
         var dimes = 0
@@ -120,7 +120,7 @@ struct ChangeMaker{
         
         // Dimes
         if configuration.dimes != 0 {
-            let maxDimes = Int(total / 0.1)
+            let maxDimes = Int(Float(total / 0.1))
             if configuration.dimes <= maxDimes {
                 total -= Double(configuration.dimes) * 0.1
                 dimes = configuration.dimes
@@ -132,7 +132,7 @@ struct ChangeMaker{
         
         // Nickels
         if configuration.nickels != 0 {
-            let maxNickels = Int(total / 0.05)
+            let maxNickels = Int(Float(total / 0.05))
             if configuration.nickels <= maxNickels {
                 total -= Double(configuration.nickels) * 0.05
                 nickels = configuration.nickels
@@ -142,11 +142,25 @@ struct ChangeMaker{
             }
         }
         
-        return Cash(dimes: dimes, nickels: nickels, quarters: quarters, loonies: loonies, toonies: toonies, rollNickels: 0, rollDimes: 0, rollQuarters: 0, rollLoonies: 0, rollToonies: 0, bill5: bill5, bill10: bill10, bill20: bill20, bill50: bill50, bill100: bill100)
-        
+        return Cash(dimes: dimes,
+                    nickels: nickels,
+                    quarters: quarters,
+                    loonies: loonies,
+                    toonies: toonies,
+                    rollNickels: 0,
+                    rollDimes: 0,
+                    rollQuarters: 0,
+                    rollLoonies: 0,
+                    rollToonies: 0,
+                    bill5: bill5,
+                    bill10: bill10,
+                    bill20: bill20,
+                    bill50: bill50,
+                    bill100: bill100
+        )
     }
     
-    func difference(original: Cash, cashout: Cash) -> Cash {
+    func createFloat(original: Cash, cashout: Cash) -> Cash {
         let dimes = original.dimes - cashout.dimes
         let nickels = original.nickels - cashout.nickels
         let quarters = original.quarters - cashout.quarters
