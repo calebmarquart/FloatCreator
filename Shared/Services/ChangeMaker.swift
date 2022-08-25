@@ -75,7 +75,7 @@ struct ChangeMaker {
             let maxBill5 = Int(total / Double(5))
             if configuration.bill5 <= maxBill5 {
                 total -= Double(configuration.bill5 * 5)
-                bill20 = configuration.bill5
+                bill5 = configuration.bill5
             } else {
                 total -= Double(maxBill5 * 5)
                 bill5 = maxBill5
@@ -206,7 +206,7 @@ struct ChangeMaker {
         cash.rollDimes * 5 +
         cash.rollQuarters * 10 +
         cash.rollLoonies * 25 +
-        cash.rollToonies * 100
+        cash.rollToonies * 50
     }
 }
 
