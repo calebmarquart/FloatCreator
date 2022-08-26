@@ -168,7 +168,7 @@ struct ChangeMaker {
         let toonies = original.toonies - cashout.toonies
         let rollNickels = original.rollNickels
         let rollDimes = original.rollDimes
-        let rollQuarters = original.quarters
+        let rollQuarters = original.rollQuarters
         let rollLoonies = original.rollLoonies
         let rollToonies = original.rollToonies
         let bill5 = original.five - cashout.five
