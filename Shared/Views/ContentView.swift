@@ -21,11 +21,11 @@ struct ContentView: View {
     @State private var rollQuarters = ""
     @State private var rollLoonies = ""
     @State private var rollToonies = ""
-    @State private var bill5 = ""
-    @State private var bill10 = ""
-    @State private var bill20 = ""
-    @State private var bill50 = ""
-    @State private var bill100 = ""
+    @State private var five = ""
+    @State private var ten = ""
+    @State private var twenty = ""
+    @State private var fifty = ""
+    @State private var hundred = ""
     @State private var showingNextView = false
     @State private var showingSettings = false
     @State private var showingClearAlert = false
@@ -308,11 +308,11 @@ struct ContentView: View {
                         .scaledToFit()
                         .frame(height: 28)
                 }
-                TextField("$5 Bills", text: $bill5)
-                    .focused($focusedField, equals: .bill5)
+                TextField("$5 Bills", text: $five)
+                    .focused($focusedField, equals: .five)
                     .textField()
                 Text("x 5 = ")
-                Text("\((Int(bill5) ?? 0) * 5)")
+                Text("\((Int(five) ?? 0) * 5)")
                     .bold()
             }
             HStack {
@@ -322,11 +322,11 @@ struct ContentView: View {
                         .scaledToFit()
                         .frame(height: 28)
                 }
-                TextField("$10 Bills", text: $bill10)
-                    .focused($focusedField, equals: .bill10)
+                TextField("$10 Bills", text: $ten)
+                    .focused($focusedField, equals: .ten)
                     .textField()
                 Text("x 10 = ")
-                Text("\((Int(bill10) ?? 0) * 10)")
+                Text("\((Int(ten) ?? 0) * 10)")
                     .bold()
             }
             HStack {
@@ -336,11 +336,11 @@ struct ContentView: View {
                         .scaledToFit()
                         .frame(height: 28)
                 }
-                TextField("$20 Bills", text: $bill20)
-                    .focused($focusedField, equals: .bill20)
+                TextField("$20 Bills", text: $twenty)
+                    .focused($focusedField, equals: .twenty)
                     .textField()
                 Text("x 20 = ")
-                Text("\((Int(bill20) ?? 0) * 20)")
+                Text("\((Int(twenty) ?? 0) * 20)")
                     .bold()
             }
             HStack {
@@ -350,11 +350,11 @@ struct ContentView: View {
                         .scaledToFit()
                         .frame(height: 28)
                 }
-                TextField("$50 Bills", text: $bill50)
-                    .focused($focusedField, equals: .bill50)
+                TextField("$50 Bills", text: $fifty)
+                    .focused($focusedField, equals: .fifty)
                     .textField()
                 Text("x 50 = ")
-                Text("\((Int(bill50) ?? 0) * 50)")
+                Text("\((Int(fifty) ?? 0) * 50)")
                     .bold()
             }
             HStack {
@@ -364,11 +364,11 @@ struct ContentView: View {
                         .scaledToFit()
                         .frame(height: 28)
                 }
-                TextField("$100 Bills", text: $bill100)
-                    .focused($focusedField, equals: .bill100)
+                TextField("$100 Bills", text: $hundred)
+                    .focused($focusedField, equals: .hundred)
                     .textField()
                 Text("x 100 = ")
-                Text("\((Int(bill100) ?? 0) * 100)")
+                Text("\((Int(hundred) ?? 0) * 100)")
                     .bold()
             }
             HStack {
@@ -404,11 +404,11 @@ struct ContentView: View {
     }
     
     func billTotal() -> Double {
-        let five = (Int(bill5) ?? 0) * 5
-        let ten = (Int(bill10) ?? 0) * 10
-        let twenty = (Int(bill20) ?? 0) * 20
-        let fifty = (Int(bill50) ?? 0) * 50
-        let hundred = (Int(bill100) ?? 0) * 100
+        let five = (Int(five) ?? 0) * 5
+        let ten = (Int(ten) ?? 0) * 10
+        let twenty = (Int(twenty) ?? 0) * 20
+        let fifty = (Int(fifty) ?? 0) * 50
+        let hundred = (Int(hundred) ?? 0) * 100
         
         return Double(five + ten + twenty + fifty + hundred)
     }
@@ -418,7 +418,7 @@ struct ContentView: View {
     }
     
     func calculate() {
-        configuration = Cash(dimes: Int(dimes) ?? 0, nickels: Int(nickels) ?? 0, quarters: Int(quarters) ?? 0, loonies: Int(loonies) ?? 0, toonies: Int(toonies) ?? 0, rollNickels: Int(rollNickels) ?? 0, rollDimes: Int(rollDimes) ?? 0, rollQuarters: Int(rollQuarters) ?? 0, rollLoonies: Int(rollLoonies) ?? 0, rollToonies: Int(rollToonies) ?? 0, bill5: Int(bill5) ?? 0, bill10: Int(bill10) ?? 0, bill20: Int(bill20) ?? 0, bill50: Int(bill50) ?? 0, bill100: Int(bill100) ?? 0)
+        configuration = Cash(dimes: Int(dimes) ?? 0, nickels: Int(nickels) ?? 0, quarters: Int(quarters) ?? 0, loonies: Int(loonies) ?? 0, toonies: Int(toonies) ?? 0, rollNickels: Int(rollNickels) ?? 0, rollDimes: Int(rollDimes) ?? 0, rollQuarters: Int(rollQuarters) ?? 0, rollLoonies: Int(rollLoonies) ?? 0, rollToonies: Int(rollToonies) ?? 0, five: Int(five) ?? 0, ten: Int(ten) ?? 0, twenty: Int(twenty) ?? 0, fifty: Int(fifty) ?? 0, hundred: Int(hundred) ?? 0)
         showingNextView = true
     }
     
@@ -433,13 +433,13 @@ struct ContentView: View {
         rollQuarters = ""
         rollLoonies = ""
         rollToonies = ""
-        bill5 = ""
-        bill10 = ""
-        bill20 = ""
-        bill50 = ""
-        bill100 = ""
+        five = ""
+        ten = ""
+        twenty = ""
+        fifty = ""
+        hundred = ""
         
-        configuration = Cash(dimes: 0, nickels: 0, quarters: 0, loonies: 0, toonies: 0, rollNickels: 0, rollDimes: 0, rollQuarters: 0, rollLoonies: 0, rollToonies: 0, bill5: 0, bill10: 0, bill20: 0, bill50: 0, bill100: 0)
+        configuration = Cash(dimes: 0, nickels: 0, quarters: 0, loonies: 0, toonies: 0, rollNickels: 0, rollDimes: 0, rollQuarters: 0, rollLoonies: 0, rollToonies: 0, five: 0, ten: 0, twenty: 0, fifty: 0, hundred: 0)
         
     }
     
@@ -459,11 +459,11 @@ struct ContentView: View {
         case .rollQuarters: focusedField = .rollLoonies
         case .rollLoonies: focusedField = .rollToonies
         case .rollToonies: focusedField = .nickels
-        case .bill5: focusedField = .bill10
-        case .bill10: focusedField = .bill20
-        case .bill20: focusedField = .bill50
-        case .bill50: focusedField = .bill100
-        case .bill100: focusedField = .rollNickels
+        case .five: focusedField = .ten
+        case .ten: focusedField = .twenty
+        case .twenty: focusedField = .fifty
+        case .fifty: focusedField = .hundred
+        case .hundred: focusedField = .rollNickels
         }
     }
     
@@ -478,11 +478,11 @@ struct ContentView: View {
         case rollQuarters
         case rollLoonies
         case rollToonies
-        case bill5
-        case bill10
-        case bill20
-        case bill50
-        case bill100
+        case five
+        case ten
+        case twenty
+        case fifty
+        case hundred
     }
 }
 
@@ -502,8 +502,8 @@ let emptyCash = Cash(dimes: 0,
                      rollQuarters: 0,
                      rollLoonies: 0,
                      rollToonies: 0,
-                     bill5: 0,
-                     bill10: 0,
-                     bill20: 0,
-                     bill50: 0,
-                     bill100: 0)
+                     five: 0,
+                     ten: 0,
+                     twenty: 0,
+                     fifty: 0,
+                     hundred: 0)

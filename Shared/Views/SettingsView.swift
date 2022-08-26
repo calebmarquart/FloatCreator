@@ -24,11 +24,11 @@ struct SettingsView: View {
             
             Section("About") {
                 NavigationLink("Privacy Policy") {
-                    Text("Privacy Policy")
+                    WebView(url: URL(string: "https://calebmarquart.com/floatcreator/privacy-policy/")!)
                 }
                 
                 NavigationLink("Terms & Conditions") {
-                    Text("Terms & Conditions")
+                    WebView(url: URL(string: "https://calebmarquart.com/floatcreator/terms/")!)
                 }
                 
                 HStack {

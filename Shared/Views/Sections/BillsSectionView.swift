@@ -22,8 +22,8 @@ struct BillsSectionView: View {
                 }
                 Text("$5 Bills")
                 Spacer()
-                Text("\(cash.bill5) - ")
-                Text("$\(cash.bill5 * 5)").bold()
+                Text("\(cash.five) - ")
+                Text("$\(cash.five * 5)").bold()
             }
             HStack {
                 if showImages {
@@ -34,8 +34,8 @@ struct BillsSectionView: View {
                 }
                 Text("$10 Bills")
                 Spacer()
-                Text("\(cash.bill10) - ")
-                Text("$\(cash.bill10 * 10)").bold()
+                Text("\(cash.ten) - ")
+                Text("$\(cash.ten * 10)").bold()
             }
             HStack {
                 if showImages {
@@ -46,8 +46,8 @@ struct BillsSectionView: View {
                 }
                 Text("$20 Bills")
                 Spacer()
-                Text("\(cash.bill20) - ")
-                Text("$\(cash.bill20 * 20)").bold()
+                Text("\(cash.twenty) - ")
+                Text("$\(cash.twenty * 20)").bold()
             }
             HStack {
                 if showImages {
@@ -58,8 +58,8 @@ struct BillsSectionView: View {
                 }
                 Text("$50 Bills")
                 Spacer()
-                Text("\(cash.bill50) - ")
-                Text("$\(cash.bill50 * 50)").bold()
+                Text("\(cash.fifty) - ")
+                Text("$\(cash.fifty * 50)").bold()
             }
             HStack {
                 if showImages {
@@ -70,8 +70,8 @@ struct BillsSectionView: View {
                 }
                 Text("$100 Bills")
                 Spacer()
-                Text("\(cash.bill100) - ")
-                Text("$\(cash.bill100 * 100)").bold()
+                Text("\(cash.hundred) - ")
+                Text("$\(cash.hundred * 100)").bold()
             }
         } header: {
             Text("Bills")

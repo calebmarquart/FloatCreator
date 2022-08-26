@@ -45,11 +45,11 @@ struct NewFloatView_Previews: PreviewProvider {
                                  rollQuarters: 0,
                                  rollLoonies: 0,
                                  rollToonies: 0,
-                                 bill5: 0,
-                                 bill10: 0,
-                                 bill20: 0,
-                                 bill50: 0,
-                                 bill100: 0)
+                                 five: 0,
+                                 ten: 0,
+                                 twenty: 0,
+                                 fifty: 0,
+                                 hundred: 0)
             )
         }
     }

@@ -16,69 +16,69 @@ struct ChangeMaker {
         var quarters = 0
         var loonies = 0
         var toonies = 0
-        var bill5 = 0
-        var bill10 = 0
-        var bill20 = 0
-        var bill50 = 0
-        var bill100 = 0
+        var five = 0
+        var ten = 0
+        var twenty = 0
+        var fifty = 0
+        var hundred = 0
         
         // 100 Bills
-        if configuration.bill100 != 0 {
+        if configuration.hundred != 0 {
             let maxBill100 = Int(total / Double(100))
-            if configuration.bill100 <= maxBill100 {
-                total -= Double(configuration.bill100 * 100)
-                bill100 = configuration.bill100
+            if configuration.hundred <= maxBill100 {
+                total -= Double(configuration.hundred * 100)
+                hundred = configuration.hundred
             } else {
-                total -= Double(100)
-                bill100 = maxBill100
+                total -= Double(maxBill100 * 100)
+                hundred = maxBill100
             }
         }
         
         // 50 Bills
-        if configuration.bill50 != 0 {
+        if configuration.fifty != 0 {
             let maxBill50 = Int(total / Double(50))
-            if configuration.bill50 <= maxBill50 {
-                total -= Double(configuration.bill50 * 50)
-                bill50 = configuration.bill50
+            if configuration.fifty <= maxBill50 {
+                total -= Double(configuration.fifty * 50)
+                fifty = configuration.fifty
             } else {
                 total -= Double(maxBill50 * 50)
-                bill50 = maxBill50
+                fifty = maxBill50
             }
         }
         
         // 20 Bills
-        if configuration.bill20 != 0 {
+        if configuration.twenty != 0 {
             let maxBill20 = Int(total / Double(20))
-            if configuration.bill20 <= maxBill20 {
-                total -= Double(configuration.bill20 * 20)
-                bill20 = configuration.bill20
+            if configuration.twenty <= maxBill20 {
+                total -= Double(configuration.twenty * 20)
+                twenty = configuration.twenty
             } else {
                 total -= Double(maxBill20 * 20)
-                bill20 = maxBill20
+                twenty = maxBill20
             }
         }
         
         // 10 Bill
-        if configuration.bill10 != 0 {
+        if configuration.ten != 0 {
             let maxBill10 = Int(total / Double(10))
-            if configuration.bill10 <= maxBill10 {
-                total -= Double(configuration.bill10 * 10)
-                bill10 = configuration.bill10
+            if configuration.ten <= maxBill10 {
+                total -= Double(configuration.ten * 10)
+                ten = configuration.ten
             } else {
                 total -= Double(maxBill10 * 10)
-                bill10 = maxBill10
+                ten = maxBill10
             }
         }
         
         // 5 Bill
-        if configuration.bill5 != 0 {
+        if configuration.five != 0 {
             let maxBill5 = Int(total / Double(5))
-            if configuration.bill5 <= maxBill5 {
-                total -= Double(configuration.bill5 * 5)
-                bill5 = configuration.bill5
+            if configuration.five <= maxBill5 {
+                total -= Double(configuration.five * 5)
+                five = configuration.five
             } else {
                 total -= Double(maxBill5 * 5)
-                bill5 = maxBill5
+                five = maxBill5
             }
         }
         
@@ -152,11 +152,11 @@ struct ChangeMaker {
                     rollQuarters: 0,
                     rollLoonies: 0,
                     rollToonies: 0,
-                    bill5: bill5,
-                    bill10: bill10,
-                    bill20: bill20,
-                    bill50: bill50,
-                    bill100: bill100
+                    five: five,
+                    ten: ten,
+                    twenty: twenty,
+                    fifty: fifty,
+                    hundred: hundred
         )
     }
     
@@ -168,16 +168,16 @@ struct ChangeMaker {
         let toonies = original.toonies - cashout.toonies
         let rollNickels = original.rollNickels
         let rollDimes = original.rollDimes
-        let rollQuarters = original.rollDimes
+        let rollQuarters = original.quarters
         let rollLoonies = original.rollLoonies
         let rollToonies = original.rollToonies
-        let bill5 = original.bill5 - cashout.bill5
-        let bill10 = original.bill10 - cashout.bill10
-        let bill20 = original.bill20 - cashout.bill20
-        let bill50 = original.bill50 - cashout.bill50
-        let bill100 = original.bill100 - cashout.bill100
+        let bill5 = original.five - cashout.five
+        let bill10 = original.ten - cashout.ten
+        let bill20 = original.twenty - cashout.twenty
+        let bill50 = original.fifty - cashout.fifty
+        let bill100 = original.hundred - cashout.hundred
         
-        return Cash(dimes: dimes, nickels: nickels, quarters: quarters, loonies: loonies, toonies: toonies, rollNickels: rollNickels, rollDimes: rollDimes, rollQuarters: rollQuarters, rollLoonies: rollLoonies, rollToonies: rollToonies, bill5: bill5, bill10: bill10, bill20: bill20, bill50: bill50, bill100: bill100)
+        return Cash(dimes: dimes, nickels: nickels, quarters: quarters, loonies: loonies, toonies: toonies, rollNickels: rollNickels, rollDimes: rollDimes, rollQuarters: rollQuarters, rollLoonies: rollLoonies, rollToonies: rollToonies, five: bill5, ten: bill10, twenty: bill20, fifty: bill50, hundred: bill100)
         
     }
     
@@ -194,11 +194,11 @@ struct ChangeMaker {
     }
     
     func getBillTotal(_ cash: Cash) -> Int {
-        return cash.bill5 * 5 +
-        cash.bill10 * 10 +
-        cash.bill20 * 20 +
-        cash.bill50 * 50 +
-        cash.bill100 * 100
+        return cash.five * 5 +
+        cash.ten * 10 +
+        cash.twenty * 20 +
+        cash.fifty * 50 +
+        cash.hundred * 100
     }
     
     func getRollTotal(_ cash: Cash) -> Int {
@@ -221,9 +221,9 @@ struct Cash {
     let rollQuarters: Int
     let rollLoonies: Int
     let rollToonies: Int
-    let bill5: Int
-    let bill10: Int
-    let bill20: Int
-    let bill50: Int
-    let bill100: Int
+    let five: Int
+    let ten: Int
+    let twenty: Int
+    let fifty: Int
+    let hundred: Int
 }
