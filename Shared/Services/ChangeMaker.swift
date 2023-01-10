@@ -8,6 +8,9 @@
 import SwiftUI
 
 struct ChangeMaker {
+    
+    static let instance = ChangeMaker()
+    
     func createCashout(from configuration: Cash, float: Int) -> Cash {
         var total = getTotal(configuration) - Double(float)
         
@@ -23,124 +26,44 @@ struct ChangeMaker {
         var hundred = 0
         
         // 100 Bills
-        if configuration.hundred != 0 {
-            let maxBill100 = Int(total / Double(100))
-            if configuration.hundred <= maxBill100 {
-                total -= Double(configuration.hundred * 100)
-                hundred = configuration.hundred
-            } else {
-                total -= Double(maxBill100 * 100)
-                hundred = maxBill100
-            }
-        }
+        hundred = getGoodAmount(amount: configuration.hundred, type: .hundred, total: total)
+        total -= hundred.value(.hundred)
         
         // 50 Bills
-        if configuration.fifty != 0 {
-            let maxBill50 = Int(total / Double(50))
-            if configuration.fifty <= maxBill50 {
-                total -= Double(configuration.fifty * 50)
-                fifty = configuration.fifty
-            } else {
-                total -= Double(maxBill50 * 50)
-                fifty = maxBill50
-            }
-        }
+        fifty = getGoodAmount(amount: configuration.fifty, type: .fifty, total: total)
+        total -= fifty.value(.fifty)
         
         // 20 Bills
-        if configuration.twenty != 0 {
-            let maxBill20 = Int(total / Double(20))
-            if configuration.twenty <= maxBill20 {
-                total -= Double(configuration.twenty * 20)
-                twenty = configuration.twenty
-            } else {
-                total -= Double(maxBill20 * 20)
-                twenty = maxBill20
-            }
-        }
+        twenty = getGoodAmount(amount: configuration.twenty, type: .twenty, total: total)
+        total -= twenty.value(.twenty)
         
         // 10 Bill
-        if configuration.ten != 0 {
-            let maxBill10 = Int(total / Double(10))
-            if configuration.ten <= maxBill10 {
-                total -= Double(configuration.ten * 10)
-                ten = configuration.ten
-            } else {
-                total -= Double(maxBill10 * 10)
-                ten = maxBill10
-            }
-        }
+        ten = getGoodAmount(amount: configuration.ten, type: .ten, total: total)
+        total -= ten.value(.ten)
         
         // 5 Bill
-        if configuration.five != 0 {
-            let maxBill5 = Int(total / Double(5))
-            if configuration.five <= maxBill5 {
-                total -= Double(configuration.five * 5)
-                five = configuration.five
-            } else {
-                total -= Double(maxBill5 * 5)
-                five = maxBill5
-            }
-        }
+        five = getGoodAmount(amount: configuration.five, type: .five, total: total)
+        total -= five.value(.five)
         
         // Toonies
-        if configuration.toonies != 0 {
-            let maxToonies = Int(total / Double(2))
-            if configuration.toonies <= maxToonies {
-                total -= Double(configuration.toonies * 2)
-                toonies = configuration.toonies
-            } else {
-                total -= Double(maxToonies * 2)
-                toonies = maxToonies
-            }
-        }
+        toonies = getGoodAmount(amount: configuration.toonies, type: .toonies, total: total)
+        total -= toonies.value(.toonies)
         
         // Loonies
-        if configuration.loonies != 0 {
-            let maxLoonies = Int(total / Double(1))
-            if configuration.loonies <= maxLoonies {
-                total -= Double(configuration.loonies * 1)
-                loonies = configuration.loonies
-            } else {
-                total -= Double(maxLoonies * 1)
-                loonies = maxLoonies
-            }
-        }
+        loonies = getGoodAmount(amount: configuration.loonies, type: .loonies, total: total)
+        total -= loonies.value(.loonies)
         
         // Quarters
-        if configuration.quarters != 0 {
-            let maxQuarters = Int(total / 0.25)
-            if configuration.quarters <= maxQuarters {
-                total -= Double(configuration.quarters) * 0.25
-                quarters = configuration.quarters
-            } else {
-                total -= Double(maxQuarters) * 0.25
-                quarters = maxQuarters
-            }
-        }
+        quarters = getGoodAmount(amount: configuration.quarters, type: .quarters, total: total)
+        total -= quarters.value(.quarters)
         
         // Dimes
-        if configuration.dimes != 0 {
-            let maxDimes = Int(Float(total / 0.1))
-            if configuration.dimes <= maxDimes {
-                total -= Double(configuration.dimes) * 0.1
-                dimes = configuration.dimes
-            } else {
-                total -= Double(maxDimes) * 0.1
-                dimes = maxDimes
-            }
-        }
+        dimes = getGoodAmount(amount: configuration.dimes, type: .dimes, total: total)
+        total -= dimes.value(.dimes)
         
         // Nickels
-        if configuration.nickels != 0 {
-            let maxNickels = Int(Float(total / 0.05))
-            if configuration.nickels <= maxNickels {
-                total -= Double(configuration.nickels) * 0.05
-                nickels = configuration.nickels
-            } else {
-                total -= Double(maxNickels) * 0.05
-                nickels = maxNickels
-            }
-        }
+        nickels = getGoodAmount(amount: configuration.nickels, type: .nickels, total: total)
+        total -= nickels.value(.nickels)
         
         return Cash(dimes: dimes,
                     nickels: nickels,
@@ -158,6 +81,17 @@ struct ChangeMaker {
                     fifty: fifty,
                     hundred: hundred
         )
+    }
+    
+    private func getGoodAmount(amount: Int, type: MoneyType, total: Double) -> Int {
+        guard amount != 0 else { return 0 }
+        
+        let maxMoney = Int(Float(total / 1.value(type)))
+        if amount <= maxMoney {
+            return amount
+        } else {
+            return maxMoney
+        }
     }
     
     func createFloat(original: Cash, cashout: Cash) -> Cash {
@@ -210,20 +144,4 @@ struct ChangeMaker {
     }
 }
 
-struct Cash {
-    let dimes: Int
-    let nickels: Int
-    let quarters: Int
-    let loonies: Int
-    let toonies: Int
-    let rollNickels: Int
-    let rollDimes: Int
-    let rollQuarters: Int
-    let rollLoonies: Int
-    let rollToonies: Int
-    let five: Int
-    let ten: Int
-    let twenty: Int
-    let fifty: Int
-    let hundred: Int
-}
+

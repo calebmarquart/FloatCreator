@@ -31,7 +31,7 @@ struct ContentView: View {
     @State private var showingClearAlert = false
     @State private var configuration = emptyCash
     
-    @FocusState private var focusedField: Field?
+    @FocusState private var focusedField: MoneyType?
     
     var body: some View {
         NavigationView {
@@ -466,24 +466,6 @@ struct ContentView: View {
         case .hundred: focusedField = .rollNickels
         }
     }
-    
-    enum Field {
-        case nickels
-        case dimes
-        case quarters
-        case loonies
-        case toonies
-        case rollNickels
-        case rollDimes
-        case rollQuarters
-        case rollLoonies
-        case rollToonies
-        case five
-        case ten
-        case twenty
-        case fifty
-        case hundred
-    }
 }
 
 struct ContentView_Previews: PreviewProvider {
@@ -507,3 +489,21 @@ let emptyCash = Cash(dimes: 0,
                      twenty: 0,
                      fifty: 0,
                      hundred: 0)
+
+enum MoneyType {
+    case nickels
+    case dimes
+    case quarters
+    case loonies
+    case toonies
+    case rollNickels
+    case rollDimes
+    case rollQuarters
+    case rollLoonies
+    case rollToonies
+    case five
+    case ten
+    case twenty
+    case fifty
+    case hundred
+}

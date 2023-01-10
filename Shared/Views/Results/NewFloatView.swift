@@ -8,11 +8,11 @@
 import SwiftUI
 
 struct NewFloatView: View {
-    let configuration: Cash
-    let change = ChangeMaker()
     @AppStorage("float_amount") private var floatAmount = 300
     @State private var float: Cash = emptyCash
     @State private var cashout: Cash = emptyCash
+    
+    let configuration: Cash
     
     var body: some View {
         FloatView(cash: float)
@@ -25,8 +25,8 @@ struct NewFloatView: View {
                 }
             }
             .onAppear {
-                cashout = change.createCashout(from: configuration, float: floatAmount)
-                float = change.createFloat(original: configuration, cashout: cashout)
+                cashout = ChangeMaker.instance.createCashout(from: configuration, float: floatAmount)
+                float = ChangeMaker.instance.createFloat(original: configuration, cashout: cashout)
             }
     }
 }

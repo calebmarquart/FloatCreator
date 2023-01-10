@@ -13,6 +13,10 @@
 		87735EB628ADEE7800B06250 /* BillsSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87735EB428ADEE7700B06250 /* BillsSectionView.swift */; };
 		87735EB828ADEE8100B06250 /* RollsSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87735EB728ADEE8100B06250 /* RollsSectionView.swift */; };
 		87735EB928ADEE8100B06250 /* RollsSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87735EB728ADEE8100B06250 /* RollsSectionView.swift */; };
+		87754ECA296BDD1100B8B5FD /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87754EC9296BDD1100B8B5FD /* Extensions.swift */; };
+		87754ECB296BDD1100B8B5FD /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87754EC9296BDD1100B8B5FD /* Extensions.swift */; };
+		87754ECD296BE24F00B8B5FD /* CashModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87754ECC296BE24F00B8B5FD /* CashModel.swift */; };
+		87754ECE296BE24F00B8B5FD /* CashModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87754ECC296BE24F00B8B5FD /* CashModel.swift */; };
 		879492B328AC993900C6B1A0 /* FloatCreatorApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 879492A328AC993700C6B1A0 /* FloatCreatorApp.swift */; };
 		879492B428AC993900C6B1A0 /* FloatCreatorApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 879492A328AC993700C6B1A0 /* FloatCreatorApp.swift */; };
 		879492B528AC993900C6B1A0 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 879492A428AC993700C6B1A0 /* ContentView.swift */; };
@@ -39,6 +43,8 @@
 		87735EB128ADEE2300B06250 /* CoinsSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinsSectionView.swift; sourceTree = "<group>"; };
 		87735EB428ADEE7700B06250 /* BillsSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BillsSectionView.swift; sourceTree = "<group>"; };
 		87735EB728ADEE8100B06250 /* RollsSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RollsSectionView.swift; sourceTree = "<group>"; };
+		87754EC9296BDD1100B8B5FD /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		87754ECC296BE24F00B8B5FD /* CashModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CashModel.swift; sourceTree = "<group>"; };
 		879492A328AC993700C6B1A0 /* FloatCreatorApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloatCreatorApp.swift; sourceTree = "<group>"; };
 		879492A428AC993700C6B1A0 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		879492A528AC993900C6B1A0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -116,6 +122,8 @@
 			isa = PBXGroup;
 			children = (
 				879FF78228ACC3100066F2BE /* ChangeMaker.swift */,
+				87754EC9296BDD1100B8B5FD /* Extensions.swift */,
+				87754ECC296BE24F00B8B5FD /* CashModel.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -263,7 +271,9 @@
 				87BAE12028ADDF5E00D6B0FE /* ViewModifiers.swift in Sources */,
 				879FF78628ACC8EA0066F2BE /* CashOutView.swift in Sources */,
 				879492B528AC993900C6B1A0 /* ContentView.swift in Sources */,
+				87754ECD296BE24F00B8B5FD /* CashModel.swift in Sources */,
 				87735EB828ADEE8100B06250 /* RollsSectionView.swift in Sources */,
+				87754ECA296BDD1100B8B5FD /* Extensions.swift in Sources */,
 				879492B328AC993900C6B1A0 /* FloatCreatorApp.swift in Sources */,
 				87A2C3B228B8371800EB5A43 /* WebView.swift in Sources */,
 				879FF78328ACC3100066F2BE /* ChangeMaker.swift in Sources */,
@@ -282,7 +292,9 @@
 				87BAE12128ADDF5E00D6B0FE /* ViewModifiers.swift in Sources */,
 				879FF78728ACC8EA0066F2BE /* CashOutView.swift in Sources */,
 				879492B628AC993900C6B1A0 /* ContentView.swift in Sources */,
+				87754ECE296BE24F00B8B5FD /* CashModel.swift in Sources */,
 				87735EB928ADEE8100B06250 /* RollsSectionView.swift in Sources */,
+				87754ECB296BDD1100B8B5FD /* Extensions.swift in Sources */,
 				879492B428AC993900C6B1A0 /* FloatCreatorApp.swift in Sources */,
 				87A2C3B328B8371800EB5A43 /* WebView.swift in Sources */,
 				879FF78428ACC3100066F2BE /* ChangeMaker.swift in Sources */,

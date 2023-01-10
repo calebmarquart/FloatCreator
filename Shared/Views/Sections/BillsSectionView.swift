@@ -79,7 +79,7 @@ struct BillsSectionView: View {
             HStack {
                 Text("Bill Total")
                 Spacer()
-                Text("$\(ChangeMaker().getBillTotal(cash))")
+                Text("$\(ChangeMaker.instance.getBillTotal(cash))")
             }
         }
     }

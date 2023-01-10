@@ -15,63 +15,63 @@ struct CoinsSectionView: View {
         Section {
             HStack {
                 if showImages {
-                Image("nickel")
-                    .resizable()
-                    .scaledToFit()
-                    .frame(width: 24, height: 24)
+                    Image("nickel")
+                        .resizable()
+                        .scaledToFit()
+                        .frame(width: 24, height: 24)
                 }
                 Text("Nickels")
                 Spacer()
                 Text("\(cash.nickels) - ")
-                Text("$\(Double(cash.nickels) * 0.05, specifier: "%.2f")").bold()
+                cash.nickels.valueFormat(.nickels).bold()
             }
             HStack {
                 if showImages {
-                Image("dime")
-                    .resizable()
-                    .scaledToFit()
-                    .frame(width: 24, height: 24)
+                    Image("dime")
+                        .resizable()
+                        .scaledToFit()
+                        .frame(width: 24, height: 24)
                 }
                 Text("Dimes")
                 Spacer()
                 Text("\(cash.dimes) - ")
-                Text("$\(Double(cash.dimes) * 0.1, specifier: "%.2f")").bold()
+                cash.dimes.valueFormat(.dimes).bold()
             }
             HStack {
                 if showImages {
-                Image("quarter")
-                    .resizable()
-                    .scaledToFit()
-                    .frame(width: 24, height: 24)
+                    Image("quarter")
+                        .resizable()
+                        .scaledToFit()
+                        .frame(width: 24, height: 24)
                 }
                 Text("Quarters")
                 Spacer()
                 Text("\(cash.quarters) - ")
-                Text("$\(Double(cash.quarters) * 0.25, specifier: "%.2f")").bold()
+                cash.quarters.valueFormat(.quarters).bold()
             }
             HStack {
                 if showImages {
-                Image("loonie")
-                    .resizable()
-                    .scaledToFit()
-                    .frame(width: 24, height: 24)
+                    Image("loonie")
+                        .resizable()
+                        .scaledToFit()
+                        .frame(width: 24, height: 24)
                 }
                 Text("Loonies")
                 Spacer()
                 Text("\(cash.loonies) - ")
-                Text("$\(Double(cash.loonies), specifier: "%.2f")").bold()
+                cash.loonies.valueFormat(.loonies).bold()
             }
             HStack {
                 if showImages {
-                Image("toonie")
-                    .resizable()
-                    .scaledToFit()
-                    .frame(width: 24, height: 24)
+                    Image("toonie")
+                        .resizable()
+                        .scaledToFit()
+                        .frame(width: 24, height: 24)
                 }
                 Text("Toonies")
                 Spacer()
                 Text("\(cash.toonies) - ")
-                Text("$\(Double(cash.toonies * 2), specifier: "%.2f")").bold()
+                cash.toonies.valueFormat(.toonies).bold()
             }
         } header: {
             Text("Coins")
@@ -79,10 +79,8 @@ struct CoinsSectionView: View {
             HStack {
                 Text("Coin Total")
                 Spacer()
-                Text("$\(ChangeMaker().getCoinTotal(cash), specifier: "%.2f")")
+                Text("$\(ChangeMaker.instance.getCoinTotal(cash), specifier: "%.2f")")
             }
         }
-    }
-    
-    
+    } 
 }

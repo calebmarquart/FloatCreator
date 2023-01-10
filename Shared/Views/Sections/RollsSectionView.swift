@@ -84,7 +84,7 @@ struct RollsSectionView: View {
             HStack {
                 Text("Roll Total")
                 Spacer()
-                Text("$\(ChangeMaker().getRollTotal(cash))")
+                Text("$\(ChangeMaker.instance.getRollTotal(cash))")
             }
         }
     }
