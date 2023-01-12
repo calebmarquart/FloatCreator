@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct CashOutView: View {
+struct FloatView: View {
     
     let cash: Cash
     
@@ -15,9 +15,11 @@ struct CashOutView: View {
         List {
             BillsSectionView(cash: cash)
             
+            RollsSectionView(cash: cash)
+            
             CoinsSectionView(cash: cash)
             
-            Section("Cashout Total") {
+            Section("Float Total") {
                 HStack {
                     Text("Total")
                     Spacer()
@@ -25,6 +27,5 @@ struct CashOutView: View {
                 }
             }
         }
-        .navigationTitle("Cash Out")
     }
 }

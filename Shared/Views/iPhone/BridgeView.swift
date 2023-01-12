@@ -7,34 +7,45 @@
 
 import SwiftUI
 
-struct NewFloatView: View {
-    @AppStorage("float_amount") private var floatAmount = 300
-    @State private var float: Cash = emptyCash
-    @State private var cashout: Cash = emptyCash
+struct BridgeView: View {
+    @State private var showingPrint = false
     
-    let configuration: Cash
+    let float: Cash
+    let cashout: Cash
+    
+    init(configuration: Cash) {
+        cashout = ChangeMaker.instance.createCashout(from: configuration)
+        float = ChangeMaker.instance.createFloat(original: configuration, cashout: cashout)
+    }
     
     var body: some View {
         FloatView(cash: float)
             .navigationTitle("Suggested Float")
             .toolbar {
-                ToolbarItem(placement: .navigationBarTrailing) {
+                ToolbarItemGroup(placement: .navigationBarTrailing) {
+                    
+                    Button {
+                        showingPrint.toggle()
+                    } label: {
+                        Image(systemName: "printer")
+                    }
+
+                    
                     NavigationLink("Next") {
                         CashOutView(cash: cashout)
                     }
                 }
             }
-            .onAppear {
-                cashout = ChangeMaker.instance.createCashout(from: configuration, float: floatAmount)
-                float = ChangeMaker.instance.createFloat(original: configuration, cashout: cashout)
+            .sheet(isPresented: $showingPrint) {
+                PrintView(cash: float)
             }
     }
 }
 
-struct NewFloatView_Previews: PreviewProvider {
+struct BridgeView_Previews: PreviewProvider {
     static var previews: some View {
         NavigationView {
-            NewFloatView(configuration:
+            BridgeView(configuration:
                             Cash(dimes: 0,
                                  nickels: 0,
                                  quarters: 0,

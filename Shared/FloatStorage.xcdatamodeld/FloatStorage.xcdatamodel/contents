@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="21279" systemVersion="22A380" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="CashDB" representedClassName="CashDB" syncable="YES" codeGenerationType="class">
+        <attribute name="dimes" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="fifty" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="five" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="hundred" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="loonies" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="nickels" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="quarters" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="rollDimes" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="rollLoonies" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="rollNickels" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="rollQuarters" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="rollToonies" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="ten" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="toonies" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="twenty" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <relationship name="parentCashout" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="FloatDB" inverseName="cashout" inverseEntity="FloatDB"/>
+        <relationship name="parentFloat" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="FloatDB" inverseName="float" inverseEntity="FloatDB"/>
+    </entity>
+    <entity name="FloatDB" representedClassName="FloatDB" syncable="YES" codeGenerationType="class">
+        <attribute name="date" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="lead" optional="YES" attributeType="String"/>
+        <attribute name="till" optional="YES" attributeType="String"/>
+        <relationship name="cashout" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="CashDB" inverseName="parentCashout" inverseEntity="CashDB"/>
+        <relationship name="float" optional="YES" maxCount="1" deletionRule="Cascade" destinationEntity="CashDB" inverseName="parentFloat" inverseEntity="CashDB"/>
+    </entity>
+</model>

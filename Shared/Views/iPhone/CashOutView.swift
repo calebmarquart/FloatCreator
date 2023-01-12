@@ -7,8 +7,9 @@
 
 import SwiftUI
 
-struct FloatView: View {
-    @AppStorage("float_amount") private var floatAmount = 300
+struct CashOutView: View {
+    
+    @State private var showingPrint = false
     
     let cash: Cash
     
@@ -16,17 +17,29 @@ struct FloatView: View {
         List {
             BillsSectionView(cash: cash)
             
-            RollsSectionView(cash: cash)
-            
             CoinsSectionView(cash: cash)
             
-            Section("Float Total") {
+            Section("Cashout Total") {
                 HStack {
                     Text("Total")
                     Spacer()
                     Text("$\(ChangeMaker.instance.getTotal(cash), specifier: "%.2f")").bold()
                 }
             }
+        }
+        .navigationTitle("Cash Out")
+        .toolbar {
+            ToolbarItem(placement: .navigationBarTrailing) {
+                Button {
+                    showingPrint.toggle()
+                } label: {
+                    Image(systemName: "printer")
+                }
+
+            }
+        }
+        .sheet(isPresented: $showingPrint) {
+            PrintView(cash: cash)
         }
     }
 }

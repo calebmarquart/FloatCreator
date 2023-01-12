@@ -7,6 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		876D0DD5296FB446008DCB09 /* DisplayPhoneCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 876D0DD4296FB446008DCB09 /* DisplayPhoneCellView.swift */; };
+		876D0DD6296FB446008DCB09 /* DisplayPhoneCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 876D0DD4296FB446008DCB09 /* DisplayPhoneCellView.swift */; };
+		876D0DD8296FC851008DCB09 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 876D0DD7296FC851008DCB09 /* CoreDataManager.swift */; };
+		876D0DD9296FC851008DCB09 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 876D0DD7296FC851008DCB09 /* CoreDataManager.swift */; };
+		876D0DDC296FC909008DCB09 /* FloatStorage.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 876D0DDA296FC909008DCB09 /* FloatStorage.xcdatamodeld */; };
+		876D0DDD296FC909008DCB09 /* FloatStorage.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 876D0DDA296FC909008DCB09 /* FloatStorage.xcdatamodeld */; };
+		876D0DDF296FD519008DCB09 /* ListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 876D0DDE296FD519008DCB09 /* ListView.swift */; };
+		876D0DE0296FD519008DCB09 /* ListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 876D0DDE296FD519008DCB09 /* ListView.swift */; };
 		87735EB228ADEE2300B06250 /* CoinsSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87735EB128ADEE2300B06250 /* CoinsSectionView.swift */; };
 		87735EB328ADEE2300B06250 /* CoinsSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87735EB128ADEE2300B06250 /* CoinsSectionView.swift */; };
 		87735EB528ADEE7800B06250 /* BillsSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87735EB428ADEE7700B06250 /* BillsSectionView.swift */; };
@@ -23,8 +31,8 @@
 		879492B628AC993900C6B1A0 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 879492A428AC993700C6B1A0 /* ContentView.swift */; };
 		879492B728AC993900C6B1A0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 879492A528AC993900C6B1A0 /* Assets.xcassets */; };
 		879492B828AC993900C6B1A0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 879492A528AC993900C6B1A0 /* Assets.xcassets */; };
-		879492C528ACADEC00C6B1A0 /* NewFloatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 879492C428ACADEC00C6B1A0 /* NewFloatView.swift */; };
-		879492C628ACADEC00C6B1A0 /* NewFloatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 879492C428ACADEC00C6B1A0 /* NewFloatView.swift */; };
+		879492C528ACADEC00C6B1A0 /* BridgeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 879492C428ACADEC00C6B1A0 /* BridgeView.swift */; };
+		879492C628ACADEC00C6B1A0 /* BridgeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 879492C428ACADEC00C6B1A0 /* BridgeView.swift */; };
 		879FF78328ACC3100066F2BE /* ChangeMaker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 879FF78228ACC3100066F2BE /* ChangeMaker.swift */; };
 		879FF78428ACC3100066F2BE /* ChangeMaker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 879FF78228ACC3100066F2BE /* ChangeMaker.swift */; };
 		879FF78628ACC8EA0066F2BE /* CashOutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 879FF78528ACC8EA0066F2BE /* CashOutView.swift */; };
@@ -33,13 +41,40 @@
 		879FF78D28ACCDB70066F2BE /* FloatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 879FF78B28ACCDB70066F2BE /* FloatView.swift */; };
 		87A2C3B228B8371800EB5A43 /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87A2C3B128B8371800EB5A43 /* WebView.swift */; };
 		87A2C3B328B8371800EB5A43 /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87A2C3B128B8371800EB5A43 /* WebView.swift */; };
+		87ABE8FC2970C3DB009953A3 /* CoinsGroupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87ABE8FB2970C3DB009953A3 /* CoinsGroupView.swift */; };
+		87ABE8FD2970C3DB009953A3 /* CoinsGroupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87ABE8FB2970C3DB009953A3 /* CoinsGroupView.swift */; };
+		87ABE8FF2970C432009953A3 /* BillsGroupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87ABE8FE2970C432009953A3 /* BillsGroupView.swift */; };
+		87ABE9002970C432009953A3 /* BillsGroupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87ABE8FE2970C432009953A3 /* BillsGroupView.swift */; };
+		87ABE9022970C484009953A3 /* RollsGroupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87ABE9012970C484009953A3 /* RollsGroupView.swift */; };
+		87ABE9032970C484009953A3 /* RollsGroupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87ABE9012970C484009953A3 /* RollsGroupView.swift */; };
+		87ABE9052970C694009953A3 /* SaveDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87ABE9042970C694009953A3 /* SaveDetailView.swift */; };
+		87ABE9062970C694009953A3 /* SaveDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87ABE9042970C694009953A3 /* SaveDetailView.swift */; };
+		87ABE9092970CE10009953A3 /* SaveBridgeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87ABE9082970CE10009953A3 /* SaveBridgeView.swift */; };
+		87ABE90A2970CE10009953A3 /* SaveBridgeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87ABE9082970CE10009953A3 /* SaveBridgeView.swift */; };
 		87BAE11D28ADDB4D00D6B0FE /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87BAE11C28ADDB4D00D6B0FE /* SettingsView.swift */; };
 		87BAE11E28ADDB4D00D6B0FE /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87BAE11C28ADDB4D00D6B0FE /* SettingsView.swift */; };
 		87BAE12028ADDF5E00D6B0FE /* ViewModifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87BAE11F28ADDF5E00D6B0FE /* ViewModifiers.swift */; };
 		87BAE12128ADDF5E00D6B0FE /* ViewModifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87BAE11F28ADDF5E00D6B0FE /* ViewModifiers.swift */; };
+		87D8D07A296CE28500FE9B9E /* PrintManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87D8D079296CE28500FE9B9E /* PrintManager.swift */; };
+		87D8D07B296CE28500FE9B9E /* PrintManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87D8D079296CE28500FE9B9E /* PrintManager.swift */; };
+		87D8D07E296CE29600FE9B9E /* StarIO10 in Frameworks */ = {isa = PBXBuildFile; productRef = 87D8D07D296CE29600FE9B9E /* StarIO10 */; };
+		87D8D080296D15E300FE9B9E /* PrintView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87D8D07F296D15E300FE9B9E /* PrintView.swift */; };
+		87D8D081296D15E300FE9B9E /* PrintView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87D8D07F296D15E300FE9B9E /* PrintView.swift */; };
+		87D8D08B296F701B00FE9B9E /* FloatCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87D8D08A296F701B00FE9B9E /* FloatCell.swift */; };
+		87D8D08C296F701B00FE9B9E /* FloatCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87D8D08A296F701B00FE9B9E /* FloatCell.swift */; };
+		87D8D08E296F724300FE9B9E /* FloatCashoutPadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87D8D08D296F724300FE9B9E /* FloatCashoutPadView.swift */; };
+		87D8D08F296F724300FE9B9E /* FloatCashoutPadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87D8D08D296F724300FE9B9E /* FloatCashoutPadView.swift */; };
+		87D8D091296F814900FE9B9E /* CalculationDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87D8D090296F814900FE9B9E /* CalculationDetailView.swift */; };
+		87D8D092296F814900FE9B9E /* CalculationDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87D8D090296F814900FE9B9E /* CalculationDetailView.swift */; };
+		87D8D094296F8B6800FE9B9E /* DisplayPadCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87D8D093296F8B6800FE9B9E /* DisplayPadCellView.swift */; };
+		87D8D095296F8B6800FE9B9E /* DisplayPadCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87D8D093296F8B6800FE9B9E /* DisplayPadCellView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		876D0DD4296FB446008DCB09 /* DisplayPhoneCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplayPhoneCellView.swift; sourceTree = "<group>"; };
+		876D0DD7296FC851008DCB09 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
+		876D0DDB296FC909008DCB09 /* FloatStorage.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = FloatStorage.xcdatamodel; sourceTree = "<group>"; };
+		876D0DDE296FD519008DCB09 /* ListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListView.swift; sourceTree = "<group>"; };
 		87735EB128ADEE2300B06250 /* CoinsSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinsSectionView.swift; sourceTree = "<group>"; };
 		87735EB428ADEE7700B06250 /* BillsSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BillsSectionView.swift; sourceTree = "<group>"; };
 		87735EB728ADEE8100B06250 /* RollsSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RollsSectionView.swift; sourceTree = "<group>"; };
@@ -51,13 +86,24 @@
 		879492AA28AC993900C6B1A0 /* FloatCreator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FloatCreator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		879492B028AC993900C6B1A0 /* FloatCreator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FloatCreator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		879492B228AC993900C6B1A0 /* macOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = macOS.entitlements; sourceTree = "<group>"; };
-		879492C428ACADEC00C6B1A0 /* NewFloatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewFloatView.swift; sourceTree = "<group>"; };
+		879492C428ACADEC00C6B1A0 /* BridgeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BridgeView.swift; sourceTree = "<group>"; };
 		879FF78228ACC3100066F2BE /* ChangeMaker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeMaker.swift; sourceTree = "<group>"; };
 		879FF78528ACC8EA0066F2BE /* CashOutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CashOutView.swift; sourceTree = "<group>"; };
 		879FF78B28ACCDB70066F2BE /* FloatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloatView.swift; sourceTree = "<group>"; };
 		87A2C3B128B8371800EB5A43 /* WebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebView.swift; sourceTree = "<group>"; };
+		87ABE8FB2970C3DB009953A3 /* CoinsGroupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinsGroupView.swift; sourceTree = "<group>"; };
+		87ABE8FE2970C432009953A3 /* BillsGroupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BillsGroupView.swift; sourceTree = "<group>"; };
+		87ABE9012970C484009953A3 /* RollsGroupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RollsGroupView.swift; sourceTree = "<group>"; };
+		87ABE9042970C694009953A3 /* SaveDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveDetailView.swift; sourceTree = "<group>"; };
+		87ABE9082970CE10009953A3 /* SaveBridgeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveBridgeView.swift; sourceTree = "<group>"; };
 		87BAE11C28ADDB4D00D6B0FE /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		87BAE11F28ADDF5E00D6B0FE /* ViewModifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModifiers.swift; sourceTree = "<group>"; };
+		87D8D079296CE28500FE9B9E /* PrintManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrintManager.swift; sourceTree = "<group>"; };
+		87D8D07F296D15E300FE9B9E /* PrintView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrintView.swift; sourceTree = "<group>"; };
+		87D8D08A296F701B00FE9B9E /* FloatCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloatCell.swift; sourceTree = "<group>"; };
+		87D8D08D296F724300FE9B9E /* FloatCashoutPadView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloatCashoutPadView.swift; sourceTree = "<group>"; };
+		87D8D090296F814900FE9B9E /* CalculationDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculationDetailView.swift; sourceTree = "<group>"; };
+		87D8D093296F8B6800FE9B9E /* DisplayPadCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplayPadCellView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,6 +111,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				87D8D07E296CE29600FE9B9E /* StarIO10 in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -78,36 +125,27 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		876D0DD3296FA3D6008DCB09 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				87D8D08A296F701B00FE9B9E /* FloatCell.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
 		87735EBA28ADEFF000B06250 /* Views */ = {
 			isa = PBXGroup;
 			children = (
 				879492A428AC993700C6B1A0 /* ContentView.swift */,
-				87BAE11C28ADDB4D00D6B0FE /* SettingsView.swift */,
+				87D8D07F296D15E300FE9B9E /* PrintView.swift */,
 				87A2C3B128B8371800EB5A43 /* WebView.swift */,
-				87735EBC28ADF01800B06250 /* Results */,
-				87735EBB28ADEFF700B06250 /* Sections */,
+				87BAE11C28ADDB4D00D6B0FE /* SettingsView.swift */,
+				87ABE9072970C6C1009953A3 /* Saved */,
+				876D0DD3296FA3D6008DCB09 /* Components */,
+				87D8D089296F6E2600FE9B9E /* iPad */,
+				87D8D088296F6E1B00FE9B9E /* iPhone */,
 			);
 			path = Views;
-			sourceTree = "<group>";
-		};
-		87735EBB28ADEFF700B06250 /* Sections */ = {
-			isa = PBXGroup;
-			children = (
-				87735EB128ADEE2300B06250 /* CoinsSectionView.swift */,
-				87735EB428ADEE7700B06250 /* BillsSectionView.swift */,
-				87735EB728ADEE8100B06250 /* RollsSectionView.swift */,
-			);
-			path = Sections;
-			sourceTree = "<group>";
-		};
-		87735EBC28ADF01800B06250 /* Results */ = {
-			isa = PBXGroup;
-			children = (
-				879FF78B28ACCDB70066F2BE /* FloatView.swift */,
-				879492C428ACADEC00C6B1A0 /* NewFloatView.swift */,
-				879FF78528ACC8EA0066F2BE /* CashOutView.swift */,
-			);
-			path = Results;
 			sourceTree = "<group>";
 		};
 		87735EBD28ADF03C00B06250 /* Modifiers */ = {
@@ -122,6 +160,8 @@
 			isa = PBXGroup;
 			children = (
 				879FF78228ACC3100066F2BE /* ChangeMaker.swift */,
+				87D8D079296CE28500FE9B9E /* PrintManager.swift */,
+				876D0DD7296FC851008DCB09 /* CoreDataManager.swift */,
 				87754EC9296BDD1100B8B5FD /* Extensions.swift */,
 				87754ECC296BE24F00B8B5FD /* CashModel.swift */,
 			);
@@ -144,6 +184,7 @@
 				87735EBA28ADEFF000B06250 /* Views */,
 				87735EBE28ADF04500B06250 /* Services */,
 				87735EBD28ADF03C00B06250 /* Modifiers */,
+				876D0DDA296FC909008DCB09 /* FloatStorage.xcdatamodeld */,
 				879492A528AC993900C6B1A0 /* Assets.xcassets */,
 			);
 			path = Shared;
@@ -166,6 +207,43 @@
 			path = macOS;
 			sourceTree = "<group>";
 		};
+		87ABE9072970C6C1009953A3 /* Saved */ = {
+			isa = PBXGroup;
+			children = (
+				876D0DDE296FD519008DCB09 /* ListView.swift */,
+				87ABE9042970C694009953A3 /* SaveDetailView.swift */,
+				87ABE9082970CE10009953A3 /* SaveBridgeView.swift */,
+			);
+			path = Saved;
+			sourceTree = "<group>";
+		};
+		87D8D088296F6E1B00FE9B9E /* iPhone */ = {
+			isa = PBXGroup;
+			children = (
+				876D0DD4296FB446008DCB09 /* DisplayPhoneCellView.swift */,
+				87735EB128ADEE2300B06250 /* CoinsSectionView.swift */,
+				87735EB428ADEE7700B06250 /* BillsSectionView.swift */,
+				87735EB728ADEE8100B06250 /* RollsSectionView.swift */,
+				879FF78B28ACCDB70066F2BE /* FloatView.swift */,
+				879492C428ACADEC00C6B1A0 /* BridgeView.swift */,
+				879FF78528ACC8EA0066F2BE /* CashOutView.swift */,
+			);
+			path = iPhone;
+			sourceTree = "<group>";
+		};
+		87D8D089296F6E2600FE9B9E /* iPad */ = {
+			isa = PBXGroup;
+			children = (
+				87D8D08D296F724300FE9B9E /* FloatCashoutPadView.swift */,
+				87D8D090296F814900FE9B9E /* CalculationDetailView.swift */,
+				87D8D093296F8B6800FE9B9E /* DisplayPadCellView.swift */,
+				87ABE8FB2970C3DB009953A3 /* CoinsGroupView.swift */,
+				87ABE9012970C484009953A3 /* RollsGroupView.swift */,
+				87ABE8FE2970C432009953A3 /* BillsGroupView.swift */,
+			);
+			path = iPad;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -182,6 +260,9 @@
 			dependencies = (
 			);
 			name = "FloatCreator (iOS)";
+			packageProductDependencies = (
+				87D8D07D296CE29600FE9B9E /* StarIO10 */,
+			);
 			productName = "FloatCreator (iOS)";
 			productReference = 879492AA28AC993900C6B1A0 /* FloatCreator.app */;
 			productType = "com.apple.product-type.application";
@@ -230,6 +311,9 @@
 				Base,
 			);
 			mainGroup = 8794929D28AC993700C6B1A0;
+			packageReferences = (
+				87D8D07C296CE29600FE9B9E /* XCRemoteSwiftPackageReference "StarXpand-SDK-iOS" */,
+			);
 			productRefGroup = 879492AB28AC993900C6B1A0 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -264,20 +348,35 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				87ABE8FC2970C3DB009953A3 /* CoinsGroupView.swift in Sources */,
 				87BAE11D28ADDB4D00D6B0FE /* SettingsView.swift in Sources */,
 				87735EB528ADEE7800B06250 /* BillsSectionView.swift in Sources */,
-				879492C528ACADEC00C6B1A0 /* NewFloatView.swift in Sources */,
+				87D8D080296D15E300FE9B9E /* PrintView.swift in Sources */,
+				87ABE9022970C484009953A3 /* RollsGroupView.swift in Sources */,
+				879492C528ACADEC00C6B1A0 /* BridgeView.swift in Sources */,
 				879FF78C28ACCDB70066F2BE /* FloatView.swift in Sources */,
 				87BAE12028ADDF5E00D6B0FE /* ViewModifiers.swift in Sources */,
 				879FF78628ACC8EA0066F2BE /* CashOutView.swift in Sources */,
 				879492B528AC993900C6B1A0 /* ContentView.swift in Sources */,
+				87ABE8FF2970C432009953A3 /* BillsGroupView.swift in Sources */,
+				876D0DDF296FD519008DCB09 /* ListView.swift in Sources */,
+				87ABE9052970C694009953A3 /* SaveDetailView.swift in Sources */,
 				87754ECD296BE24F00B8B5FD /* CashModel.swift in Sources */,
 				87735EB828ADEE8100B06250 /* RollsSectionView.swift in Sources */,
+				876D0DDC296FC909008DCB09 /* FloatStorage.xcdatamodeld in Sources */,
+				876D0DD8296FC851008DCB09 /* CoreDataManager.swift in Sources */,
+				87D8D094296F8B6800FE9B9E /* DisplayPadCellView.swift in Sources */,
 				87754ECA296BDD1100B8B5FD /* Extensions.swift in Sources */,
+				87D8D08B296F701B00FE9B9E /* FloatCell.swift in Sources */,
 				879492B328AC993900C6B1A0 /* FloatCreatorApp.swift in Sources */,
 				87A2C3B228B8371800EB5A43 /* WebView.swift in Sources */,
 				879FF78328ACC3100066F2BE /* ChangeMaker.swift in Sources */,
+				87D8D091296F814900FE9B9E /* CalculationDetailView.swift in Sources */,
+				87D8D08E296F724300FE9B9E /* FloatCashoutPadView.swift in Sources */,
 				87735EB228ADEE2300B06250 /* CoinsSectionView.swift in Sources */,
+				87ABE9092970CE10009953A3 /* SaveBridgeView.swift in Sources */,
+				876D0DD5296FB446008DCB09 /* DisplayPhoneCellView.swift in Sources */,
+				87D8D07A296CE28500FE9B9E /* PrintManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -285,20 +384,35 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				87ABE8FD2970C3DB009953A3 /* CoinsGroupView.swift in Sources */,
 				87BAE11E28ADDB4D00D6B0FE /* SettingsView.swift in Sources */,
 				87735EB628ADEE7800B06250 /* BillsSectionView.swift in Sources */,
-				879492C628ACADEC00C6B1A0 /* NewFloatView.swift in Sources */,
+				87D8D081296D15E300FE9B9E /* PrintView.swift in Sources */,
+				87ABE9032970C484009953A3 /* RollsGroupView.swift in Sources */,
+				879492C628ACADEC00C6B1A0 /* BridgeView.swift in Sources */,
 				879FF78D28ACCDB70066F2BE /* FloatView.swift in Sources */,
 				87BAE12128ADDF5E00D6B0FE /* ViewModifiers.swift in Sources */,
 				879FF78728ACC8EA0066F2BE /* CashOutView.swift in Sources */,
 				879492B628AC993900C6B1A0 /* ContentView.swift in Sources */,
+				87ABE9002970C432009953A3 /* BillsGroupView.swift in Sources */,
+				876D0DE0296FD519008DCB09 /* ListView.swift in Sources */,
+				87ABE9062970C694009953A3 /* SaveDetailView.swift in Sources */,
 				87754ECE296BE24F00B8B5FD /* CashModel.swift in Sources */,
 				87735EB928ADEE8100B06250 /* RollsSectionView.swift in Sources */,
+				876D0DDD296FC909008DCB09 /* FloatStorage.xcdatamodeld in Sources */,
+				876D0DD9296FC851008DCB09 /* CoreDataManager.swift in Sources */,
+				87D8D095296F8B6800FE9B9E /* DisplayPadCellView.swift in Sources */,
 				87754ECB296BDD1100B8B5FD /* Extensions.swift in Sources */,
+				87D8D08C296F701B00FE9B9E /* FloatCell.swift in Sources */,
 				879492B428AC993900C6B1A0 /* FloatCreatorApp.swift in Sources */,
 				87A2C3B328B8371800EB5A43 /* WebView.swift in Sources */,
 				879FF78428ACC3100066F2BE /* ChangeMaker.swift in Sources */,
+				87D8D092296F814900FE9B9E /* CalculationDetailView.swift in Sources */,
+				87D8D08F296F724300FE9B9E /* FloatCashoutPadView.swift in Sources */,
 				87735EB328ADEE2300B06250 /* CoinsSectionView.swift in Sources */,
+				87ABE90A2970CE10009953A3 /* SaveBridgeView.swift in Sources */,
+				876D0DD6296FB446008DCB09 /* DisplayPhoneCellView.swift in Sources */,
+				87D8D07B296CE28500FE9B9E /* PrintManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -424,12 +538,15 @@
 				DEVELOPMENT_TEAM = 8P84J9SURU;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSBluetoothAlwaysUsageDescription = "Use Bluetooth to connect to wireless printer.";
+				INFOPLIST_KEY_NSBluetoothPeripheralUsageDescription = "Use Bluetooth to connect to wireless printer.";
+				INFOPLIST_KEY_NSLocalNetworkUsageDescription = "Use the Local Network to connect to printers.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -454,12 +571,15 @@
 				DEVELOPMENT_TEAM = 8P84J9SURU;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSBluetoothAlwaysUsageDescription = "Use Bluetooth to connect to wireless printer.";
+				INFOPLIST_KEY_NSBluetoothPeripheralUsageDescription = "Use Bluetooth to connect to wireless printer.";
+				INFOPLIST_KEY_NSLocalNetworkUsageDescription = "Use the Local Network to connect to printers.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -562,6 +682,38 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		87D8D07C296CE29600FE9B9E /* XCRemoteSwiftPackageReference "StarXpand-SDK-iOS" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/star-micronics/StarXpand-SDK-iOS";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		87D8D07D296CE29600FE9B9E /* StarIO10 */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 87D8D07C296CE29600FE9B9E /* XCRemoteSwiftPackageReference "StarXpand-SDK-iOS" */;
+			productName = StarIO10;
+		};
+/* End XCSwiftPackageProductDependency section */
+
+/* Begin XCVersionGroup section */
+		876D0DDA296FC909008DCB09 /* FloatStorage.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				876D0DDB296FC909008DCB09 /* FloatStorage.xcdatamodel */,
+			);
+			currentVersion = 876D0DDB296FC909008DCB09 /* FloatStorage.xcdatamodel */;
+			path = FloatStorage.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 8794929E28AC993700C6B1A0 /* Project object */;
 }

@@ -9,10 +9,12 @@ import SwiftUI
 
 struct ChangeMaker {
     
+    @AppStorage("float_amount") private var floatAmount = 300
+    
     static let instance = ChangeMaker()
     
-    func createCashout(from configuration: Cash, float: Int) -> Cash {
-        var total = getTotal(configuration) - Double(float)
+    func createCashout(from configuration: Cash) -> Cash {
+        var total = getTotal(configuration) - Double(floatAmount)
         
         var nickels = 0
         var dimes = 0
