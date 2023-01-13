@@ -121,12 +121,15 @@ struct ChangeMaker {
         return getCoinTotal(cash) + Double(getRollTotal(cash)) + Double(getBillTotal(cash))
     }
     
+    /// Gets the coin total from a cash object
+    /// - Parameter cash: A cash object
+    /// - Returns: A double
     func getCoinTotal(_ cash: Cash) -> Double {
-        return Double(cash.nickels) * 0.05 +
-        Double(cash.dimes) * 0.1 +
-        Double(cash.quarters) * 0.25 +
-        Double(cash.loonies) +
-        Double(cash.toonies) * 2
+        return cash.nickels.value(.nickels) +
+        cash.dimes.value(.dimes) +
+        cash.quarters.value(.quarters) +
+        cash.loonies.value(.loonies) +
+        cash.toonies.value(.toonies)
     }
     
     func getBillTotal(_ cash: Cash) -> Int {

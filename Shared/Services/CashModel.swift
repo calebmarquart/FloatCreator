@@ -5,7 +5,7 @@
 //  Created by Caleb Marquart on 2023-01-08.
 //
 
-import Foundation
+import SwiftUI
 
 struct Cash: Identifiable {
     let id = UUID()
@@ -42,6 +42,16 @@ enum MoneyType {
     case twenty
     case fifty
     case hundred
+}
+
+struct PrintQuery: Identifiable {
+    let id = UUID()
+    let type: FloatType
+    let cash: Cash
+    let till: String
+    let lead: String
+    let date: Date
+    let image: UIImage?
 }
 
 let emptyCash = Cash(dimes: 0,

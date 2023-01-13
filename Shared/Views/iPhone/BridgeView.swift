@@ -8,7 +8,12 @@
 import SwiftUI
 
 struct BridgeView: View {
-    @State private var showingPrint = false
+    @AppStorage("image_data") private var imageData = Data()
+    
+    @State private var itemForPrint: PrintQuery?
+    @State private var showingInfo = false
+    @State var till = ""
+    @State var lead = ""
     
     let float: Cash
     let cashout: Cash
@@ -23,21 +28,35 @@ struct BridgeView: View {
             .navigationTitle("Suggested Float")
             .toolbar {
                 ToolbarItemGroup(placement: .navigationBarTrailing) {
-                    
                     Button {
-                        showingPrint.toggle()
+                        itemForPrint = PrintQuery(type: .float, cash: float, till: till, lead: lead, date: Date.now, image: imageData.toImage())
                     } label: {
                         Image(systemName: "printer")
                     }
-
                     
                     NavigationLink("Next") {
                         CashOutView(cash: cashout)
+                            .toolbar {
+                                ToolbarItem(placement: .navigationBarTrailing) {
+                                    Button {
+                                        itemForPrint = PrintQuery(type: .cashout, cash: cashout, till: till, lead: lead, date: Date.now, image: imageData.toImage())
+                                    } label: {
+                                        Image(systemName: "printer")
+                                    }
+                                }
+                            }
                     }
                 }
             }
-            .sheet(isPresented: $showingPrint) {
-                PrintView(cash: float)
+            .sheet(item: $itemForPrint) { printItem in
+                PrintView(print: printItem)
+            }
+            .sheet(isPresented: $showingInfo) {
+                AddFloatInfoView(till: $till, lead: $lead, float: float, cashout: cashout)
+            }
+            .task {
+                try? await Task.sleep(nanoseconds: 1_000_000_000)
+                showingInfo = true
             }
     }
 }

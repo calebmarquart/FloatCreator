@@ -8,9 +8,6 @@
 import SwiftUI
 
 struct CashOutView: View {
-    
-    @State private var showingPrint = false
-    
     let cash: Cash
     
     var body: some View {
@@ -28,18 +25,5 @@ struct CashOutView: View {
             }
         }
         .navigationTitle("Cash Out")
-        .toolbar {
-            ToolbarItem(placement: .navigationBarTrailing) {
-                Button {
-                    showingPrint.toggle()
-                } label: {
-                    Image(systemName: "printer")
-                }
-
-            }
-        }
-        .sheet(isPresented: $showingPrint) {
-            PrintView(cash: cash)
-        }
     }
 }

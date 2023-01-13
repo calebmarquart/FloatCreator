@@ -12,44 +12,32 @@ class PrintManager {
     
     static let instance = PrintManager()
     
-    let settings = StarConnectionSettings(interfaceType: .bluetooth)
-    let printer: StarPrinter
-    
-    init() {
-        self.printer = StarPrinter(settings)
-    }
+    let printer: StarPrinter = StarPrinter(StarConnectionSettings(interfaceType: .bluetooth))
     
     func printFloat(with query: PrintQuery) async {
-       
-        // TODO: Convert the float data into a string that will be printed on a receipt
-        // Use the StarPrint builder to make this
+        
+        // Create the print command from the builder
         let printCommand = buildPrintCommand(with: query)
         
-        print(printCommand)
-        
         do {
+            // Open access to the print
             try await printer.open()
             
             defer {
                 Task {
+                    // Close the printer before exiting the function
                     await printer.close()
                 }
             }
-            
+            // Print the command
             try await printer.print(command: printCommand)
+            
         } catch {
             print("Error printing data. \(error)")
         }
-        
-        
-        
     }
     
-    func getPrinterName() async -> String? {
-        return "DEBUG PRINTER"
-    }
-    
-    func getStatus() async -> StarPrinterStatus? {
+    func isConnected() async -> Bool {
         do {
             try await printer.open()
             
@@ -59,10 +47,11 @@ class PrintManager {
                 }
             }
             
-            return try await printer.getStatus()
+            _ = try await printer.getStatus()
+            
+            return true
         } catch {
-            print("Error with printer. \(error)")
-            return nil
+            return false
         }
     }
     
@@ -71,83 +60,122 @@ class PrintManager {
         let formatter = DateFormatter()
         formatter.dateFormat = "MMMM d, yyyy"
         let date = formatter.string(from: query.date)
-        
-        
+        // Get the float type name
+        let floatName = query.type.string()
         
         let builder = StarXpandCommand.StarXpandCommandBuilder()
         _ = builder.addDocument(
-            
             StarXpandCommand.DocumentBuilder()
                 .addPrinter(
-                    
                     StarXpandCommand.PrinterBuilder()
-                        .actionPrintImage(StarXpandCommand.Printer.ImageParameter(image: query.image, width: 406))
-                        .styleInternationalCharacter(.usa)
-                        .styleCharacterSpace(0)
-                        .styleAlignment(.left)
-                        .actionPrintText(date + "\n" + query.till + "\n" + query.lead + "\n")
-                        
-                        .styleBold(true)
-                        .actionPrintText("Bills\n")
-                        .styleBold(false)
-                        .actionPrintText(
-                            query.cash.five.valuePrint(.five) + "\n" +
-                            query.cash.ten.valuePrint(.ten) + "\n" +
-                            query.cash.twenty.valuePrint(.twenty) + "\n" +
-                            query.cash.fifty.valuePrint(.fifty) + "\n" +
-                            query.cash.hundred.valuePrint(.hundred) + "\n"
-                        )
-                        .actionFeedLine(1)
-                        .actionPrintText("Bill Total: \t \(String(format: "%.2f", ChangeMaker.instance.getBillTotal(query.cash)))\n")
-                    
-                        .styleBold(true)
-                        .actionPrintText("Coin Rolls\n")
-                        .styleBold(false)
-                        .actionPrintText(
-                            query.cash.rollNickels.valuePrint(.rollNickels) + "\n" +
-                            query.cash.rollDimes.valuePrint(.rollDimes) + "\n" +
-                            query.cash.rollQuarters.valuePrint(.rollQuarters) + "\n" +
-                            query.cash.rollLoonies.valuePrint(.rollLoonies) + "\n" +
-                            query.cash.rollToonies.valuePrint(.rollToonies) + "\n"
-                        )
-                        .actionFeedLine(1)
-                        .actionPrintText("Coin Roll Total: \t \(String(format: "%.2f", ChangeMaker.instance.getRollTotal(query.cash)))\n")
-                    
-                        .styleBold(true)
-                        .actionPrintText("Coins\n")
-                        .styleBold(false)
-                        .actionPrintText(
-                            query.cash.nickels.valuePrint(.nickels) + "\n" +
-                            query.cash.dimes.valuePrint(.dimes) + "\n" +
-                            query.cash.quarters.valuePrint(.quarters) + "\n" +
-                            query.cash.loonies.valuePrint(.loonies) + "\n" +
-                            query.cash.toonies.valuePrint(.toonies) + "\n"
-                        )
-                        .actionFeedLine(1)
-                        .actionPrintText("Coin Total: \t \(String(format: "%.2f", ChangeMaker.instance.getCoinTotal(query.cash)))\n")
-                    
-                        .styleBold(true)
-                        .actionPrintText("Verify\n")
-                        .styleBold(false)
-                        .actionPrintText(
-                            "Date: _________________\n" +
-                            "Discrepancy: __________\n" +
-                            "Actual Total: _________\n" +
-                            "Verified By: __________\n"
-                        )
-                        .actionCut(.partial)
+                        .add(buildHeader(name: floatName, date: date, till: query.till, lead: query.lead, image: query.image))
+                        .add(buildSection(section: .bills, cash: query.cash))
+                        .add(buildSection(section: .rolls, cash: query.cash))
+                        .add(buildSection(section: .coins, cash: query.cash))
+                        .add(buildVerify())
                     )
             )
         
         return builder.getCommands()
     }
-}
-
-struct PrintQuery: Identifiable {
-    let id = UUID()
-    let cash: Cash
-    let till: String
-    let lead: String
-    let date: Date
-    let image: UIImage
+    
+    private func buildHeader(name: String, date: String, till: String, lead: String, image: UIImage?) -> StarXpandCommand.PrinterBuilder {
+        
+        if let image = image {
+            return StarXpandCommand.PrinterBuilder()
+                .styleAlignment(.center)
+                .actionPrintImage(StarXpandCommand.Printer.ImageParameter(image: image, width: 350))
+                .styleInternationalCharacter(.usa)
+                .styleCharacterSpace(0)
+                .actionFeedLine(1)
+                .styleBold(true)
+                .actionPrintText(name + " Receipt\n")
+                .styleBold(false)
+                .actionPrintText(date + "\n" + till + " | " + lead)
+                .actionFeedLine(1)
+        } else {
+            return StarXpandCommand.PrinterBuilder()
+                .styleAlignment(.center)
+                .styleInternationalCharacter(.usa)
+                .styleCharacterSpace(0)
+                .actionFeedLine(1)
+                .styleBold(true)
+                .actionPrintText(name + " Receipt\n")
+                .styleBold(false)
+                .actionPrintText(date + "\n" + till + " | " + lead)
+                .actionFeedLine(1)
+        }
+    }
+    
+    private func buildSection(section: SectionType, cash: Cash) -> StarXpandCommand.PrinterBuilder {
+        switch section {
+        case .bills:
+            return StarXpandCommand.PrinterBuilder()
+                .styleAlignment(.left)
+                .styleBold(true)
+                .actionPrintText("\tBills\n")
+                .styleBold(false)
+                .actionPrintText(
+                    cash.five.valuePrint(.five) + "\n" +
+                    cash.ten.valuePrint(.ten) + "\n" +
+                    cash.twenty.valuePrint(.twenty) + "\n" +
+                    cash.fifty.valuePrint(.fifty) + "\n" +
+                    cash.hundred.valuePrint(.hundred) + "\n"
+                )
+                .actionPrintText("\tBill Total: \t $\(String(format: "%.2f", ChangeMaker.instance.getBillTotal(cash)))\n")
+                .actionFeedLine(1)
+        case .rolls:
+            return StarXpandCommand.PrinterBuilder()
+                .styleBold(true)
+                .actionPrintText("\tRolls\n")
+                .styleBold(false)
+                .actionPrintText(
+                    cash.rollNickels.valuePrint(.rollNickels) + "\n" +
+                    cash.rollDimes.valuePrint(.rollDimes) + "\n" +
+                    cash.rollQuarters.valuePrint(.rollQuarters) + "\n" +
+                    cash.rollLoonies.valuePrint(.rollLoonies) + "\n" +
+                    cash.rollToonies.valuePrint(.rollToonies) + "\n"
+                )
+                .actionPrintText(
+                    "\tRoll Total: \t $\(String(format: "%.2f", ChangeMaker.instance.getRollTotal(cash)))\n"
+                )
+                .actionFeedLine(1)
+        case .coins:
+            return StarXpandCommand.PrinterBuilder()
+                .styleBold(true)
+                .actionPrintText("\tCoins\n")
+                .styleBold(false)
+                .actionPrintText(
+                    cash.nickels.valuePrint(.nickels) + "\n" +
+                    cash.dimes.valuePrint(.dimes) + "\n" +
+                    cash.quarters.valuePrint(.quarters) + "\n" +
+                    cash.loonies.valuePrint(.loonies) + "\n" +
+                    cash.toonies.valuePrint(.toonies) + "\n"
+                )
+                .actionPrintText("\tCoin Total: \t $\(String(format: "%.2f", ChangeMaker.instance.getCoinTotal(cash)))\n")
+                .actionFeedLine(1)
+        }
+    }
+    
+    private func buildVerify() -> StarXpandCommand.PrinterBuilder {
+        return StarXpandCommand.PrinterBuilder()
+            .styleAlignment(.center)
+            .styleBold(true)
+            .actionPrintText("Verify")
+            .styleBold(false)
+            .actionFeedLine(1)
+            .actionPrintText(
+                "Date: ______________________\n\n" +
+                "Discrepancy: _______________\n\n" +
+                "Actual Total: ______________\n\n" +
+                "Verified By: _______________\n\n"
+            )
+            .actionCut(.partial)
+    }
+    
+    private enum SectionType {
+        case rolls
+        case coins
+        case bills
+    }
 }

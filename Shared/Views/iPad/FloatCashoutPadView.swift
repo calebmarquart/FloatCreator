@@ -9,7 +9,11 @@ import SwiftUI
 
 struct FloatCashoutPadView: View {
     
-    @State var itemForPrint: Cash?
+    @AppStorage("image_data") private var imageData: Data = Data()
+    
+    @State var itemForPrint: PrintQuery?
+    @State var till = ""
+    @State var lead = ""
     
     let float: Cash
     let cashout: Cash
@@ -34,8 +38,7 @@ struct FloatCashoutPadView: View {
                     Text("$\(ChangeMaker.instance.getTotal(float), specifier: "%.2f")")
                         .bold()
                     Button {
-                        // Print the float
-                        itemForPrint = float
+                        itemForPrint = PrintQuery(type: .float, cash: float, till: till, lead: lead, date: Date.now, image: imageData.toImage())
                     } label: {
                         Image(systemName: "printer.fill")
                             .padding(10)
@@ -56,8 +59,7 @@ struct FloatCashoutPadView: View {
                     Text("$\(ChangeMaker.instance.getTotal(cashout), specifier: "%.2f")")
                         .bold()
                     Button {
-                        // Print the cashout
-                        itemForPrint = cashout
+                        itemForPrint = PrintQuery(type: .cashout, cash: cashout, till: till, lead: lead, date: Date.now, image: imageData.toImage())
                     } label: {
                         Image(systemName: "printer.fill")
                             .padding(10)
@@ -80,7 +82,7 @@ struct FloatCashoutPadView: View {
             .shadow(color: .black.opacity(0.05), radius: 10, x: 0, y: -3)
         }
         .sheet(item: $itemForPrint) { printItem in
-            PrintView(cash: printItem)
+            PrintView(print: printItem)
         }
     }
 }

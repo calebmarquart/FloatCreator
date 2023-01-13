@@ -36,35 +36,35 @@ extension Int {
         
         switch type {
         case .five:
-            return "(5) \(self) x $5 \t \(self * 5)"
+            return "\t(5) \(self) x $5 \t $\(self * 5)"
         case .ten:
-            return "(10) \(self) x $10 \t \(self * 10)"
+            return "\t(10) \(self) x $10 \t $\(self * 10)"
         case .twenty:
-            return "(20) \(self) x $20 \t \(self * 20)"
+            return "\t(20) \(self) x $20 \t $\(self * 20)"
         case .fifty:
-            return "(50) \(self) x $50 \t \(self * 50)"
+            return "\t(50) \(self) x $50 \t $\(self * 50)"
         case .hundred:
-            return "(100) \(self) x $100 \t \(self * 100)"
+            return "\t(100) \(self) x $100 \t $\(self * 100)"
         case .rollNickels:
-            return "(N) \(self) x $2 \t \(self * 2)"
+            return "\t(N) \(self) x $2 \t $\(self * 2)"
         case .rollDimes:
-            return "(D) \(self) x $5 \t \(self * 5)"
+            return "\t(D) \(self) x $5 \t $\(self * 5)"
         case .rollQuarters:
-            return "(Q) \(self) x $10 \t \(self * 10)"
+            return "\t(Q) \(self) x $10 \t $\(self * 10)"
         case .rollLoonies:
-            return "(L) \(self) x $25 \t \(self * 25)"
+            return "\t(L) \(self) x $25 \t $\(self * 25)"
         case .rollToonies:
-            return "(T) \(self) x $50 \t \(self * 50)"
+            return "\t(T) \(self) x $50 \t $\(self * 50)"
         case .nickels:
-            return "(N) \(self) x $0.05 \t \(String(format: "%.2f", self.value(.nickels)))"
+            return "\t(N) \(self) x $0.05 \t $\(String(format: "%.2f", self.value(.nickels)))"
         case .dimes:
-            return "(D) \(self) x $0.10 \t \(String(format: "%.2f", self.value(.dimes)))"
+            return "\t(D) \(self) x $0.10 \t $\(String(format: "%.2f", self.value(.dimes)))"
         case .quarters:
-            return "(Q) \(self) x $0.25 \t \(String(format: "%.2f", self.value(.quarters)))"
+            return "\t(Q) \(self) x $0.25 \t $\(String(format: "%.2f", self.value(.quarters)))"
         case .loonies:
-            return "(L) \(self) x $1.00 \t \(String(format: "%.2f", self.value(.loonies)))"
+            return "\t(L) \(self) x $1.00 \t $\(String(format: "%.2f", self.value(.loonies)))"
         case .toonies:
-            return "(T) \(self) x $2.00 \t \(String(format: "%.2f", self.value(.toonies)))"
+            return "\t(T) \(self) x $2.00 \t $\(String(format: "%.2f", self.value(.toonies)))"
         }
     }
     
@@ -209,6 +209,18 @@ extension String {
             return .cashout
         } else {
             return .float
+        }
+    }
+}
+
+extension Data {
+    func toImage() -> UIImage? {
+        if let image = UIImage(data: self) {
+            return image
+        } else if let logo = UIImage(named: "logo") {
+            return logo
+        } else {
+             return nil
         }
     }
 }

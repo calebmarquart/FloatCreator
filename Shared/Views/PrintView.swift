@@ -10,55 +10,18 @@ import SwiftUI
 struct PrintView: View {
     
     @Environment(\.dismiss) private var dismiss
-    @State private var shiftLead = ""
-    @State private var till = ""
-    @State private var printerName: String?
-    @State private var printing = false
     
-    let cash: Cash
+    @State private var connection: ConnectionState = .connecting
+    
+    let print: PrintQuery
     
     var body: some View {
         NavigationView {
             VStack(spacing: 20.0) {
-                if let name = printerName {
-                    Text("Connected Printer: \(name)")
-                        .font(.headline)
-                    TextField("Till", text: $till)
-                        .textField()
-                    TextField("Shift Lead", text: $shiftLead)
-                        .textField()
-                    
-                    Button {
-                        let query = PrintQuery(cash: cash, till: till, lead: shiftLead, date: Date.now, image: UIImage(named: "logo")!)
-                        
-                        // TODO: Call the print function
-                        printing = true
-
-                        Task {
-                            await PrintManager.instance.printFloat(with: query)
-                        }
-
-                        printing = false
-                        
-                        dismiss()
-                        
-                    } label: {
-                        Text("Print")
-                            .foregroundColor(.white)
-                            .bold()
-                            .padding()
-                            .background(printing ? Color.gray : Color.cyan)
-                            .cornerRadius(15)
-                            .disabled(printing)
-                    }
-
-                    Spacer()
-                    
-                } else {
-                    Text("There are no connected printers")
-                        .font(.headline)
-                    Text("Please add a bluetooth printer from the device settings")
-                        .font(.caption)
+                switch connection {
+                case .connecting: connecting
+                case .connected: connected
+                case .notConnected: notConnected
                 }
             }
             .padding()
@@ -73,15 +36,60 @@ struct PrintView: View {
                 }
             }
             .task {
-                printerName = await PrintManager.instance.getPrinterName()
+                let isConnected = await PrintManager.instance.isConnected()
+                connection = isConnected ? .connected : .notConnected
             }
         }
     }
     
-}
-
-struct PrintView_Previews: PreviewProvider {
-    static var previews: some View {
-        PrintView(cash: emptyCash)
+    var connecting: some View {
+        Group {
+            Text("Looking for printers...")
+            ProgressView()
+        }
     }
+    
+    var notConnected: some View {
+        Group {
+            Text("There are no connected printers")
+                .font(.headline)
+            Text("Please add a bluetooth printer from the device settings")
+                .font(.caption)
+        }
+    }
+    
+    var connected: some View {
+        Group {
+            HStack {
+                Text("Printer Connected")
+                Image(systemName: "check.circle.fill")
+                    .foregroundColor(.green)
+            }
+            
+            Button {
+                Task {
+                    await PrintManager.instance.printFloat(with: print)
+                }
+                
+                dismiss()
+            } label: {
+                Text("Print")
+                    .foregroundColor(.white)
+                    .bold()
+                    .padding(.vertical, 10)
+                    .padding(.horizontal, 24)
+                    .background(Color.cyan)
+                    .cornerRadius(12)
+            }
+            
+            Spacer()
+        }
+    }
+    
+    private enum ConnectionState {
+        case connected
+        case connecting
+        case notConnected
+    }
+    
 }
