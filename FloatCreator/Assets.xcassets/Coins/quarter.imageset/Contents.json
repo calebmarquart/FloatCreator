@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "canada-25-cent-back.png",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

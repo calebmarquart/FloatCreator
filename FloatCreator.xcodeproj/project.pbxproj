@@ -8,68 +8,37 @@
 
 /* Begin PBXBuildFile section */
 		876D0DD5296FB446008DCB09 /* DisplayPhoneCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 876D0DD4296FB446008DCB09 /* DisplayPhoneCellView.swift */; };
-		876D0DD6296FB446008DCB09 /* DisplayPhoneCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 876D0DD4296FB446008DCB09 /* DisplayPhoneCellView.swift */; };
 		876D0DD8296FC851008DCB09 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 876D0DD7296FC851008DCB09 /* CoreDataManager.swift */; };
-		876D0DD9296FC851008DCB09 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 876D0DD7296FC851008DCB09 /* CoreDataManager.swift */; };
 		876D0DDC296FC909008DCB09 /* FloatStorage.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 876D0DDA296FC909008DCB09 /* FloatStorage.xcdatamodeld */; };
-		876D0DDD296FC909008DCB09 /* FloatStorage.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 876D0DDA296FC909008DCB09 /* FloatStorage.xcdatamodeld */; };
 		876D0DDF296FD519008DCB09 /* ListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 876D0DDE296FD519008DCB09 /* ListView.swift */; };
-		876D0DE0296FD519008DCB09 /* ListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 876D0DDE296FD519008DCB09 /* ListView.swift */; };
 		87735EB228ADEE2300B06250 /* CoinsSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87735EB128ADEE2300B06250 /* CoinsSectionView.swift */; };
-		87735EB328ADEE2300B06250 /* CoinsSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87735EB128ADEE2300B06250 /* CoinsSectionView.swift */; };
 		87735EB528ADEE7800B06250 /* BillsSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87735EB428ADEE7700B06250 /* BillsSectionView.swift */; };
-		87735EB628ADEE7800B06250 /* BillsSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87735EB428ADEE7700B06250 /* BillsSectionView.swift */; };
 		87735EB828ADEE8100B06250 /* RollsSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87735EB728ADEE8100B06250 /* RollsSectionView.swift */; };
-		87735EB928ADEE8100B06250 /* RollsSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87735EB728ADEE8100B06250 /* RollsSectionView.swift */; };
 		87754ECA296BDD1100B8B5FD /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87754EC9296BDD1100B8B5FD /* Extensions.swift */; };
-		87754ECB296BDD1100B8B5FD /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87754EC9296BDD1100B8B5FD /* Extensions.swift */; };
 		87754ECD296BE24F00B8B5FD /* CashModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87754ECC296BE24F00B8B5FD /* CashModel.swift */; };
-		87754ECE296BE24F00B8B5FD /* CashModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87754ECC296BE24F00B8B5FD /* CashModel.swift */; };
 		879492B328AC993900C6B1A0 /* FloatCreatorApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 879492A328AC993700C6B1A0 /* FloatCreatorApp.swift */; };
-		879492B428AC993900C6B1A0 /* FloatCreatorApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 879492A328AC993700C6B1A0 /* FloatCreatorApp.swift */; };
 		879492B528AC993900C6B1A0 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 879492A428AC993700C6B1A0 /* ContentView.swift */; };
-		879492B628AC993900C6B1A0 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 879492A428AC993700C6B1A0 /* ContentView.swift */; };
 		879492B728AC993900C6B1A0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 879492A528AC993900C6B1A0 /* Assets.xcassets */; };
-		879492B828AC993900C6B1A0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 879492A528AC993900C6B1A0 /* Assets.xcassets */; };
-		879492C528ACADEC00C6B1A0 /* BridgeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 879492C428ACADEC00C6B1A0 /* BridgeView.swift */; };
-		879492C628ACADEC00C6B1A0 /* BridgeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 879492C428ACADEC00C6B1A0 /* BridgeView.swift */; };
+		879492C528ACADEC00C6B1A0 /* PhoneSingleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 879492C428ACADEC00C6B1A0 /* PhoneSingleView.swift */; };
 		879FF78328ACC3100066F2BE /* ChangeMaker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 879FF78228ACC3100066F2BE /* ChangeMaker.swift */; };
-		879FF78428ACC3100066F2BE /* ChangeMaker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 879FF78228ACC3100066F2BE /* ChangeMaker.swift */; };
-		879FF78628ACC8EA0066F2BE /* CashOutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 879FF78528ACC8EA0066F2BE /* CashOutView.swift */; };
-		879FF78728ACC8EA0066F2BE /* CashOutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 879FF78528ACC8EA0066F2BE /* CashOutView.swift */; };
-		879FF78C28ACCDB70066F2BE /* FloatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 879FF78B28ACCDB70066F2BE /* FloatView.swift */; };
-		879FF78D28ACCDB70066F2BE /* FloatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 879FF78B28ACCDB70066F2BE /* FloatView.swift */; };
+		879FF78C28ACCDB70066F2BE /* PhoneDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 879FF78B28ACCDB70066F2BE /* PhoneDetailView.swift */; };
 		87A2C3B228B8371800EB5A43 /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87A2C3B128B8371800EB5A43 /* WebView.swift */; };
-		87A2C3B328B8371800EB5A43 /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87A2C3B128B8371800EB5A43 /* WebView.swift */; };
 		87ABE8FC2970C3DB009953A3 /* CoinsGroupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87ABE8FB2970C3DB009953A3 /* CoinsGroupView.swift */; };
-		87ABE8FD2970C3DB009953A3 /* CoinsGroupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87ABE8FB2970C3DB009953A3 /* CoinsGroupView.swift */; };
 		87ABE8FF2970C432009953A3 /* BillsGroupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87ABE8FE2970C432009953A3 /* BillsGroupView.swift */; };
-		87ABE9002970C432009953A3 /* BillsGroupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87ABE8FE2970C432009953A3 /* BillsGroupView.swift */; };
 		87ABE9022970C484009953A3 /* RollsGroupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87ABE9012970C484009953A3 /* RollsGroupView.swift */; };
-		87ABE9032970C484009953A3 /* RollsGroupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87ABE9012970C484009953A3 /* RollsGroupView.swift */; };
-		87ABE9052970C694009953A3 /* SaveFloatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87ABE9042970C694009953A3 /* SaveFloatView.swift */; };
-		87ABE9062970C694009953A3 /* SaveFloatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87ABE9042970C694009953A3 /* SaveFloatView.swift */; };
-		87ABE9092970CE10009953A3 /* SaveBridgeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87ABE9082970CE10009953A3 /* SaveBridgeView.swift */; };
-		87ABE90A2970CE10009953A3 /* SaveBridgeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87ABE9082970CE10009953A3 /* SaveBridgeView.swift */; };
-		87ABE91029711ABC009953A3 /* AddFloatInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87ABE90F29711ABC009953A3 /* AddFloatInfoView.swift */; };
-		87ABE91129711ABC009953A3 /* AddFloatInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87ABE90F29711ABC009953A3 /* AddFloatInfoView.swift */; };
+		87ABE91029711ABC009953A3 /* FloatInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87ABE90F29711ABC009953A3 /* FloatInfoView.swift */; };
+		87ABE91929720668009953A3 /* PrintQueryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87ABE91829720668009953A3 /* PrintQueryModel.swift */; };
+		87ABE91B297206C0009953A3 /* FloatModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87ABE91A297206C0009953A3 /* FloatModel.swift */; };
+		87ABE91D2972089D009953A3 /* ContentFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87ABE91C2972089D009953A3 /* ContentFunctions.swift */; };
 		87BAE11D28ADDB4D00D6B0FE /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87BAE11C28ADDB4D00D6B0FE /* SettingsView.swift */; };
-		87BAE11E28ADDB4D00D6B0FE /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87BAE11C28ADDB4D00D6B0FE /* SettingsView.swift */; };
 		87BAE12028ADDF5E00D6B0FE /* ViewModifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87BAE11F28ADDF5E00D6B0FE /* ViewModifiers.swift */; };
-		87BAE12128ADDF5E00D6B0FE /* ViewModifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87BAE11F28ADDF5E00D6B0FE /* ViewModifiers.swift */; };
 		87D8D07A296CE28500FE9B9E /* PrintManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87D8D079296CE28500FE9B9E /* PrintManager.swift */; };
-		87D8D07B296CE28500FE9B9E /* PrintManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87D8D079296CE28500FE9B9E /* PrintManager.swift */; };
 		87D8D07E296CE29600FE9B9E /* StarIO10 in Frameworks */ = {isa = PBXBuildFile; productRef = 87D8D07D296CE29600FE9B9E /* StarIO10 */; };
 		87D8D080296D15E300FE9B9E /* PrintView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87D8D07F296D15E300FE9B9E /* PrintView.swift */; };
-		87D8D081296D15E300FE9B9E /* PrintView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87D8D07F296D15E300FE9B9E /* PrintView.swift */; };
 		87D8D08B296F701B00FE9B9E /* FloatCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87D8D08A296F701B00FE9B9E /* FloatCell.swift */; };
-		87D8D08C296F701B00FE9B9E /* FloatCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87D8D08A296F701B00FE9B9E /* FloatCell.swift */; };
-		87D8D08E296F724300FE9B9E /* FloatCashoutPadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87D8D08D296F724300FE9B9E /* FloatCashoutPadView.swift */; };
-		87D8D08F296F724300FE9B9E /* FloatCashoutPadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87D8D08D296F724300FE9B9E /* FloatCashoutPadView.swift */; };
-		87D8D091296F814900FE9B9E /* CalculationDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87D8D090296F814900FE9B9E /* CalculationDetailView.swift */; };
-		87D8D092296F814900FE9B9E /* CalculationDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87D8D090296F814900FE9B9E /* CalculationDetailView.swift */; };
+		87D8D08E296F724300FE9B9E /* PadDualView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87D8D08D296F724300FE9B9E /* PadDualView.swift */; };
+		87D8D091296F814900FE9B9E /* PadDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87D8D090296F814900FE9B9E /* PadDetailView.swift */; };
 		87D8D094296F8B6800FE9B9E /* DisplayPadCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87D8D093296F8B6800FE9B9E /* DisplayPadCellView.swift */; };
-		87D8D095296F8B6800FE9B9E /* DisplayPadCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87D8D093296F8B6800FE9B9E /* DisplayPadCellView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -86,27 +55,24 @@
 		879492A428AC993700C6B1A0 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		879492A528AC993900C6B1A0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		879492AA28AC993900C6B1A0 /* FloatCreator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FloatCreator.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		879492B028AC993900C6B1A0 /* FloatCreator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FloatCreator.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		879492B228AC993900C6B1A0 /* macOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = macOS.entitlements; sourceTree = "<group>"; };
-		879492C428ACADEC00C6B1A0 /* BridgeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BridgeView.swift; sourceTree = "<group>"; };
+		879492C428ACADEC00C6B1A0 /* PhoneSingleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneSingleView.swift; sourceTree = "<group>"; };
 		879FF78228ACC3100066F2BE /* ChangeMaker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeMaker.swift; sourceTree = "<group>"; };
-		879FF78528ACC8EA0066F2BE /* CashOutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CashOutView.swift; sourceTree = "<group>"; };
-		879FF78B28ACCDB70066F2BE /* FloatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloatView.swift; sourceTree = "<group>"; };
+		879FF78B28ACCDB70066F2BE /* PhoneDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneDetailView.swift; sourceTree = "<group>"; };
 		87A2C3B128B8371800EB5A43 /* WebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebView.swift; sourceTree = "<group>"; };
 		87ABE8FB2970C3DB009953A3 /* CoinsGroupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinsGroupView.swift; sourceTree = "<group>"; };
 		87ABE8FE2970C432009953A3 /* BillsGroupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BillsGroupView.swift; sourceTree = "<group>"; };
 		87ABE9012970C484009953A3 /* RollsGroupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RollsGroupView.swift; sourceTree = "<group>"; };
-		87ABE9042970C694009953A3 /* SaveFloatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveFloatView.swift; sourceTree = "<group>"; };
-		87ABE9082970CE10009953A3 /* SaveBridgeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveBridgeView.swift; sourceTree = "<group>"; };
-		87ABE90B2970FAAB009953A3 /* FloatCreator--iOS--Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "FloatCreator--iOS--Info.plist"; sourceTree = "<group>"; };
-		87ABE90F29711ABC009953A3 /* AddFloatInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddFloatInfoView.swift; sourceTree = "<group>"; };
+		87ABE90F29711ABC009953A3 /* FloatInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloatInfoView.swift; sourceTree = "<group>"; };
+		87ABE91829720668009953A3 /* PrintQueryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrintQueryModel.swift; sourceTree = "<group>"; };
+		87ABE91A297206C0009953A3 /* FloatModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloatModel.swift; sourceTree = "<group>"; };
+		87ABE91C2972089D009953A3 /* ContentFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentFunctions.swift; sourceTree = "<group>"; };
 		87BAE11C28ADDB4D00D6B0FE /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		87BAE11F28ADDF5E00D6B0FE /* ViewModifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModifiers.swift; sourceTree = "<group>"; };
 		87D8D079296CE28500FE9B9E /* PrintManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrintManager.swift; sourceTree = "<group>"; };
 		87D8D07F296D15E300FE9B9E /* PrintView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrintView.swift; sourceTree = "<group>"; };
 		87D8D08A296F701B00FE9B9E /* FloatCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloatCell.swift; sourceTree = "<group>"; };
-		87D8D08D296F724300FE9B9E /* FloatCashoutPadView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloatCashoutPadView.swift; sourceTree = "<group>"; };
-		87D8D090296F814900FE9B9E /* CalculationDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculationDetailView.swift; sourceTree = "<group>"; };
+		87D8D08D296F724300FE9B9E /* PadDualView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PadDualView.swift; sourceTree = "<group>"; };
+		87D8D090296F814900FE9B9E /* PadDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PadDetailView.swift; sourceTree = "<group>"; };
 		87D8D093296F8B6800FE9B9E /* DisplayPadCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplayPadCellView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -119,33 +85,19 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		879492AD28AC993900C6B1A0 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		876D0DD3296FA3D6008DCB09 /* Components */ = {
-			isa = PBXGroup;
-			children = (
-				87D8D08A296F701B00FE9B9E /* FloatCell.swift */,
-			);
-			path = Components;
-			sourceTree = "<group>";
-		};
 		87735EBA28ADEFF000B06250 /* Views */ = {
 			isa = PBXGroup;
 			children = (
 				879492A428AC993700C6B1A0 /* ContentView.swift */,
+				87ABE91C2972089D009953A3 /* ContentFunctions.swift */,
+				87ABE90F29711ABC009953A3 /* FloatInfoView.swift */,
 				87D8D07F296D15E300FE9B9E /* PrintView.swift */,
 				87A2C3B128B8371800EB5A43 /* WebView.swift */,
 				87BAE11C28ADDB4D00D6B0FE /* SettingsView.swift */,
-				87ABE9072970C6C1009953A3 /* Saved */,
-				876D0DD3296FA3D6008DCB09 /* Components */,
+				876D0DDE296FD519008DCB09 /* ListView.swift */,
 				87D8D089296F6E2600FE9B9E /* iPad */,
 				87D8D088296F6E1B00FE9B9E /* iPhone */,
 			);
@@ -167,7 +119,6 @@
 				87D8D079296CE28500FE9B9E /* PrintManager.swift */,
 				876D0DD7296FC851008DCB09 /* CoreDataManager.swift */,
 				87754EC9296BDD1100B8B5FD /* Extensions.swift */,
-				87754ECC296BE24F00B8B5FD /* CashModel.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -175,82 +126,72 @@
 		8794929D28AC993700C6B1A0 = {
 			isa = PBXGroup;
 			children = (
-				87ABE90B2970FAAB009953A3 /* FloatCreator--iOS--Info.plist */,
-				879492A228AC993700C6B1A0 /* Shared */,
-				879492B128AC993900C6B1A0 /* macOS */,
+				879492A228AC993700C6B1A0 /* FloatCreator */,
 				879492AB28AC993900C6B1A0 /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		879492A228AC993700C6B1A0 /* Shared */ = {
+		879492A228AC993700C6B1A0 /* FloatCreator */ = {
 			isa = PBXGroup;
 			children = (
 				879492A328AC993700C6B1A0 /* FloatCreatorApp.swift */,
 				87735EBA28ADEFF000B06250 /* Views */,
 				87735EBE28ADF04500B06250 /* Services */,
 				87735EBD28ADF03C00B06250 /* Modifiers */,
-				876D0DDA296FC909008DCB09 /* FloatStorage.xcdatamodeld */,
+				87ABE9172972064E009953A3 /* Models */,
 				879492A528AC993900C6B1A0 /* Assets.xcassets */,
 			);
-			path = Shared;
+			path = FloatCreator;
 			sourceTree = "<group>";
 		};
 		879492AB28AC993900C6B1A0 /* Products */ = {
 			isa = PBXGroup;
 			children = (
 				879492AA28AC993900C6B1A0 /* FloatCreator.app */,
-				879492B028AC993900C6B1A0 /* FloatCreator.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		879492B128AC993900C6B1A0 /* macOS */ = {
+		87ABE91529712A8D009953A3 /* Components */ = {
 			isa = PBXGroup;
 			children = (
-				879492B228AC993900C6B1A0 /* macOS.entitlements */,
-			);
-			path = macOS;
-			sourceTree = "<group>";
-		};
-		87ABE9072970C6C1009953A3 /* Saved */ = {
-			isa = PBXGroup;
-			children = (
-				876D0DDE296FD519008DCB09 /* ListView.swift */,
-				87ABE9042970C694009953A3 /* SaveFloatView.swift */,
-				87ABE9082970CE10009953A3 /* SaveBridgeView.swift */,
-				87ABE90F29711ABC009953A3 /* AddFloatInfoView.swift */,
-			);
-			path = Saved;
-			sourceTree = "<group>";
-		};
-		87ABE91529712A8D009953A3 /* Sections */ = {
-			isa = PBXGroup;
-			children = (
+				876D0DD4296FB446008DCB09 /* DisplayPhoneCellView.swift */,
 				87735EB128ADEE2300B06250 /* CoinsSectionView.swift */,
 				87735EB428ADEE7700B06250 /* BillsSectionView.swift */,
 				87735EB728ADEE8100B06250 /* RollsSectionView.swift */,
 			);
-			path = Sections;
+			path = Components;
 			sourceTree = "<group>";
 		};
-		87ABE9162971300E009953A3 /* Sections */ = {
+		87ABE9162971300E009953A3 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				87D8D093296F8B6800FE9B9E /* DisplayPadCellView.swift */,
 				87ABE8FB2970C3DB009953A3 /* CoinsGroupView.swift */,
 				87ABE9012970C484009953A3 /* RollsGroupView.swift */,
 				87ABE8FE2970C432009953A3 /* BillsGroupView.swift */,
 			);
-			path = Sections;
+			path = Components;
+			sourceTree = "<group>";
+		};
+		87ABE9172972064E009953A3 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				876D0DDA296FC909008DCB09 /* FloatStorage.xcdatamodeld */,
+				87754ECC296BE24F00B8B5FD /* CashModel.swift */,
+				87ABE91A297206C0009953A3 /* FloatModel.swift */,
+				87ABE91829720668009953A3 /* PrintQueryModel.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 		87D8D088296F6E1B00FE9B9E /* iPhone */ = {
 			isa = PBXGroup;
 			children = (
-				876D0DD4296FB446008DCB09 /* DisplayPhoneCellView.swift */,
-				879FF78B28ACCDB70066F2BE /* FloatView.swift */,
-				879492C428ACADEC00C6B1A0 /* BridgeView.swift */,
-				879FF78528ACC8EA0066F2BE /* CashOutView.swift */,
-				87ABE91529712A8D009953A3 /* Sections */,
+				87D8D08A296F701B00FE9B9E /* FloatCell.swift */,
+				879492C428ACADEC00C6B1A0 /* PhoneSingleView.swift */,
+				879FF78B28ACCDB70066F2BE /* PhoneDetailView.swift */,
+				87ABE91529712A8D009953A3 /* Components */,
 			);
 			path = iPhone;
 			sourceTree = "<group>";
@@ -258,10 +199,9 @@
 		87D8D089296F6E2600FE9B9E /* iPad */ = {
 			isa = PBXGroup;
 			children = (
-				87D8D08D296F724300FE9B9E /* FloatCashoutPadView.swift */,
-				87D8D090296F814900FE9B9E /* CalculationDetailView.swift */,
-				87D8D093296F8B6800FE9B9E /* DisplayPadCellView.swift */,
-				87ABE9162971300E009953A3 /* Sections */,
+				87D8D08D296F724300FE9B9E /* PadDualView.swift */,
+				87D8D090296F814900FE9B9E /* PadDetailView.swift */,
+				87ABE9162971300E009953A3 /* Components */,
 			);
 			path = iPad;
 			sourceTree = "<group>";
@@ -289,23 +229,6 @@
 			productReference = 879492AA28AC993900C6B1A0 /* FloatCreator.app */;
 			productType = "com.apple.product-type.application";
 		};
-		879492AF28AC993900C6B1A0 /* FloatCreator (macOS) */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 879492BE28AC993900C6B1A0 /* Build configuration list for PBXNativeTarget "FloatCreator (macOS)" */;
-			buildPhases = (
-				879492AC28AC993900C6B1A0 /* Sources */,
-				879492AD28AC993900C6B1A0 /* Frameworks */,
-				879492AE28AC993900C6B1A0 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = "FloatCreator (macOS)";
-			productName = "FloatCreator (macOS)";
-			productReference = 879492B028AC993900C6B1A0 /* FloatCreator.app */;
-			productType = "com.apple.product-type.application";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -317,9 +240,6 @@
 				LastUpgradeCheck = 1400;
 				TargetAttributes = {
 					879492A928AC993900C6B1A0 = {
-						CreatedOnToolsVersion = 13.4.1;
-					};
-					879492AF28AC993900C6B1A0 = {
 						CreatedOnToolsVersion = 13.4.1;
 					};
 				};
@@ -341,7 +261,6 @@
 			projectRoot = "";
 			targets = (
 				879492A928AC993900C6B1A0 /* FloatCreator (iOS) */,
-				879492AF28AC993900C6B1A0 /* FloatCreator (macOS) */,
 			);
 		};
 /* End PBXProject section */
@@ -352,14 +271,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				879492B728AC993900C6B1A0 /* Assets.xcassets in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		879492AE28AC993900C6B1A0 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				879492B828AC993900C6B1A0 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -375,68 +286,31 @@
 				87735EB528ADEE7800B06250 /* BillsSectionView.swift in Sources */,
 				87D8D080296D15E300FE9B9E /* PrintView.swift in Sources */,
 				87ABE9022970C484009953A3 /* RollsGroupView.swift in Sources */,
-				879492C528ACADEC00C6B1A0 /* BridgeView.swift in Sources */,
-				879FF78C28ACCDB70066F2BE /* FloatView.swift in Sources */,
+				879492C528ACADEC00C6B1A0 /* PhoneSingleView.swift in Sources */,
+				879FF78C28ACCDB70066F2BE /* PhoneDetailView.swift in Sources */,
 				87BAE12028ADDF5E00D6B0FE /* ViewModifiers.swift in Sources */,
-				879FF78628ACC8EA0066F2BE /* CashOutView.swift in Sources */,
 				879492B528AC993900C6B1A0 /* ContentView.swift in Sources */,
 				87ABE8FF2970C432009953A3 /* BillsGroupView.swift in Sources */,
 				876D0DDF296FD519008DCB09 /* ListView.swift in Sources */,
-				87ABE9052970C694009953A3 /* SaveFloatView.swift in Sources */,
 				87754ECD296BE24F00B8B5FD /* CashModel.swift in Sources */,
 				87735EB828ADEE8100B06250 /* RollsSectionView.swift in Sources */,
-				87ABE91029711ABC009953A3 /* AddFloatInfoView.swift in Sources */,
+				87ABE91029711ABC009953A3 /* FloatInfoView.swift in Sources */,
 				876D0DDC296FC909008DCB09 /* FloatStorage.xcdatamodeld in Sources */,
 				876D0DD8296FC851008DCB09 /* CoreDataManager.swift in Sources */,
 				87D8D094296F8B6800FE9B9E /* DisplayPadCellView.swift in Sources */,
 				87754ECA296BDD1100B8B5FD /* Extensions.swift in Sources */,
 				87D8D08B296F701B00FE9B9E /* FloatCell.swift in Sources */,
+				87ABE91B297206C0009953A3 /* FloatModel.swift in Sources */,
 				879492B328AC993900C6B1A0 /* FloatCreatorApp.swift in Sources */,
 				87A2C3B228B8371800EB5A43 /* WebView.swift in Sources */,
 				879FF78328ACC3100066F2BE /* ChangeMaker.swift in Sources */,
-				87D8D091296F814900FE9B9E /* CalculationDetailView.swift in Sources */,
-				87D8D08E296F724300FE9B9E /* FloatCashoutPadView.swift in Sources */,
+				87ABE91D2972089D009953A3 /* ContentFunctions.swift in Sources */,
+				87D8D091296F814900FE9B9E /* PadDetailView.swift in Sources */,
+				87D8D08E296F724300FE9B9E /* PadDualView.swift in Sources */,
+				87ABE91929720668009953A3 /* PrintQueryModel.swift in Sources */,
 				87735EB228ADEE2300B06250 /* CoinsSectionView.swift in Sources */,
-				87ABE9092970CE10009953A3 /* SaveBridgeView.swift in Sources */,
 				876D0DD5296FB446008DCB09 /* DisplayPhoneCellView.swift in Sources */,
 				87D8D07A296CE28500FE9B9E /* PrintManager.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		879492AC28AC993900C6B1A0 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				87ABE8FD2970C3DB009953A3 /* CoinsGroupView.swift in Sources */,
-				87BAE11E28ADDB4D00D6B0FE /* SettingsView.swift in Sources */,
-				87735EB628ADEE7800B06250 /* BillsSectionView.swift in Sources */,
-				87D8D081296D15E300FE9B9E /* PrintView.swift in Sources */,
-				87ABE9032970C484009953A3 /* RollsGroupView.swift in Sources */,
-				879492C628ACADEC00C6B1A0 /* BridgeView.swift in Sources */,
-				879FF78D28ACCDB70066F2BE /* FloatView.swift in Sources */,
-				87BAE12128ADDF5E00D6B0FE /* ViewModifiers.swift in Sources */,
-				879FF78728ACC8EA0066F2BE /* CashOutView.swift in Sources */,
-				879492B628AC993900C6B1A0 /* ContentView.swift in Sources */,
-				87ABE9002970C432009953A3 /* BillsGroupView.swift in Sources */,
-				876D0DE0296FD519008DCB09 /* ListView.swift in Sources */,
-				87ABE9062970C694009953A3 /* SaveFloatView.swift in Sources */,
-				87754ECE296BE24F00B8B5FD /* CashModel.swift in Sources */,
-				87735EB928ADEE8100B06250 /* RollsSectionView.swift in Sources */,
-				87ABE91129711ABC009953A3 /* AddFloatInfoView.swift in Sources */,
-				876D0DDD296FC909008DCB09 /* FloatStorage.xcdatamodeld in Sources */,
-				876D0DD9296FC851008DCB09 /* CoreDataManager.swift in Sources */,
-				87D8D095296F8B6800FE9B9E /* DisplayPadCellView.swift in Sources */,
-				87754ECB296BDD1100B8B5FD /* Extensions.swift in Sources */,
-				87D8D08C296F701B00FE9B9E /* FloatCell.swift in Sources */,
-				879492B428AC993900C6B1A0 /* FloatCreatorApp.swift in Sources */,
-				87A2C3B328B8371800EB5A43 /* WebView.swift in Sources */,
-				879FF78428ACC3100066F2BE /* ChangeMaker.swift in Sources */,
-				87D8D092296F814900FE9B9E /* CalculationDetailView.swift in Sources */,
-				87D8D08F296F724300FE9B9E /* FloatCashoutPadView.swift in Sources */,
-				87735EB328ADEE2300B06250 /* CoinsSectionView.swift in Sources */,
-				87ABE90A2970CE10009953A3 /* SaveBridgeView.swift in Sources */,
-				876D0DD6296FB446008DCB09 /* DisplayPhoneCellView.swift in Sources */,
-				87D8D07B296CE28500FE9B9E /* PrintManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -565,14 +439,16 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "FloatCreator--iOS--Info.plist";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				INFOPLIST_KEY_NSBluetoothAlwaysUsageDescription = "Use Bluetooth to connect to wireless printer.";
 				INFOPLIST_KEY_NSBluetoothPeripheralUsageDescription = "Use Bluetooth to connect to wireless printer.";
 				INFOPLIST_KEY_NSLocalNetworkUsageDescription = "Use the Local Network to connect to printers.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIStatusBarStyle = "";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -582,6 +458,9 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.calebmarquart.FloatCreator;
 				PRODUCT_NAME = FloatCreator;
 				SDKROOT = iphoneos;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -599,14 +478,16 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "FloatCreator--iOS--Info.plist";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				INFOPLIST_KEY_NSBluetoothAlwaysUsageDescription = "Use Bluetooth to connect to wireless printer.";
 				INFOPLIST_KEY_NSBluetoothPeripheralUsageDescription = "Use Bluetooth to connect to wireless printer.";
 				INFOPLIST_KEY_NSLocalNetworkUsageDescription = "Use the Local Network to connect to printers.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIStatusBarStyle = "";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -616,70 +497,13 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.calebmarquart.FloatCreator;
 				PRODUCT_NAME = FloatCreator;
 				SDKROOT = iphoneos;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
-			};
-			name = Release;
-		};
-		879492BF28AC993900C6B1A0 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = macOS/macOS.entitlements;
-				CODE_SIGN_IDENTITY = "-";
-				CODE_SIGN_STYLE = Automatic;
-				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 1;
-				DEAD_CODE_STRIPPING = YES;
-				DEVELOPMENT_TEAM = 8P84J9SURU;
-				ENABLE_HARDENED_RUNTIME = YES;
-				ENABLE_PREVIEWS = YES;
-				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_NSHumanReadableCopyright = "";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/../Frameworks",
-				);
-				MACOSX_DEPLOYMENT_TARGET = 12.3;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.calebmarquart.FloatCreator;
-				PRODUCT_NAME = FloatCreator;
-				SDKROOT = macosx;
-				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_VERSION = 5.0;
-			};
-			name = Debug;
-		};
-		879492C028AC993900C6B1A0 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = macOS/macOS.entitlements;
-				CODE_SIGN_IDENTITY = "-";
-				CODE_SIGN_STYLE = Automatic;
-				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 1;
-				DEAD_CODE_STRIPPING = YES;
-				DEVELOPMENT_TEAM = 8P84J9SURU;
-				ENABLE_HARDENED_RUNTIME = YES;
-				ENABLE_PREVIEWS = YES;
-				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_NSHumanReadableCopyright = "";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/../Frameworks",
-				);
-				MACOSX_DEPLOYMENT_TARGET = 12.3;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.calebmarquart.FloatCreator;
-				PRODUCT_NAME = FloatCreator;
-				SDKROOT = macosx;
-				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
 		};
@@ -700,15 +524,6 @@
 			buildConfigurations = (
 				879492BC28AC993900C6B1A0 /* Debug */,
 				879492BD28AC993900C6B1A0 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		879492BE28AC993900C6B1A0 /* Build configuration list for PBXNativeTarget "FloatCreator (macOS)" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				879492BF28AC993900C6B1A0 /* Debug */,
-				879492C028AC993900C6B1A0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
