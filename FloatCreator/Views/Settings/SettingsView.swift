@@ -13,7 +13,7 @@ struct SettingsView: View {
     @AppStorage("show_images") var showImages = true
     
     var body: some View {
-        NavigationView {
+        NavigationStack {
             List {
                 Section("Float Amount") {
                     Stepper("$\(floatAmount) Float", value: $floatAmount, in: 50...1000, step: 50)
@@ -21,15 +21,18 @@ struct SettingsView: View {
                 
                 Section("Images") {
                     Toggle("Show Images", isOn: $showImages)
+                    NavigationLink("Receipt Logo") {
+                        ImageSelectionView()
+                    }
                 }
                 
                 Section("About") {
                     NavigationLink("Privacy Policy") {
-                        WebView(url: URL(string: "https://calebmarquart.com/floatcreator/privacy-policy/")!)
+                        WebView(url: URL(string: privacyPolicy)!)
                     }
                     
                     NavigationLink("Terms & Conditions") {
-                        WebView(url: URL(string: "https://calebmarquart.com/floatcreator/terms/")!)
+                        WebView(url: URL(string: terms)!)
                     }
                     
                     HStack {
@@ -59,8 +62,8 @@ struct SettingsView: View {
 
                 }
             }
+            
         }
-        .navigationViewStyle(.stack)
     }
 }
 
@@ -74,3 +77,6 @@ struct SettingsView_Previews: PreviewProvider {
 
 let appVersion = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String
 let buildVersion = Bundle.main.infoDictionary?["CFBundleVersion"] as? String
+
+let privacyPolicy = "https://calebmarquart.com/float-privacy-policy/"
+let terms = "https://calebmarquart.com/float-terms/"

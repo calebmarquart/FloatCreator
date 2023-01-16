@@ -30,6 +30,7 @@
 		87ABE91929720668009953A3 /* PrintQueryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87ABE91829720668009953A3 /* PrintQueryModel.swift */; };
 		87ABE91B297206C0009953A3 /* FloatModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87ABE91A297206C0009953A3 /* FloatModel.swift */; };
 		87ABE91D2972089D009953A3 /* ContentFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87ABE91C2972089D009953A3 /* ContentFunctions.swift */; };
+		87ABE91F29735CFD009953A3 /* ImageSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87ABE91E29735CFD009953A3 /* ImageSelectionView.swift */; };
 		87BAE11D28ADDB4D00D6B0FE /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87BAE11C28ADDB4D00D6B0FE /* SettingsView.swift */; };
 		87BAE12028ADDF5E00D6B0FE /* ViewModifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87BAE11F28ADDF5E00D6B0FE /* ViewModifiers.swift */; };
 		87D8D07A296CE28500FE9B9E /* PrintManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87D8D079296CE28500FE9B9E /* PrintManager.swift */; };
@@ -66,6 +67,7 @@
 		87ABE91829720668009953A3 /* PrintQueryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrintQueryModel.swift; sourceTree = "<group>"; };
 		87ABE91A297206C0009953A3 /* FloatModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloatModel.swift; sourceTree = "<group>"; };
 		87ABE91C2972089D009953A3 /* ContentFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentFunctions.swift; sourceTree = "<group>"; };
+		87ABE91E29735CFD009953A3 /* ImageSelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageSelectionView.swift; sourceTree = "<group>"; };
 		87BAE11C28ADDB4D00D6B0FE /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		87BAE11F28ADDF5E00D6B0FE /* ViewModifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModifiers.swift; sourceTree = "<group>"; };
 		87D8D079296CE28500FE9B9E /* PrintManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrintManager.swift; sourceTree = "<group>"; };
@@ -95,9 +97,8 @@
 				87ABE91C2972089D009953A3 /* ContentFunctions.swift */,
 				87ABE90F29711ABC009953A3 /* FloatInfoView.swift */,
 				87D8D07F296D15E300FE9B9E /* PrintView.swift */,
-				87A2C3B128B8371800EB5A43 /* WebView.swift */,
-				87BAE11C28ADDB4D00D6B0FE /* SettingsView.swift */,
 				876D0DDE296FD519008DCB09 /* ListView.swift */,
+				87ABE92029736665009953A3 /* Settings */,
 				87D8D089296F6E2600FE9B9E /* iPad */,
 				87D8D088296F6E1B00FE9B9E /* iPhone */,
 			);
@@ -183,6 +184,16 @@
 				87ABE91829720668009953A3 /* PrintQueryModel.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		87ABE92029736665009953A3 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				87A2C3B128B8371800EB5A43 /* WebView.swift */,
+				87BAE11C28ADDB4D00D6B0FE /* SettingsView.swift */,
+				87ABE91E29735CFD009953A3 /* ImageSelectionView.swift */,
+			);
+			path = Settings;
 			sourceTree = "<group>";
 		};
 		87D8D088296F6E1B00FE9B9E /* iPhone */ = {
@@ -301,6 +312,7 @@
 				87754ECA296BDD1100B8B5FD /* Extensions.swift in Sources */,
 				87D8D08B296F701B00FE9B9E /* FloatCell.swift in Sources */,
 				87ABE91B297206C0009953A3 /* FloatModel.swift in Sources */,
+				87ABE91F29735CFD009953A3 /* ImageSelectionView.swift in Sources */,
 				879492B328AC993900C6B1A0 /* FloatCreatorApp.swift in Sources */,
 				87A2C3B228B8371800EB5A43 /* WebView.swift in Sources */,
 				879FF78328ACC3100066F2BE /* ChangeMaker.swift in Sources */,
@@ -439,6 +451,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "FloatCreator--iOS--Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = Float;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				INFOPLIST_KEY_NSBluetoothAlwaysUsageDescription = "Use Bluetooth to connect to wireless printer.";
 				INFOPLIST_KEY_NSBluetoothPeripheralUsageDescription = "Use Bluetooth to connect to wireless printer.";
@@ -449,7 +462,7 @@
 				INFOPLIST_KEY_UIStatusBarStyle = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -478,6 +491,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "FloatCreator--iOS--Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = Float;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				INFOPLIST_KEY_NSBluetoothAlwaysUsageDescription = "Use Bluetooth to connect to wireless printer.";
 				INFOPLIST_KEY_NSBluetoothPeripheralUsageDescription = "Use Bluetooth to connect to wireless printer.";
@@ -488,7 +502,7 @@
 				INFOPLIST_KEY_UIStatusBarStyle = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

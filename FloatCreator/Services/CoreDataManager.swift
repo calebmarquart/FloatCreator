@@ -48,7 +48,7 @@ class CoreDataManager {
         }
     }
     
-    private func save() {
+    func save() {
         do {
             try container.viewContext.save()
         } catch {
@@ -76,7 +76,6 @@ class CoreDataManager {
         
         return entry
     }
-    
 }
 
 

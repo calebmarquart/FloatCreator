@@ -13,16 +13,22 @@ struct ListView: View {
     @State private var floats = [FloatDB]()
     
     var body: some View {
-        NavigationView {
-            List(floats) { item in
-                NavigationLink {
-                   makeDestination(with: item)
-                } label: {
-                    makeLabel(with: item)
+        NavigationStack {
+            Group {
+                if floats.isEmpty {
+                    Text("There are no saved floats yet")
+                        .font(.headline)
+                        .offset(y: -60)
+                } else {
+                    List {
+                        ForEach(floats) { item in
+                            NavigationLink(value: item) {
+                                makeLabel(with: item)
+                            }
+                        }
+                        .onDelete(perform: delete)
+                    }
                 }
-            }
-            .task {
-                floats = await CoreDataManager.instance.fetch()
             }
             .navigationTitle("Saved Floats")
             .toolbar {
@@ -34,6 +40,12 @@ struct ListView: View {
                     }
 
                 }
+            }
+            .task {
+                floats = await CoreDataManager.instance.fetch()
+            }
+            .navigationDestination(for: FloatDB.self) { item in
+                makeDestination(with: item)
             }
         }
     }
@@ -61,6 +73,11 @@ struct ListView: View {
         }
     }
     
+    private func delete(at offsets: IndexSet) {
+        offsets.map { floats[$0] }
+            .forEach(CoreDataManager.instance.container.viewContext.delete)
+        CoreDataManager.instance.save()
+    }
 }
 
 struct ListView_Previews: PreviewProvider {

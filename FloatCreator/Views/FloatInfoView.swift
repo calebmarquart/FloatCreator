@@ -74,14 +74,19 @@ struct FloatInfoView: View {
                 .frame(maxWidth: .infinity, alignment: .center)
                 
                 Spacer()
-                
-                NavigationLink(destination: makeDestination(), isActive: $showingDetail) {
-                    EmptyView()
-                }
             }
         .padding(.vertical)
         .padding(.horizontal, 30)
         .navigationTitle("Float Info")
+        .navigationDestination(isPresented: $showingDetail) {
+            if UIDevice.current.userInterfaceIdiom == .phone {
+                // PhoneSingleView
+                PhoneSingleView(float: float, cashout: cashout)
+            } else {
+                // PadDualView
+                PadDualView(float: float, cashout: cashout)
+            }
+        }
     }
     
     private func createFloat() {
@@ -102,21 +107,10 @@ struct FloatInfoView: View {
         showingDetail = true
     }
     
-    @ViewBuilder private func makeDestination() -> some View {
-        if UIDevice.current.userInterfaceIdiom == .phone {
-            // PhoneSingleView
-            PhoneSingleView(float: float, cashout: cashout)
-        } else {
-            // PadDualView
-            PadDualView(float: float, cashout: cashout)
-        }
-    }
-    
     private enum Field: Hashable {
         case till
         case lead
     }
-    
 }
 
 struct AddFloatInfoView_Previews: PreviewProvider {

@@ -43,20 +43,12 @@ struct ContentView: View {
     }
     
     var body: some View {
-        NavigationView {
+        NavigationStack {
             Group {
-                ZStack {
-                    if UIDevice.current.userInterfaceIdiom == .phone {
-                        iPhoneView
-                    } else {
-                        iPadView
-                    }
-                    
-                    NavigationLink(isActive: $showingNextView) {
-                        FloatInfoView(configuration: configuration)
-                    } label: {
-                        EmptyView()
-                    }
+                if UIDevice.current.userInterfaceIdiom == .phone {
+                    iPhoneView
+                } else {
+                    iPadView
                 }
             }
             .toolbar {
@@ -82,9 +74,11 @@ struct ContentView: View {
                     }
                 }
             }
+            .navigationDestination(isPresented: $showingNextView) {
+                FloatInfoView(configuration: configuration)
+            }
         }
-        .navigationViewStyle(.stack)
-        .sheet(isPresented: $showingSettings) {
+        .fullScreenCover(isPresented: $showingSettings) {
             SettingsView()
         }
         .fullScreenCover(isPresented: $showingList) {

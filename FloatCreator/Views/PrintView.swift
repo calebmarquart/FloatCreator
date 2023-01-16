@@ -16,7 +16,7 @@ struct PrintView: View {
     let print: PrintQuery
     
     var body: some View {
-        NavigationView {
+        NavigationStack {
             VStack(spacing: 20.0) {
                 switch connection {
                 case .connecting: connecting
