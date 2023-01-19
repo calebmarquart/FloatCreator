@@ -1,31 +1,32 @@
 //
-//  FloatCell.swift
-//  FloatCreator
+//  PadEntryCell.swift
+//  FloatCreator (iOS)
 //
-//  Created by Caleb Marquart on 2023-01-11.
+//  Created by Caleb Marquart on 2023-01-18.
 //
 
 import SwiftUI
 
-struct FloatCell: View {
+struct PadEntryCell: View {
     
     @AppStorage("show_images") private var showImages = true
     
+    @Binding var text: String
+    @Binding var activeEntry: MoneyType?
+    
     let title: String
     let type: MoneyType
-    let value: String
     let image: Image
+    let value: String
     let system: Bool
     let imageWidth: CGFloat
     
-    @Binding private var text: String
-    @FocusState private var focus: MoneyType?
-    
-    init(type: MoneyType, text: Binding<String>, focus: FocusState<MoneyType?>) {
+    init(type: MoneyType, text: Binding<String>, activeEntry: Binding<MoneyType?>) {
+       
         var system: Bool = false
         
         self._text = Binding(projectedValue: text)
-        self._focus = focus
+        self._activeEntry = Binding(projectedValue: activeEntry)
         
         switch type {
         case .five:
@@ -110,13 +111,36 @@ struct FloatCell: View {
                     .foregroundColor(.primary).opacity(system ? 0.2 : 1)
                     .frame(height: imageWidth)
             }
-            TextField(title, text: $text)
-                .focused($focus, equals: type)
-                .textField()
+            Text(text == "" ? title : text)
+                .foregroundColor(text == "" ? .secondary : .primary)
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                    .textField()
+                    .overlay {
+                        if let activeEntry = activeEntry {
+                            if activeEntry == type {
+                                RoundedRectangle(cornerRadius: 8)
+                                    .stroke(lineWidth: 3)
+                                    .fill(Color.blue)
+                            }
+                        }
+                    }
+            
             Text("x \(value) = ")
             Text((Int(text) ?? 0).valueString(type))
                 .bold()
         }
-        .keyboardType(.numberPad)
+        .onTapGesture {
+            if activeEntry != type {
+                activeEntry = type
+            } else {
+                activeEntry = nil
+            }
+        }
+    }
+}
+
+struct PadEntryCell_Previews: PreviewProvider {
+    static var previews: some View {
+        PadEntryCell(type: .five, text: .constant(""), activeEntry: .constant(nil))
     }
 }

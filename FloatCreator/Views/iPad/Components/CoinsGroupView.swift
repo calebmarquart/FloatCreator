@@ -23,7 +23,7 @@ struct CoinsGroupView: View {
             HStack {
                 Text("Coin Total")
                 Spacer()
-                Text("$\(ChangeMaker.instance.getRollTotal(cash), specifier: "%.2f")")
+                Text("$\(ChangeMaker.instance.getCoinTotal(cash), specifier: "%.2f")")
             }
             .font(.subheadline)
             .padding(.horizontal)

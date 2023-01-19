@@ -29,8 +29,8 @@ class CoreDataManager {
         entry.date = Date.now
         entry.lead = lead
         entry.till = till
-        entry.cashout = makeCash(with: float)
-        entry.float = makeCash(with: cashout)
+        entry.cashout = makeCash(with: cashout)
+        entry.float = makeCash(with: float)
         
         save()
     }

@@ -94,7 +94,7 @@ struct FloatInfoView: View {
         let float = ChangeMaker.instance.createFloat(original: configuration, cashout: cashout)
         
         let lead = self.lead.isEmpty ? "Anonymous" : self.lead
-        let till = self.till.isEmpty ? "Any Till" : self.lead
+        let till = self.till.isEmpty ? "Any Till" : self.till
         let date = Date.now
         let image = imageData.toImage()
         

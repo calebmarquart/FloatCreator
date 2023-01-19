@@ -29,14 +29,18 @@
 		87ABE91029711ABC009953A3 /* FloatInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87ABE90F29711ABC009953A3 /* FloatInfoView.swift */; };
 		87ABE91929720668009953A3 /* PrintQueryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87ABE91829720668009953A3 /* PrintQueryModel.swift */; };
 		87ABE91B297206C0009953A3 /* FloatModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87ABE91A297206C0009953A3 /* FloatModel.swift */; };
-		87ABE91D2972089D009953A3 /* ContentFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87ABE91C2972089D009953A3 /* ContentFunctions.swift */; };
 		87ABE91F29735CFD009953A3 /* ImageSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87ABE91E29735CFD009953A3 /* ImageSelectionView.swift */; };
+		87ABE9222978C73B009953A3 /* PadKeyboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87ABE9212978C73B009953A3 /* PadKeyboardView.swift */; };
+		87ABE9252978DD1E009953A3 /* PadEntryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87ABE9242978DD1E009953A3 /* PadEntryCell.swift */; };
+		87ABE9272978EB54009953A3 /* ContentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87ABE9262978EB54009953A3 /* ContentViewModel.swift */; };
+		87ABE9292978ECAE009953A3 /* PadEntryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87ABE9282978ECAE009953A3 /* PadEntryView.swift */; };
+		87ABE92B2978EF18009953A3 /* PhoneEntryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87ABE92A2978EF18009953A3 /* PhoneEntryView.swift */; };
 		87BAE11D28ADDB4D00D6B0FE /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87BAE11C28ADDB4D00D6B0FE /* SettingsView.swift */; };
 		87BAE12028ADDF5E00D6B0FE /* ViewModifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87BAE11F28ADDF5E00D6B0FE /* ViewModifiers.swift */; };
 		87D8D07A296CE28500FE9B9E /* PrintManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87D8D079296CE28500FE9B9E /* PrintManager.swift */; };
 		87D8D07E296CE29600FE9B9E /* StarIO10 in Frameworks */ = {isa = PBXBuildFile; productRef = 87D8D07D296CE29600FE9B9E /* StarIO10 */; };
 		87D8D080296D15E300FE9B9E /* PrintView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87D8D07F296D15E300FE9B9E /* PrintView.swift */; };
-		87D8D08B296F701B00FE9B9E /* FloatCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87D8D08A296F701B00FE9B9E /* FloatCell.swift */; };
+		87D8D08B296F701B00FE9B9E /* PhoneEntryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87D8D08A296F701B00FE9B9E /* PhoneEntryCell.swift */; };
 		87D8D08E296F724300FE9B9E /* PadDualView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87D8D08D296F724300FE9B9E /* PadDualView.swift */; };
 		87D8D091296F814900FE9B9E /* PadDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87D8D090296F814900FE9B9E /* PadDetailView.swift */; };
 		87D8D094296F8B6800FE9B9E /* DisplayPadCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87D8D093296F8B6800FE9B9E /* DisplayPadCellView.swift */; };
@@ -66,13 +70,17 @@
 		87ABE90F29711ABC009953A3 /* FloatInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloatInfoView.swift; sourceTree = "<group>"; };
 		87ABE91829720668009953A3 /* PrintQueryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrintQueryModel.swift; sourceTree = "<group>"; };
 		87ABE91A297206C0009953A3 /* FloatModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloatModel.swift; sourceTree = "<group>"; };
-		87ABE91C2972089D009953A3 /* ContentFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentFunctions.swift; sourceTree = "<group>"; };
 		87ABE91E29735CFD009953A3 /* ImageSelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageSelectionView.swift; sourceTree = "<group>"; };
+		87ABE9212978C73B009953A3 /* PadKeyboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PadKeyboardView.swift; sourceTree = "<group>"; };
+		87ABE9242978DD1E009953A3 /* PadEntryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PadEntryCell.swift; sourceTree = "<group>"; };
+		87ABE9262978EB54009953A3 /* ContentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewModel.swift; sourceTree = "<group>"; };
+		87ABE9282978ECAE009953A3 /* PadEntryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PadEntryView.swift; sourceTree = "<group>"; };
+		87ABE92A2978EF18009953A3 /* PhoneEntryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneEntryView.swift; sourceTree = "<group>"; };
 		87BAE11C28ADDB4D00D6B0FE /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		87BAE11F28ADDF5E00D6B0FE /* ViewModifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModifiers.swift; sourceTree = "<group>"; };
 		87D8D079296CE28500FE9B9E /* PrintManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrintManager.swift; sourceTree = "<group>"; };
 		87D8D07F296D15E300FE9B9E /* PrintView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrintView.swift; sourceTree = "<group>"; };
-		87D8D08A296F701B00FE9B9E /* FloatCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloatCell.swift; sourceTree = "<group>"; };
+		87D8D08A296F701B00FE9B9E /* PhoneEntryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneEntryCell.swift; sourceTree = "<group>"; };
 		87D8D08D296F724300FE9B9E /* PadDualView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PadDualView.swift; sourceTree = "<group>"; };
 		87D8D090296F814900FE9B9E /* PadDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PadDetailView.swift; sourceTree = "<group>"; };
 		87D8D093296F8B6800FE9B9E /* DisplayPadCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplayPadCellView.swift; sourceTree = "<group>"; };
@@ -93,11 +101,10 @@
 		87735EBA28ADEFF000B06250 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				879492A428AC993700C6B1A0 /* ContentView.swift */,
-				87ABE91C2972089D009953A3 /* ContentFunctions.swift */,
 				87ABE90F29711ABC009953A3 /* FloatInfoView.swift */,
 				87D8D07F296D15E300FE9B9E /* PrintView.swift */,
 				876D0DDE296FD519008DCB09 /* ListView.swift */,
+				87ABE92C29790B82009953A3 /* ContentView */,
 				87ABE92029736665009953A3 /* Settings */,
 				87D8D089296F6E2600FE9B9E /* iPad */,
 				87D8D088296F6E1B00FE9B9E /* iPhone */,
@@ -156,6 +163,7 @@
 		87ABE91529712A8D009953A3 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				87D8D08A296F701B00FE9B9E /* PhoneEntryCell.swift */,
 				876D0DD4296FB446008DCB09 /* DisplayPhoneCellView.swift */,
 				87735EB128ADEE2300B06250 /* CoinsSectionView.swift */,
 				87735EB428ADEE7700B06250 /* BillsSectionView.swift */,
@@ -167,6 +175,7 @@
 		87ABE9162971300E009953A3 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				87ABE9242978DD1E009953A3 /* PadEntryCell.swift */,
 				87D8D093296F8B6800FE9B9E /* DisplayPadCellView.swift */,
 				87ABE8FB2970C3DB009953A3 /* CoinsGroupView.swift */,
 				87ABE9012970C484009953A3 /* RollsGroupView.swift */,
@@ -196,10 +205,27 @@
 			path = Settings;
 			sourceTree = "<group>";
 		};
+		87ABE9232978DCFE009953A3 /* Keyboard */ = {
+			isa = PBXGroup;
+			children = (
+				87ABE9212978C73B009953A3 /* PadKeyboardView.swift */,
+			);
+			path = Keyboard;
+			sourceTree = "<group>";
+		};
+		87ABE92C29790B82009953A3 /* ContentView */ = {
+			isa = PBXGroup;
+			children = (
+				879492A428AC993700C6B1A0 /* ContentView.swift */,
+				87ABE9262978EB54009953A3 /* ContentViewModel.swift */,
+			);
+			path = ContentView;
+			sourceTree = "<group>";
+		};
 		87D8D088296F6E1B00FE9B9E /* iPhone */ = {
 			isa = PBXGroup;
 			children = (
-				87D8D08A296F701B00FE9B9E /* FloatCell.swift */,
+				87ABE92A2978EF18009953A3 /* PhoneEntryView.swift */,
 				879492C428ACADEC00C6B1A0 /* PhoneSingleView.swift */,
 				879FF78B28ACCDB70066F2BE /* PhoneDetailView.swift */,
 				87ABE91529712A8D009953A3 /* Components */,
@@ -210,8 +236,10 @@
 		87D8D089296F6E2600FE9B9E /* iPad */ = {
 			isa = PBXGroup;
 			children = (
+				87ABE9282978ECAE009953A3 /* PadEntryView.swift */,
 				87D8D08D296F724300FE9B9E /* PadDualView.swift */,
 				87D8D090296F814900FE9B9E /* PadDetailView.swift */,
+				87ABE9232978DCFE009953A3 /* Keyboard */,
 				87ABE9162971300E009953A3 /* Components */,
 			);
 			path = iPad;
@@ -293,10 +321,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				87ABE8FC2970C3DB009953A3 /* CoinsGroupView.swift in Sources */,
+				87ABE9292978ECAE009953A3 /* PadEntryView.swift in Sources */,
 				87BAE11D28ADDB4D00D6B0FE /* SettingsView.swift in Sources */,
 				87735EB528ADEE7800B06250 /* BillsSectionView.swift in Sources */,
 				87D8D080296D15E300FE9B9E /* PrintView.swift in Sources */,
 				87ABE9022970C484009953A3 /* RollsGroupView.swift in Sources */,
+				87ABE92B2978EF18009953A3 /* PhoneEntryView.swift in Sources */,
 				879492C528ACADEC00C6B1A0 /* PhoneSingleView.swift in Sources */,
 				879FF78C28ACCDB70066F2BE /* PhoneDetailView.swift in Sources */,
 				87BAE12028ADDF5E00D6B0FE /* ViewModifiers.swift in Sources */,
@@ -309,14 +339,16 @@
 				876D0DDC296FC909008DCB09 /* FloatStorage.xcdatamodeld in Sources */,
 				876D0DD8296FC851008DCB09 /* CoreDataManager.swift in Sources */,
 				87D8D094296F8B6800FE9B9E /* DisplayPadCellView.swift in Sources */,
+				87ABE9222978C73B009953A3 /* PadKeyboardView.swift in Sources */,
 				87754ECA296BDD1100B8B5FD /* Extensions.swift in Sources */,
-				87D8D08B296F701B00FE9B9E /* FloatCell.swift in Sources */,
+				87D8D08B296F701B00FE9B9E /* PhoneEntryCell.swift in Sources */,
+				87ABE9272978EB54009953A3 /* ContentViewModel.swift in Sources */,
+				87ABE9252978DD1E009953A3 /* PadEntryCell.swift in Sources */,
 				87ABE91B297206C0009953A3 /* FloatModel.swift in Sources */,
 				87ABE91F29735CFD009953A3 /* ImageSelectionView.swift in Sources */,
 				879492B328AC993900C6B1A0 /* FloatCreatorApp.swift in Sources */,
 				87A2C3B228B8371800EB5A43 /* WebView.swift in Sources */,
 				879FF78328ACC3100066F2BE /* ChangeMaker.swift in Sources */,
-				87ABE91D2972089D009953A3 /* ContentFunctions.swift in Sources */,
 				87D8D091296F814900FE9B9E /* PadDetailView.swift in Sources */,
 				87D8D08E296F724300FE9B9E /* PadDualView.swift in Sources */,
 				87ABE91929720668009953A3 /* PrintQueryModel.swift in Sources */,

@@ -35,6 +35,7 @@ struct PadDetailView: View {
                 
                 CoinsGroupView(cash: cash)
             }
+            .padding(.bottom, 24)
         }
     }
 }
