@@ -12,62 +12,8 @@ struct PadEntryView: View {
     
     // For iPad
     @State var activeKeyboard = false
-    @State var showingKeyboard = true
     @State var activeNumber = ""
     @State var activeEntry: MoneyType?
-    
-    var header: some View {
-            HStack {
-                Button {
-                    viewModel.showingList = true
-                } label: {
-                    Image(systemName: "list.bullet")
-                        .foregroundColor(.white)
-                        .font(.title)
-                        .padding(.trailing, 8)
-                }
-                
-                VStack(alignment: .leading) {
-                    
-                    Text("Create Float")
-                        .font(.title2)
-                        .bold()
-                    Text(viewModel.date)
-                        .font(.title3)
-                }
-                .foregroundColor(.white)
-                
-                Spacer()
-                
-                Button {
-                    viewModel.calculate()
-                } label: {
-                    Text("Cashout")
-                        .bold()
-                        .font(.title3)
-                        .foregroundColor(.teal)
-                        .padding(.vertical, 10)
-                        .padding(.horizontal)
-                        .background(viewModel.total() >= Double(viewModel.floatAmount) ? Color.white : Color.white.opacity(0.5))
-                        .cornerRadius(8)
-                }
-                .disabled(viewModel.total() < Double(viewModel.floatAmount))
-                
-                
-                Button {
-                    viewModel.showingSettings = true
-                } label: {
-                    Image(systemName: "gear")
-                        .foregroundColor(.white)
-                        .font(.title)
-                        .padding(.leading, 8)
-                }
-                
-            }
-            .padding(.vertical)
-            .padding(.horizontal, 24)
-            .background(Color.teal)
-    }
     
     var body: some View {
         VStack(spacing: 0) {
@@ -162,7 +108,7 @@ struct PadEntryView: View {
                     header
                 }
                 
-                PadKeyboardView(isActive: $activeKeyboard, isVisible: $showingKeyboard, activeNumber: $activeNumber, width: 250)
+                PadKeyboardView(isActive: $activeKeyboard, activeNumber: $activeNumber, width: 250)
                     .onChange(of: activeEntry) { newValue in
                         activeKeyboard = (newValue == nil ? false : true)
                         activeNumber = viewModel.existingValue(newValue: newValue)
@@ -172,10 +118,70 @@ struct PadEntryView: View {
                         viewModel.updateNumber(newValue: newValue, activeEntry: activeEntry)
                     }
             }
-            .background(Color("textfield").opacity(0.2))
+            .background(Color("textfield").opacity(0.3))
         }
     }
     
+    var header: some View {
+            HStack {
+                Button {
+                    viewModel.showingList = true
+                } label: {
+                    Image(systemName: "list.bullet")
+                        .foregroundColor(.white)
+                        .font(.title)
+                        .padding(.trailing, 8)
+                }
+                
+                VStack(alignment: .leading) {
+                    
+                    Text("Create Float")
+                        .font(.title2)
+                        .bold()
+                    Text(viewModel.date)
+                        .font(.title3)
+                }
+                .foregroundColor(.white)
+                
+                Spacer()
+                
+                Button {
+                    viewModel.calculate()
+                } label: {
+                    Text("Cashout")
+                        .bold()
+                        .font(.title3)
+                        .foregroundColor(.teal)
+                        .padding(.vertical, 10)
+                        .padding(.horizontal)
+                        .background(viewModel.total() >= Double(viewModel.floatAmount) ? Color.white : Color.white.opacity(0.5))
+                        .cornerRadius(8)
+                }
+                .disabled(viewModel.total() < Double(viewModel.floatAmount))
+                
+                Button {
+                    viewModel.showingClearAlert = true
+                } label: {
+                    Image(systemName: "arrow.clockwise")
+                        .foregroundColor(.white)
+                        .font(.title)
+                        .padding(.leading, 10)
+                }
+                
+                Button {
+                    viewModel.showingSettings = true
+                } label: {
+                    Image(systemName: "gear")
+                        .foregroundColor(.white)
+                        .font(.title)
+                        .padding(.leading, 8)
+                }
+                
+            }
+            .padding(.vertical)
+            .padding(.horizontal, 24)
+            .background(Color.teal)
+    }
 }
 
 struct PadEntryView_Previews: PreviewProvider {

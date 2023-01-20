@@ -39,7 +39,7 @@ struct DisplayPadCellView: View {
             Text(title)
             Spacer()
             Text("\(amount) - ")
-            amount.valueFormat(type).bold()
+            Text("$" + type.valueString(amount)).bold()
         }
         .textField()
     }

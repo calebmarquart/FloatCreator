@@ -22,84 +22,15 @@ struct PadEntryCell: View {
     let imageWidth: CGFloat
     
     init(type: MoneyType, text: Binding<String>, activeEntry: Binding<MoneyType?>) {
-       
-        var system: Bool = false
-        
         self._text = Binding(projectedValue: text)
         self._activeEntry = Binding(projectedValue: activeEntry)
         
-        switch type {
-        case .five:
-            title = "$5 Bills"
-            image = Image("5")
-            value = "5"
-        case .ten:
-            title = "$10 Bills"
-            image = Image("10")
-            value = "10"
-        case .twenty:
-            title = "$20 Bills"
-            image = Image("20")
-            value = "20"
-        case .fifty:
-            title = "$50 Bills"
-            image = Image("50")
-            value = "50"
-        case .hundred:
-            title = "$100 Bills"
-            image = Image("100")
-            value = "100"
-        case .rollNickels:
-            title = "Roll of Nickels"
-            image = Image(systemName: "n.circle")
-            system = true
-            value = "2"
-        case .rollDimes:
-            title = "Roll of Dimes"
-            image = Image(systemName: "d.circle")
-            system = true
-            value = "5"
-        case .rollQuarters:
-            title = "Roll of Quarters"
-            image = Image(systemName: "q.circle")
-            system = true
-            value = "10"
-        case .rollLoonies:
-            title = "Roll of Loonies"
-            image = Image(systemName: "l.circle")
-            system = true
-            value = "25"
-        case .rollToonies:
-            title = "Roll of Toonies"
-            image = Image(systemName: "t.circle")
-            system = true
-            value = "50"
-        case .nickels:
-            title = "Nickels"
-            image = Image("nickel")
-            value = "0.05"
-        case .dimes:
-            title = "Dimes"
-            image = Image("dime")
-            value = "0.10"
-        case .quarters:
-            title = "Quarters"
-            image = Image("quarter")
-            value = "0.25"
-        case .loonies:
-            title = "Loonies"
-            image = Image("loonie")
-            value = "1.00"
-        case .toonies:
-            title = "Toonies"
-            image = Image("toonie")
-            value = "2.00"
-        }
-        
-        self.type = type
-        self.system = system
-        
+        self.image = type.image()
+        self.title = type.title()
+        self.value = type.multiplier()
+        self.system = type.isSystem()
         self.imageWidth = type.imageWidth()
+        self.type = type
     }
     
     var body: some View {
@@ -126,8 +57,7 @@ struct PadEntryCell: View {
                     }
             
             Text("x \(value) = ")
-            Text((Int(text) ?? 0).valueString(type))
-                .bold()
+            Text(type.valueString(Int(text) ?? 0)).bold()
         }
         .onTapGesture {
             if activeEntry != type {

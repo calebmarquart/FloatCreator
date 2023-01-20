@@ -31,10 +31,12 @@
 		87ABE91B297206C0009953A3 /* FloatModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87ABE91A297206C0009953A3 /* FloatModel.swift */; };
 		87ABE91F29735CFD009953A3 /* ImageSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87ABE91E29735CFD009953A3 /* ImageSelectionView.swift */; };
 		87ABE9222978C73B009953A3 /* PadKeyboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87ABE9212978C73B009953A3 /* PadKeyboardView.swift */; };
-		87ABE9252978DD1E009953A3 /* PadEntryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87ABE9242978DD1E009953A3 /* PadEntryCell.swift */; };
 		87ABE9272978EB54009953A3 /* ContentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87ABE9262978EB54009953A3 /* ContentViewModel.swift */; };
 		87ABE9292978ECAE009953A3 /* PadEntryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87ABE9282978ECAE009953A3 /* PadEntryView.swift */; };
 		87ABE92B2978EF18009953A3 /* PhoneEntryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87ABE92A2978EF18009953A3 /* PhoneEntryView.swift */; };
+		87ABE93C297B339E009953A3 /* MoneyTypeExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87ABE93B297B339E009953A3 /* MoneyTypeExtension.swift */; };
+		87ABE93E297B37CD009953A3 /* PrintBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87ABE93D297B37CD009953A3 /* PrintBuilder.swift */; };
+		87ABE940297B3BFA009953A3 /* PadEntryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87ABE93F297B3BFA009953A3 /* PadEntryCell.swift */; };
 		87BAE11D28ADDB4D00D6B0FE /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87BAE11C28ADDB4D00D6B0FE /* SettingsView.swift */; };
 		87BAE12028ADDF5E00D6B0FE /* ViewModifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87BAE11F28ADDF5E00D6B0FE /* ViewModifiers.swift */; };
 		87D8D07A296CE28500FE9B9E /* PrintManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87D8D079296CE28500FE9B9E /* PrintManager.swift */; };
@@ -72,10 +74,12 @@
 		87ABE91A297206C0009953A3 /* FloatModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloatModel.swift; sourceTree = "<group>"; };
 		87ABE91E29735CFD009953A3 /* ImageSelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageSelectionView.swift; sourceTree = "<group>"; };
 		87ABE9212978C73B009953A3 /* PadKeyboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PadKeyboardView.swift; sourceTree = "<group>"; };
-		87ABE9242978DD1E009953A3 /* PadEntryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PadEntryCell.swift; sourceTree = "<group>"; };
 		87ABE9262978EB54009953A3 /* ContentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewModel.swift; sourceTree = "<group>"; };
 		87ABE9282978ECAE009953A3 /* PadEntryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PadEntryView.swift; sourceTree = "<group>"; };
 		87ABE92A2978EF18009953A3 /* PhoneEntryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneEntryView.swift; sourceTree = "<group>"; };
+		87ABE93B297B339E009953A3 /* MoneyTypeExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoneyTypeExtension.swift; sourceTree = "<group>"; };
+		87ABE93D297B37CD009953A3 /* PrintBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrintBuilder.swift; sourceTree = "<group>"; };
+		87ABE93F297B3BFA009953A3 /* PadEntryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PadEntryCell.swift; sourceTree = "<group>"; };
 		87BAE11C28ADDB4D00D6B0FE /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		87BAE11F28ADDF5E00D6B0FE /* ViewModifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModifiers.swift; sourceTree = "<group>"; };
 		87D8D079296CE28500FE9B9E /* PrintManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrintManager.swift; sourceTree = "<group>"; };
@@ -125,8 +129,8 @@
 			children = (
 				879FF78228ACC3100066F2BE /* ChangeMaker.swift */,
 				87D8D079296CE28500FE9B9E /* PrintManager.swift */,
+				87ABE93D297B37CD009953A3 /* PrintBuilder.swift */,
 				876D0DD7296FC851008DCB09 /* CoreDataManager.swift */,
-				87754EC9296BDD1100B8B5FD /* Extensions.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -145,6 +149,7 @@
 				879492A328AC993700C6B1A0 /* FloatCreatorApp.swift */,
 				87735EBA28ADEFF000B06250 /* Views */,
 				87735EBE28ADF04500B06250 /* Services */,
+				87ABE93A297B3383009953A3 /* Extensions */,
 				87735EBD28ADF03C00B06250 /* Modifiers */,
 				87ABE9172972064E009953A3 /* Models */,
 				879492A528AC993900C6B1A0 /* Assets.xcassets */,
@@ -175,8 +180,8 @@
 		87ABE9162971300E009953A3 /* Components */ = {
 			isa = PBXGroup;
 			children = (
-				87ABE9242978DD1E009953A3 /* PadEntryCell.swift */,
 				87D8D093296F8B6800FE9B9E /* DisplayPadCellView.swift */,
+				87ABE93F297B3BFA009953A3 /* PadEntryCell.swift */,
 				87ABE8FB2970C3DB009953A3 /* CoinsGroupView.swift */,
 				87ABE9012970C484009953A3 /* RollsGroupView.swift */,
 				87ABE8FE2970C432009953A3 /* BillsGroupView.swift */,
@@ -220,6 +225,15 @@
 				87ABE9262978EB54009953A3 /* ContentViewModel.swift */,
 			);
 			path = ContentView;
+			sourceTree = "<group>";
+		};
+		87ABE93A297B3383009953A3 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				87754EC9296BDD1100B8B5FD /* Extensions.swift */,
+				87ABE93B297B339E009953A3 /* MoneyTypeExtension.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		87D8D088296F6E1B00FE9B9E /* iPhone */ = {
@@ -275,7 +289,7 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
-				LastSwiftUpdateCheck = 1340;
+				LastSwiftUpdateCheck = 1400;
 				LastUpgradeCheck = 1400;
 				TargetAttributes = {
 					879492A928AC993900C6B1A0 = {
@@ -343,18 +357,20 @@
 				87754ECA296BDD1100B8B5FD /* Extensions.swift in Sources */,
 				87D8D08B296F701B00FE9B9E /* PhoneEntryCell.swift in Sources */,
 				87ABE9272978EB54009953A3 /* ContentViewModel.swift in Sources */,
-				87ABE9252978DD1E009953A3 /* PadEntryCell.swift in Sources */,
 				87ABE91B297206C0009953A3 /* FloatModel.swift in Sources */,
 				87ABE91F29735CFD009953A3 /* ImageSelectionView.swift in Sources */,
+				87ABE93C297B339E009953A3 /* MoneyTypeExtension.swift in Sources */,
 				879492B328AC993900C6B1A0 /* FloatCreatorApp.swift in Sources */,
 				87A2C3B228B8371800EB5A43 /* WebView.swift in Sources */,
 				879FF78328ACC3100066F2BE /* ChangeMaker.swift in Sources */,
 				87D8D091296F814900FE9B9E /* PadDetailView.swift in Sources */,
 				87D8D08E296F724300FE9B9E /* PadDualView.swift in Sources */,
+				87ABE93E297B37CD009953A3 /* PrintBuilder.swift in Sources */,
 				87ABE91929720668009953A3 /* PrintQueryModel.swift in Sources */,
 				87735EB228ADEE2300B06250 /* CoinsSectionView.swift in Sources */,
 				876D0DD5296FB446008DCB09 /* DisplayPhoneCellView.swift in Sources */,
 				87D8D07A296CE28500FE9B9E /* PrintManager.swift in Sources */,
+				87ABE940297B3BFA009953A3 /* PadEntryCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
