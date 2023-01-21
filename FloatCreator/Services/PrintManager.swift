@@ -39,7 +39,7 @@ class PrintManager {
         }
     }
     
-    func isConnected() async -> Bool {
+    func printerConnectionStatus() async -> PrinterConnectionStatus {
         do {
             try await printer.open()
             
@@ -49,12 +49,23 @@ class PrintManager {
                 }
             }
             
-            _ = try await printer.getStatus()
+            let status = try await printer.getStatus()
+            guard !status.paperEmpty else { return .outOfPaper }
+            guard !status.hasError else { return .unknownError }
             
-            return true
+            return .connected
+            
         } catch {
-            return false
+            return .notConnected
         }
     }
     
+}
+
+enum PrinterConnectionStatus {
+    case connected
+    case connecting
+    case notConnected
+    case outOfPaper
+    case unknownError
 }

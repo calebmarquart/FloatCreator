@@ -11,7 +11,7 @@ struct PrintView: View {
     
     @Environment(\.dismiss) private var dismiss
     
-    @State private var connection: ConnectionState = .connecting
+    @State private var connection: PrinterConnectionStatus = .connecting
     
     let print: PrintQuery
     
@@ -20,8 +20,8 @@ struct PrintView: View {
             VStack(spacing: 20.0) {
                 switch connection {
                 case .connecting: connecting
-                case .connected: connected
                 case .notConnected: notConnected
+                default: connected
                 }
             }
             .padding()
@@ -36,8 +36,7 @@ struct PrintView: View {
                 }
             }
             .task {
-                let isConnected = await PrintManager.instance.isConnected()
-                connection = isConnected ? .connected : .notConnected
+                connection = await PrintManager.instance.printerConnectionStatus()
             }
         }
     }
@@ -62,10 +61,28 @@ struct PrintView: View {
     
     var connected: some View {
         Group {
-            HStack {
-                Text("Printer Connected")
-                Image(systemName: "check.circle.fill")
-                    .foregroundColor(.green)
+            switch connection {
+            case .outOfPaper:
+                HStack {
+                    Image(systemName: "paperclip")
+                        .foregroundColor(.orange)
+                    Text("Printer Connected")
+                }
+                .font(.title3)
+            case .unknownError:
+                HStack {
+                    Image(systemName: "exclamationmark.triangle")
+                        .foregroundColor(.red)
+                    Text("Printer Connected")
+                }
+                .font(.title3)
+            default:
+                HStack {
+                    Image(systemName: "check.circle.fill")
+                        .foregroundColor(.green)
+                    Text("Printer Connected")
+                }
+                .font(.title3)
             }
             
             Button {
@@ -75,12 +92,12 @@ struct PrintView: View {
                 
                 dismiss()
             } label: {
-                Text("Print")
+                Label("Print", systemImage: "printer")
                     .foregroundColor(.white)
-                    .bold()
+                    .font(.title3.bold())
                     .padding(.vertical, 10)
                     .padding(.horizontal, 24)
-                    .background(Color.cyan)
+                    .background(Color("accent"))
                     .cornerRadius(12)
             }
             
@@ -88,10 +105,6 @@ struct PrintView: View {
         }
     }
     
-    private enum ConnectionState {
-        case connected
-        case connecting
-        case notConnected
-    }
+    
     
 }

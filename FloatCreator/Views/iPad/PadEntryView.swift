@@ -17,8 +17,9 @@ struct PadEntryView: View {
     
     var body: some View {
         VStack(spacing: 0) {
-            HStack(alignment: .top, spacing: 30) {
+            HStack(alignment: .top, spacing: 36) {
                 VStack {
+                    Text("Bills").font(.title3.bold())
                     Group {
                         PadEntryCell(type: .five, text: $viewModel.five, activeEntry: $activeEntry)
                         Spacer()
@@ -40,6 +41,7 @@ struct PadEntryView: View {
                 }
                 
                 VStack {
+                    Text("Rolls").font(.title3.bold())
                     Group {
                         PadEntryCell(type: .rollNickels, text: $viewModel.rollNickels, activeEntry: $activeEntry)
                         Spacer()
@@ -61,6 +63,7 @@ struct PadEntryView: View {
                 }
                 
                 VStack {
+                    Text("Coins").font(.title3.bold())
                     Group {
                         PadEntryCell(type: .nickels, text: $viewModel.nickels, activeEntry: $activeEntry)
                         Spacer()
@@ -151,7 +154,7 @@ struct PadEntryView: View {
                     Text("Cashout")
                         .bold()
                         .font(.title3)
-                        .foregroundColor(.teal)
+                        .foregroundColor(Color("accent"))
                         .padding(.vertical, 10)
                         .padding(.horizontal)
                         .background(viewModel.total() >= Double(viewModel.floatAmount) ? Color.white : Color.white.opacity(0.5))
@@ -180,7 +183,7 @@ struct PadEntryView: View {
             }
             .padding(.vertical)
             .padding(.horizontal, 24)
-            .background(Color.teal)
+            .background(Color("accent"))
     }
 }
 

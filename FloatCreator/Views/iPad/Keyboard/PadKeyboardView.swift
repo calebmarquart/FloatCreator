@@ -47,6 +47,7 @@ struct PadKeyboardView: View {
                             .keyView(width: width)
                     }
                     .disabled(!isActive)
+                    .tint(Color("accent"))
                     
                     Button {
                         activeNumber += "0"

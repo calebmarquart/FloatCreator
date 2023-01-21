@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8730EE5B297BCB940075AF1A /* FloatInfoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8730EE5A297BCB940075AF1A /* FloatInfoViewModel.swift */; };
 		876D0DD5296FB446008DCB09 /* DisplayPhoneCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 876D0DD4296FB446008DCB09 /* DisplayPhoneCellView.swift */; };
 		876D0DD8296FC851008DCB09 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 876D0DD7296FC851008DCB09 /* CoreDataManager.swift */; };
 		876D0DDC296FC909008DCB09 /* FloatStorage.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 876D0DDA296FC909008DCB09 /* FloatStorage.xcdatamodeld */; };
@@ -49,6 +50,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		8730EE5A297BCB940075AF1A /* FloatInfoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloatInfoViewModel.swift; sourceTree = "<group>"; };
 		876D0DD4296FB446008DCB09 /* DisplayPhoneCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplayPhoneCellView.swift; sourceTree = "<group>"; };
 		876D0DD7296FC851008DCB09 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		876D0DDB296FC909008DCB09 /* FloatStorage.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = FloatStorage.xcdatamodel; sourceTree = "<group>"; };
@@ -102,12 +104,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		87735EBA28ADEFF000B06250 /* Views */ = {
+		8730EE5C297BCCB20075AF1A /* FloatInfoView */ = {
 			isa = PBXGroup;
 			children = (
 				87ABE90F29711ABC009953A3 /* FloatInfoView.swift */,
+				8730EE5A297BCB940075AF1A /* FloatInfoViewModel.swift */,
+			);
+			path = FloatInfoView;
+			sourceTree = "<group>";
+		};
+		87735EBA28ADEFF000B06250 /* Views */ = {
+			isa = PBXGroup;
+			children = (
 				87D8D07F296D15E300FE9B9E /* PrintView.swift */,
 				876D0DDE296FD519008DCB09 /* ListView.swift */,
+				8730EE5C297BCCB20075AF1A /* FloatInfoView */,
 				87ABE92C29790B82009953A3 /* ContentView */,
 				87ABE92029736665009953A3 /* Settings */,
 				87D8D089296F6E2600FE9B9E /* iPad */,
@@ -363,6 +374,7 @@
 				879492B328AC993900C6B1A0 /* FloatCreatorApp.swift in Sources */,
 				87A2C3B228B8371800EB5A43 /* WebView.swift in Sources */,
 				879FF78328ACC3100066F2BE /* ChangeMaker.swift in Sources */,
+				8730EE5B297BCB940075AF1A /* FloatInfoViewModel.swift in Sources */,
 				87D8D091296F814900FE9B9E /* PadDetailView.swift in Sources */,
 				87D8D08E296F724300FE9B9E /* PadDualView.swift in Sources */,
 				87ABE93E297B37CD009953A3 /* PrintBuilder.swift in Sources */,

@@ -51,7 +51,7 @@ struct PadEntryCell: View {
                             if activeEntry == type {
                                 RoundedRectangle(cornerRadius: 8)
                                     .stroke(lineWidth: 3)
-                                    .fill(Color.blue)
+                                    .fill(Color("accent"))
                             }
                         }
                     }
