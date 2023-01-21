@@ -67,3 +67,9 @@ extension Data {
         }
     }
 }
+
+extension UIDevice {
+    func isPhone() -> Bool {
+        return self.userInterfaceIdiom == .phone
+    }
+}

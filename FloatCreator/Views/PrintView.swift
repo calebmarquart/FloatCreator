@@ -71,14 +71,14 @@ struct PrintView: View {
                 .font(.title3)
             case .unknownError:
                 HStack {
-                    Image(systemName: "exclamationmark.triangle")
+                    Image(systemName: "exclamationmark.triangle.fill")
                         .foregroundColor(.red)
                     Text("Printer Connected")
                 }
                 .font(.title3)
             default:
                 HStack {
-                    Image(systemName: "check.circle.fill")
+                    Image(systemName: "checkmark.circle.fill")
                         .foregroundColor(.green)
                     Text("Printer Connected")
                 }
@@ -104,7 +104,10 @@ struct PrintView: View {
             Spacer()
         }
     }
-    
-    
-    
+}
+
+struct PrintViewPreviews: PreviewProvider {
+    static var previews: some View {
+        PrintView(print: previewQuery)
+    }
 }
