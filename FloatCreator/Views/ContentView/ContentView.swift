@@ -10,18 +10,20 @@ struct ContentView: View {
     @StateObject var viewModel = ContentViewModel()
     
     var body: some View {
-        NavigationStack {
-            Group {
+        NavigationView {
+            ZStack {
+                NavigationLink(destination: FloatInfoView(configuration: viewModel.configuration), isActive: $viewModel.showingNextView) {
+                    EmptyView()
+                }
+                
                 if UIDevice.current.userInterfaceIdiom == .phone {
                     PhoneEntryView(viewModel: viewModel)
                 } else {
                     PadEntryView(viewModel: viewModel)
                 }
             }
-            .navigationDestination(isPresented: $viewModel.showingNextView) {
-                FloatInfoView(configuration: viewModel.configuration)
-            }
         }
+        .navigationViewStyle(.stack)
         .fullScreenCover(isPresented: $viewModel.showingSettings) {
             SettingsView()
         }

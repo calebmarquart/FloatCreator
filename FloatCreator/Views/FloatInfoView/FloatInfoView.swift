@@ -17,70 +17,73 @@ struct FloatInfoView: View {
     
     var body: some View {
         VStack(alignment: .leading, spacing: 16.0) {
-                Text("Till Amount: $" + String(format: "%.2f", ChangeMaker.instance.getTotal(configuration)))
-                    .font(.headline)
-                
-                Text("Before the float is created let's get the till and the name of the shift lead so we know who made this float.")
-                
-                VStack(spacing: 20) {
-                    HStack {
-                        Image(systemName: "dollarsign.circle").foregroundColor(.secondary)
-                        TextField("Till", text: $viewModel.till)
-                            .focused($focusedField, equals: .till)
-                            .onSubmit {
-                                focusedField = .lead
-                            }
-                            .submitLabel(.next)
-                    }
-                    .padding()
-                    .background(Color("textfield"))
-                    .cornerRadius(10)
-                    .shadow(color: .black.opacity(0.1), radius: 6, x: 3, y: 3)
-                    
-                    HStack {
-                        Image(systemName: "person").foregroundColor(.secondary)
-                        TextField("Shift Lead", text: $viewModel.lead)
-                            .focused($focusedField, equals: .lead)
-                            .onSubmit {
-                                focusedField = nil
-                            }
-                            .submitLabel(.done)
-                    }
-                    .padding()
-                    .background(Color("textfield"))
-                    .cornerRadius(10)
-                    .shadow(color: .black.opacity(0.1), radius: 6, x: 3, y: 3)
+            Text("Till Amount: $" + String(format: "%.2f", ChangeMaker.instance.getTotal(configuration)))
+                .font(.headline)
+            
+            Text("Before the float is created let's get the till and the name of the shift lead so we know who made this float.")
+            
+            VStack(spacing: 20) {
+                HStack {
+                    Image(systemName: "dollarsign.circle").foregroundColor(.secondary)
+                    TextField("Till", text: $viewModel.till)
+                        .focused($focusedField, equals: .till)
+                        .onSubmit {
+                            focusedField = .lead
+                        }
+                        .submitLabel(.next)
                 }
-                .font(.subheadline)
+                .padding()
+                .background(Color("textfield"))
+                .cornerRadius(10)
+                .shadow(color: .black.opacity(0.1), radius: 6, x: 3, y: 3)
                 
+                HStack {
+                    Image(systemName: "person").foregroundColor(.secondary)
+                    TextField("Shift Lead", text: $viewModel.lead)
+                        .focused($focusedField, equals: .lead)
+                        .onSubmit {
+                            focusedField = nil
+                        }
+                        .submitLabel(.done)
+                }
+                .padding()
+                .background(Color("textfield"))
+                .cornerRadius(10)
+                .shadow(color: .black.opacity(0.1), radius: 6, x: 3, y: 3)
+            }
+            .font(.subheadline)
+            
             Button {
                 viewModel.createFloat(with: configuration)
             } label: {
-                    Text("Create Float")
-                        .bold()
-                        .padding(.vertical, 12)
-                        .padding(.horizontal, 36)
-                        .foregroundColor(.white)
-                        .background(Color.green)
-                        .cornerRadius(12)
-                        .font(.title3)
-                }
-                .padding(.top)
-                .frame(maxWidth: .infinity, alignment: .center)
-                
-                Spacer()
+                Text("Create Float")
+                    .bold()
+                    .padding(.vertical, 12)
+                    .padding(.horizontal, 36)
+                    .foregroundColor(.white)
+                    .background(Color.green)
+                    .cornerRadius(12)
+                    .font(.title3)
             }
+            .padding(.top)
+            .frame(maxWidth: .infinity, alignment: .center)
+            
+            NavigationLink(destination: navigationDestination(), isActive: $viewModel.showingDetail) {
+                EmptyView()
+            }
+            
+            Spacer()
+        }
         .padding(.vertical)
         .padding(.horizontal, 30)
         .navigationTitle("Float Info")
-        .navigationDestination(isPresented: $viewModel.showingDetail) {
-            if UIDevice.current.userInterfaceIdiom == .phone {
-                // PhoneSingleView
-                PhoneSingleView(float: viewModel.float, cashout: viewModel.cashout)
-            } else {
-                // PadDualView
-                PadDualView(float: viewModel.float, cashout: viewModel.cashout)
-            }
+    }
+    
+    @ViewBuilder func navigationDestination() -> some View {
+        if UIDevice.current.isPhone() {
+            PhoneSingleView(float: viewModel.float, cashout: viewModel.cashout)
+        } else {
+            PadDualView(float: viewModel.float, cashout: viewModel.cashout)
         }
     }
     

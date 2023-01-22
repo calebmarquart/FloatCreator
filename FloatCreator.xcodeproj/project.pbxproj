@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		8730EE5B297BCB940075AF1A /* FloatInfoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8730EE5A297BCB940075AF1A /* FloatInfoViewModel.swift */; };
 		8730EE5E297C85610075AF1A /* ListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8730EE5D297C85610075AF1A /* ListViewModel.swift */; };
+		8730EE7D297CB4E00075AF1A /* ImageSelectionViewRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8730EE7C297CB4E00075AF1A /* ImageSelectionViewRepresentable.swift */; };
 		876D0DD5296FB446008DCB09 /* DisplayPhoneCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 876D0DD4296FB446008DCB09 /* DisplayPhoneCellView.swift */; };
 		876D0DD8296FC851008DCB09 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 876D0DD7296FC851008DCB09 /* CoreDataManager.swift */; };
 		876D0DDC296FC909008DCB09 /* FloatStorage.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 876D0DDA296FC909008DCB09 /* FloatStorage.xcdatamodeld */; };
@@ -53,6 +54,7 @@
 /* Begin PBXFileReference section */
 		8730EE5A297BCB940075AF1A /* FloatInfoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloatInfoViewModel.swift; sourceTree = "<group>"; };
 		8730EE5D297C85610075AF1A /* ListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewModel.swift; sourceTree = "<group>"; };
+		8730EE7C297CB4E00075AF1A /* ImageSelectionViewRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageSelectionViewRepresentable.swift; sourceTree = "<group>"; };
 		876D0DD4296FB446008DCB09 /* DisplayPhoneCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplayPhoneCellView.swift; sourceTree = "<group>"; };
 		876D0DD7296FC851008DCB09 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		876D0DDB296FC909008DCB09 /* FloatStorage.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = FloatStorage.xcdatamodel; sourceTree = "<group>"; };
@@ -228,6 +230,7 @@
 				87A2C3B128B8371800EB5A43 /* WebView.swift */,
 				87BAE11C28ADDB4D00D6B0FE /* SettingsView.swift */,
 				87ABE91E29735CFD009953A3 /* ImageSelectionView.swift */,
+				8730EE7C297CB4E00075AF1A /* ImageSelectionViewRepresentable.swift */,
 			);
 			path = Settings;
 			sourceTree = "<group>";
@@ -356,6 +359,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8730EE7D297CB4E00075AF1A /* ImageSelectionViewRepresentable.swift in Sources */,
 				87ABE8FC2970C3DB009953A3 /* CoinsGroupView.swift in Sources */,
 				87ABE9292978ECAE009953A3 /* PadEntryView.swift in Sources */,
 				87BAE11D28ADDB4D00D6B0FE /* SettingsView.swift in Sources */,
@@ -534,7 +538,7 @@
 				INFOPLIST_KEY_UIStatusBarStyle = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -574,7 +578,7 @@
 				INFOPLIST_KEY_UIStatusBarStyle = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

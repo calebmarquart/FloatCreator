@@ -29,7 +29,7 @@ class ListViewModel: ObservableObject {
         }
     }
     
-    @ViewBuilder func makeNavigationLabel(width item: FloatDB) -> some View {
+    @ViewBuilder func makeNavigationLabel(with item: FloatDB) -> some View {
         VStack(alignment: .leading) {
             Text((item.date ?? Date.now).regularText())
                 .font(.headline)

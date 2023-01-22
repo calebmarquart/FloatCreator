@@ -13,7 +13,7 @@ struct SettingsView: View {
     @AppStorage("show_images") var showImages = true
     
     var body: some View {
-        NavigationStack {
+        NavigationView {
             List {
                 Section("Float Amount") {
                     Stepper("$\(floatAmount) Float", value: $floatAmount, in: 50...1000, step: 50)
@@ -28,11 +28,29 @@ struct SettingsView: View {
                 
                 Section("About") {
                     NavigationLink("Privacy Policy") {
-                        WebView(url: URL(string: privacyPolicy)!)
+                        if let url = URL(string: privacyPolicy) {
+                            WebView(url: url)
+                                .navigationTitle("Privacy Policy")
+                                .navigationBarTitleDisplayMode(.inline)
+                        } else {
+                            VStack {
+                                Text("Hmmmm...").font(.headline)
+                                Text("Something went wrong")
+                            }
+                        }
                     }
                     
                     NavigationLink("Terms & Conditions") {
-                        WebView(url: URL(string: terms)!)
+                        if let url = URL(string: terms) {
+                            WebView(url: url)
+                                .navigationTitle("Terms")
+                                .navigationBarTitleDisplayMode(.inline)
+                        } else {
+                            VStack {
+                                Text("Hmmmm...").font(.headline)
+                                Text("Something went wrong")
+                            }
+                        }
                     }
                     
                     HStack {
@@ -64,6 +82,7 @@ struct SettingsView: View {
             }
             
         }
+        .navigationViewStyle(.stack)
     }
 }
 
